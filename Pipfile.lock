@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1a47e4d41d96a90b87ea4f714d2d9d6f1fabd5353479132d0145436740f5f24d"
+            "sha256": "d601ed3271a678ad14aaeb97435aaf8873b70db108dd28779f8a4b4bbaf01bf3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -253,6 +253,10 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.15.0"
+        },
+        "src": {
+            "editable": true,
+            "path": "."
         },
         "tornado": {
             "hashes": [

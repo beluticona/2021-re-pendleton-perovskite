@@ -24,3 +24,7 @@ Run:
 
 `pipenv run python -m ipykernel install --user --name=re-pendleton`
 
+`pipenv install -e .` install all packeges found by setup. In this case we want src to be importable from notebooks.
+
+
+
