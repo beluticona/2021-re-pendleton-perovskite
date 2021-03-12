@@ -2,6 +2,6 @@
 
 from pathlib import Path
 
-data_dir = Path('../../')
-data_path = data_dir / '/data/raw/full-perovskite-data.csv' 
+data_dir = Path('.')
+data_path = 'data/raw/full-perovskite-data.csv' 
 

@@ -26,7 +26,7 @@ def make_dataset(df):
 
 '''Generate a non sense data set:
 Shuffle all row except by crystal score column'''
-def nonsense_dataset(df):
+def shuffle(df):
 	out_hold['out_crystalscore'] = df['_out_crystalscore']
 	df = df.reindex(np.random.permutation(df.index)).reset_index(drop=True)
 	df['_out_crystalscore'] = out_hold['out_crystalscore']
