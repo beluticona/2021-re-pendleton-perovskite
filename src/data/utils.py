@@ -1,5 +1,3 @@
-
-
 experiment_version = 1.1
 
 GBL_inchikey = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
@@ -30,27 +28,27 @@ def make_dataset(df):
 Shuffle all row except by crystal score column'''
 def nonsense_dataset(df):
 	out_hold['out_crystalscore'] = df['_out_crystalscore']
-    df = df.reindex(np.random.permutation(df.index)).reset_index(drop=True)
-    df['_out_crystalscore'] = out_hold['out_crystalscore']
-   return df
+	df = df.reindex(np.random.permutation(df.index)).reset_index(drop=True)
+	df['_out_crystalscore'] = out_hold['out_crystalscore']
+	return df
 
 def deep_shuffe(df):
 	# Not shuffled: raw
 	keeped_columns = df.loc[:, '_raw_model_predicted':'_prototype_heteroatomINT']
-    keeped_columns = pd.concat([df['_rxn_organic-inchikey'], keeped_columns], axis=1) 
+	keeped_columns = pd.concat([df['_rxn_organic-inchikey'], keeped_columns], axis=1) 
 
-    # Isolated shuffle: all but raw
+	# Isolated shuffle: all but raw
 	shuffle_rxn = pd.concat([df.loc[:, 'name':'_rxn_M_organic'], 
-                      df.loc[:, '_rxn_temperatureC_actual_bulk' : '_feat_Hacceptorcount']], 
-                                     axis = 1)
-    shuffled_rxn = shuffle_deep_df.apply(np.random.permutation).reset_index(drop=True)
+	                  df.loc[:, '_rxn_temperatureC_actual_bulk' : '_feat_Hacceptorcount']], 
+	                                 axis = 1)
+	shuffled_rxn = shuffle_deep_df.apply(np.random.permutation).reset_index(drop=True)
 
-    shuffled_reactions = pd.concat([keeped_columns, shuffled_rxn], axis=1)
+	shuffled_reactions = pd.concat([keeped_columns, shuffled_rxn], axis=1)
 
-    return shuffled_reactions
-	
-	
-	
+	return shuffled_reactions
+
+
+
 
 	
 	
