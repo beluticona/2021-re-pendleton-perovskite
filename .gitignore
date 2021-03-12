@@ -1,4 +1,5 @@
 .ipynb_checkpoints
 /pendleton.egg-info
-/src.egg-info
+/src*.egg-info
 *pyproject.toml
+*__pycache__/
