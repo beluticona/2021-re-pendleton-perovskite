@@ -14,7 +14,13 @@ The main goal of this project is to reproduce results from the original paper, a
 
 ## Reproduction
 
+Run:
 
+`pip install pipenv`
 
-To be completed
+`pipenv --three`
+
+`pipenv install ipykernel`
+
+`pipenv run python -m ipykernel install --user --name=re-pendleton`
 
