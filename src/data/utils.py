@@ -1,3 +1,7 @@
+# import numpy
+import numpy as np
+import pandas as pd 
+
 experiment_version = 1.1
 
 GBL_inchikey = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
@@ -20,19 +24,19 @@ def make_dataset(df):
 	
 	succesful_inchikeys = df.query('_out_crystalscore == 4')['_rxn_organic-inchikey'].unique()
 	
-	succesful_reactions = (df[df['_rxn_organic-inchikey'].isin(succesful_inchikeys)])
+	df = (df[df['_rxn_organic-inchikey'].isin(succesful_inchikeys)])
 	
-	return succesful_reactions
+	return df
 
 '''Generate a non sense data set:
 Shuffle all row except by crystal score column'''
 def shuffle(df):
-	out_hold['out_crystalscore'] = df['_out_crystalscore']
+	out_hold = df['_out_crystalscore']
 	df = df.reindex(np.random.permutation(df.index)).reset_index(drop=True)
-	df['_out_crystalscore'] = out_hold['out_crystalscore']
+	df['_out_crystalscore'] = out_hold
 	return df
 
-def deep_shuffe(df):
+def deep_shuffle(df):
 	# Not shuffled: raw
 	keeped_columns = df.loc[:, '_raw_model_predicted':'_prototype_heteroatomINT']
 	keeped_columns = pd.concat([df['_rxn_organic-inchikey'], keeped_columns], axis=1) 
@@ -41,7 +45,7 @@ def deep_shuffe(df):
 	shuffle_rxn = pd.concat([df.loc[:, 'name':'_rxn_M_organic'], 
 	                  df.loc[:, '_rxn_temperatureC_actual_bulk' : '_feat_Hacceptorcount']], 
 	                                 axis = 1)
-	shuffled_rxn = shuffle_deep_df.apply(np.random.permutation).reset_index(drop=True)
+	shuffled_rxn = shuffle_rxn.apply(np.random.permutation).reset_index(drop=True)
 
 	shuffled_reactions = pd.concat([keeped_columns, shuffled_rxn], axis=1)
 
