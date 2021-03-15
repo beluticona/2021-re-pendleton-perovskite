@@ -1,4 +1,5 @@
 from src.data import utils
+from src.models import train_model
 from src.config import data_path
 from src.config import data_types_path
 import pandas as pd
@@ -16,15 +17,20 @@ with open('parameters.yaml') as file, open(data_types_path) as json_file:
 	df = pd.read_csv(data_path,header=0, dtype = dtypes)
 
 	# Select reactions where the solvent produced at leat a crystal score of 4
-	df = utils.make_dataset(df)
+	df = utils.prepare_dataset(df, parameters["shuffle"], parameters["deep_shuffle"])
 
-	# If it is desired to non sence dataset
-	if parameters["shuffle"]: 
-		df = utils.shuffle(df)
-	elif parameters["deep_shuffle"]: 
-		df = utils.deep_shuffle(df)
+	# for each dataset, train and predict considering parameters
+	
+	##----------------------TO TEST--------------------------------##
+	# Count incinchikeys
+	inchikeys_count = df['_rxn_organic-inchikey'].value_counts()
+	
+	# binarize class
+	crystal_score = df['_out_crystalscore']
+	crystal_score = (out == 4).astype(int)
 
-	df.rename(columns={"_raw_v0-M_acid": "_rxn_v0-M_acid", "_raw_v0-M_inorganic": "_rxn_v0-M_inorganic", "_raw_v0-M_organic":"_rxn_v0-M_organic"}, inplace=True)
+	for dataset_name in parameters["dataset"]: 
+		utils.process_dataset(df, dataset_name, parameters)
 
 
 
