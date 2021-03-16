@@ -1,6 +1,8 @@
-# import numpy
+
+from src.models import train
 import numpy as np
-import pandas as pd 
+import pandas as pd
+
 
 experiment_version = 1.1
 
@@ -31,7 +33,7 @@ def deep_shuffle(df):
 
 	return shuffled_reactions
 
-def prepare_dataset(df, shuffle_enabled, deep_shuffle_enabled):
+def prepare_dataset(df, data_preparation):
 	
 	# Select data from version 1.1
 	df.query('_raw_ExpVer == @experiment_version', inplace = True)
@@ -50,9 +52,9 @@ def prepare_dataset(df, shuffle_enabled, deep_shuffle_enabled):
 	df = (df[df['_rxn_organic-inchikey'].isin(succesful_inchikeys)])
 	
 	# If it is desired to make a non sence dataset
-	if shuffle_enabled: 
+	if data_preparation["shuffle_enabled"]: 
 		df = utils.shuffle(df)
-	elif deep_shuffle_enabled: 
+	elif data_preparation["deep_shuffle_enabled"]: 
 		df = utils.deep_shuffle(df)
 
 	# Rename from raw to rxn
@@ -62,24 +64,25 @@ def prepare_dataset(df, shuffle_enabled, deep_shuffle_enabled):
 
 
 ##-----------------------------esqueleto-------------##
-def process_dataset(df, dataset_name, parameters):
+def process_dataset(df, parameters):
 	inchikeys_count = df['_rxn_organic-inchikey'].value_counts()
 	
 	# binarize class
 	crystal_score = df['_out_crystalscore']
 	crystal_score = (out == 4).astype(int)
 
+	# for each dataset, train and predict considering parameters
 	for dataset_name in parameters["dataset"]: 
 
 		selected_data = {    
-			'solV-chem': filter_solV_chem(df,parameters)
+			'solV-chem': filter_solV_chem(df,parameters),
 			'solUD-chem': filter_solUD_chem(df,parameters)
 		}[dataset_name]
 
 
 		extrapolate = {
-		#	'Yes':
-			'No': train_model(parameters)
+		#	'Yes': 
+			'No': train.std_train_test(selected_data, parameters["model"], crystal_score, inchikeys_count)
 		}[parameters["extrpl"]]
 		
 	
