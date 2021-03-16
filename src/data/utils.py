@@ -85,4 +85,15 @@ def process_dataset(df, parameters):
 			'No': train.std_train_test(selected_data, parameters["model"], crystal_score, inchikeys_count)
 		}[parameters["extrpl"]]
 		
-	
+	'''
+	TODO:
+		- move filter data columns do data intead of train
+			* data feat scaling will be there
+		- break utils into
+				* main: process_dataset
+				* get_data: filters, prepare, shuffles
+
+
+
+
+	'''
