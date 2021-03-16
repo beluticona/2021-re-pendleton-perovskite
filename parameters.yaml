@@ -1,4 +1,3 @@
-cv: 3              # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
 extrpl: 0          # Run extrapolative models (Leave one amine/organic out)
 intrpl : 1          # Run interpolative models (Standard test train splits )
 plot_results : 0    # Turn mass plotting on (plots each of the model comparisons to png images)
@@ -6,15 +5,17 @@ shuffle: No         # Shuffles correspondence between x and y  (cannot be used w
 deep_shuffle : Yes    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 hyperparam_opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
-normdict:
-    feat: 0    # Forces normalization of _feats_* 
-    rxn: 0     # Forces normalization of _rxns_* 
-    raw: 0     # Forces normalization of _raws_* (post calculations of proportional values)
-
-std:
-    feat: 0     # Forces standardization of _feats_* 
-    rxn: 0      # Forces standardization of _rxns_* 
-    raw: 0      # Forces standardization of _raws_* (post calculations of proportional values)
+model:
+  strat: No
+  cv_folds: 3             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
+  norm:
+      feat: 0    # Forces normalization of _feats_* 
+      rxn: 0     # Forces normalization of _rxns_* 
+      raw: 0     # Forces normalization of _raws_* (post calculations of proportional values)
+  std:
+      feat: 0     # Forces standardization of _feats_* 
+      rxn: 0      # Forces standardization of _rxns_* 
+      raw: 0      # Forces standardization of _raws_* (post calculations of proportional values)
 # for no one hot set drop:0 and empty the keep list
 # Specifically for analyzing how stts models are handling the _feats_
 onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey

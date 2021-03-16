@@ -61,9 +61,25 @@ def prepare_dataset(df, shuffle_enabled, deep_shuffle_enabled):
 	return df
 
 
+##-----------------------------esqueleto-------------##
+def process_dataset(df, dataset_name, parameters):
+	inchikeys_count = df['_rxn_organic-inchikey'].value_counts()
+	
+	# binarize class
+	crystal_score = df['_out_crystalscore']
+	crystal_score = (out == 4).astype(int)
 
-	
-	
-	
-	
+	for dataset_name in parameters["dataset"]: 
+
+		selected_data = {    
+			'solV-chem': filter_solV_chem(df,parameters)
+			'solUD-chem': filter_solUD_chem(df,parameters)
+		}[dataset_name]
+
+
+		extrapolate = {
+		#	'Yes':
+			'No': train_model(parameters)
+		}[parameters["extrpl"]]
+		
 	
