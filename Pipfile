@@ -9,6 +9,7 @@ pandas = "*"
 numpy = "*"
 src = {editable = true, path = "."}
 pyyaml = "*"
+sklearn = "*"
 
 [dev-packages]
 

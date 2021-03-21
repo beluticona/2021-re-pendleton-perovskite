@@ -1,34 +1,113 @@
+import sklearn
+from sklearn.model_selection import train_test_split 
+from sklearn.model_selection import cross_validate, KFold
+'''
+from sklearn.model_selection import GridSearchCV
+
+from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
+from sklearn.pipeline import Pipeline
+from sklearn.ensemble import GradientBoostingClassifier
+'''
+from sklearn.metrics import confusion_matrix, classification_report, precision_recall_fscore_support
+from sklearn.metrics import matthews_corrcoef
+from sklearn.metrics import make_scorer
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.compose import make_column_transformer
+
 
 def get_solUD_model_columns(df_columns):
-	solUD_model = list(filter(lambda column_name:column_name.startswith('_rxn_') or column_name.startswith('_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
-	solUD_model.remove('_rxn_organic-inchikey')
-	return solUD_model
+    solUD_model = list(filter(lambda column_name:column_name.startswith('_rxn_') or column_name.startswith('_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
+    solUD_model.remove('_rxn_organic-inchikey')
+    return solUD_model
 
 # Select columns names involved in each model
 def filter_data_for_solV(df):
-	solUD_model = get_solUD_model_columns(df.columns.to_list)
+    solUD_model = get_solUD_model_columns(df.columns.to_list())
 
-	solV_model = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), solUD_model))
+    solV_model = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), solUD_model))
 
-	# Select data involved in each model
-	solV_data = df[solV_model].reset_index(drop=True)
-	
-	return solV_data
+    # Select data involved in each model
+    solV_data = df[solV_model].reset_index(drop=True)
+    
+    return solV_data
 
 def filter_data_for_solUD(df):
-	solUD_model = get_solUD_model_columns(df.columns.to_list())
-	
-	solUD_data = df[solUD_model].reset_index(drop=True)
-	
-	return solUD_data
+    solUD_model = get_solUD_model_columns(df.columns.to_list())
+    
+    solUD_data = df[solUD_model].reset_index(drop=True)
+    
+    return solUD_data
 
 # columns names | new data columns
 
 # col
 
 
-def std_train_test(selected_data, model_parameters, crystal_score, inchikeys_count):
-		if(model_parameters["cv_folds"] == 1):
+def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
+## if(model_parameters["cv_folds"] == 1):
+    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
 
+    clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
+                      metric_params=None, n_jobs=8, p=20)
+    param_grid = {'weights': ['uniform','distance'],
+                      'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                      'n_neighbors': range(3,9,2)
+    }
 
+    clf_dict = {'estimator': clf,
+            'opt': model_parameters['hyperparam_opt'],
+            'param_grid': param_grid
+    }
 
+    clf.fit(X_train, y_train)
+    pred = clf.predict(X_test)
+    
+    precision, recall, f1, support = precision_recall_fscore_support(y_test, pred, labels=[0,1])
+
+    for metric in results: 
+        value = {
+            'dataset_index': dataset_name,
+            'matrix':confusion_matrix(y_test, pred),
+            'precision_positive': precision[1],
+            'recall_positive': recall[1],
+            'f1_positive':f1[1],
+            'support_negative':support[0],
+            'support_positive':support[1],
+            'matthewCoef':matthews_corrcoef(y_test, pred)
+        }[metric]
+        results[metric].append(value)
+    
+    '''
+    scores = cross_validate(clf, data, crystal_score,
+                            cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
+                            scoring=scoring, 
+                            return_train_score=True,
+                            return_estimator=True)
+    return scores, clf
+
+    clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
+
+    # @TODO:add if hyperparam_opt ON or OFF
+    # default ON
+    clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
+    clf.fit(X, y)
+    clf = clf.best_estimator_
+
+    pred = clf.predict(X_test)
+    cm = confusion_matrix(y_test, pred)
+    cr = classification_report(y_test, pred)
+    precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
+    matt_coeff = matthews_corrcoef(y_test, pred)
+    return {'pred':pred,
+            'cm': cm,
+            'precision':precision,
+            'recall':recall,
+            'f1':f1,
+            'matt_coeff': matt_coeff
+            }
+
+    '''
