@@ -1,6 +1,7 @@
 import sklearn
-from sklearn.model_selection import train_test_split 
+from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
+
 '''
 from sklearn.model_selection import GridSearchCV
 
@@ -20,33 +21,33 @@ from sklearn.compose import make_column_transformer
 import numpy as np
 
 
+def get_sol_ud_model_columns(df_columns):
+    sol_ud_model = list(filter(lambda column_name: column_name.startswith('_rxn_') or column_name.startswith(
+        '_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
+    sol_ud_model.remove('_rxn_organic-inchikey')
+    return sol_ud_model
 
-def get_solUD_model_columns(df_columns):
-    solUD_model = list(filter(lambda column_name:column_name.startswith('_rxn_') or column_name.startswith('_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
-    solUD_model.remove('_rxn_organic-inchikey')
-    return solUD_model
 
 # Select columns names involved in each model
-def filter_data_for_solV(df):
-    solUD_model = get_solUD_model_columns(df.columns.to_list())
+def filter_data_for_sol_v(df):
+    sol_ud_model = get_sol_ud_model_columns(df.columns.to_list())
 
-    solV_model = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), solUD_model))
+    sol_v_model = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), sol_ud_model))
 
     # Select data involved in each model
-    solV_data = df[solV_model].reset_index(drop=True)
-    
-    return solV_data
+    sol_v_data = df[sol_v_model].reset_index(drop=True)
 
-def filter_data_for_solUD(df):
-    solUD_model = get_solUD_model_columns(df.columns.to_list())
-    
-    solUD_data = df[solUD_model].reset_index(drop=True)
-    
-    return solUD_data
+    return sol_v_data
 
-# columns names | new data columns
 
-# col
+def filter_data_for_sol_ud(df):
+    sol_ud_model = get_sol_ud_model_columns(df.columns.to_list())
+
+    sol_ud_data = df[sol_ud_model].reset_index(drop=True)
+
+    return sol_ud_data
+
+
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
 def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
 def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
@@ -55,45 +56,65 @@ def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
 def sup1(y_true, y_pred): return np.sum(y_true)
 def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
-def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
-## if(model_parameters["cv_folds"] == 1):
-    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
+
+def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
+    x_train, x_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
 
     clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
-                      metric_params=None, n_jobs=8, p=20)
-    param_grid = {'weights': ['uniform','distance'],
-                      'algorithm': ['ball_tree', 'kd_tree', 'brute'],
-                      'n_neighbors': range(3,9,2)
-    }
+                               metric_params=None, n_jobs=8, p=20)
+    param_grid = {'weights': ['uniform', 'distance'],
+                  'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                  'n_neighbors': range(3, 9, 2)
+                  }
 
     clf_dict = {'estimator': clf,
-            'opt': model_parameters['hyperparam_opt'],
-            'param_grid': param_grid
-    }
-    
+                'opt': model_parameters['hyperparam_opt'],
+                'param_grid': param_grid
+                }
+
     cv = model_parameters['cv']
 
-    if(cv > 1):
-        # metrics to track
-        scoring = {#'tp': make_scorer(tp), 
-                   'precision': 'precision', 
-                   'recall': 'recall', 
-                   'mcc': make_scorer(mcc),
-                   'support_negative': make_scorer(sup0),
-                   'support_positive': make_scorer(sup1),
-                   'f1': 'f1'}
-                   #'tn': make_scorer(tn),
-                   #'fp': make_scorer(fp), 
-                   #'fn': make_scorer(fn), 
+    if cv <= 1:
+        clf.fit(x_train, y_train)
+        y_pred = clf.predict(x_test)
 
-        #shuffle batched experimental data into descrete experiments
+        precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
+
+        for metric in results:
+            value = {
+                'dataset_index': dataset_name,
+                'cv': 1,
+                # 'matrix':confusion_matrix(y_test, pred),
+                'precision_positive': precision[1],
+                'recall_positive': recall[1],
+                'f1_positive': f1[1],
+                'support_negative': support[0],
+                'support_positive': support[1],
+                'matthewCoef': matthews_corrcoef(y_test, y_pred)
+            }[metric]
+            results[metric].append(value)
+
+    else:
+        # metrics to track
+        scoring = {  # 'tp': make_scorer(tp),
+            'precision': 'precision',
+            'recall': 'recall',
+            'mcc': make_scorer(mcc),
+            'support_negative': make_scorer(sup0),
+            'support_positive': make_scorer(sup1),
+            'f1': 'f1'}
+        # 'tn': make_scorer(tn),
+        # 'fp': make_scorer(fp),
+        # 'fn': make_scorer(fn),
+
+        # shuffle batched experimental data into discrete experiments
         scores = cross_validate(clf, data, crystal_score,
-                                cv=KFold(model_parameters['cv'], shuffle=True, random_state = 1),  
-                                scoring=scoring, 
+                                cv=KFold(model_parameters['cv'], shuffle=True, random_state=1),
+                                scoring=scoring,
                                 return_train_score=True,
                                 return_estimator=True)
         for i in range(cv):
-            for metric in results: 
+            for metric in results:
                 value = {
                     'dataset_index': dataset_name,
                     'cv': i,
@@ -105,27 +126,7 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
                     'matthewCoef': scores['test_mcc'][i]
                 }[metric]
                 results[metric].append(value)
-    
-    else: 
-        clf.fit(X_train, y_train)
-        pred = clf.predict(X_test)
-        
-        precision, recall, f1, support = precision_recall_fscore_support(y_test, pred, labels=[0,1])
 
-        for metric in results: 
-            value = {
-                'dataset_index': dataset_name,
-                'cv': 1,
-                #'matrix':confusion_matrix(y_test, pred),
-                'precision_positive': precision[1],
-                'recall_positive': recall[1],
-                'f1_positive':f1[1],
-                'support_negative':support[0],
-                'support_positive':support[1],
-                'matthewCoef':matthews_corrcoef(y_test, pred)
-            }[metric]
-            results[metric].append(value)
-    
     '''
     scores = cross_validate(clf, data, crystal_score,
                             cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
@@ -142,7 +143,7 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
     clf.fit(X, y)
     clf = clf.best_estimator_
 
-    pred = clf.predict(X_test)
+    pred = clf.predict(x_test)
     cm = confusion_matrix(y_test, pred)
     cr = classification_report(y_test, pred)
     precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)

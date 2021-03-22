@@ -90,8 +90,8 @@ def process_dataset(df, parameters):
     for dataset_name in parameters["dataset"]: 
 
         selected_data = {    
-            'solV-chem': train.filter_data_for_solV(df),
-            'solUD-chem': train.filter_data_for_solUD(df)
+            'solV-chem': train.filter_data_for_sol_v(df),
+            'solUD-chem': train.filter_data_for_sol_ud(df)
         }[dataset_name]
 
         if(intrpl): train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
@@ -110,4 +110,3 @@ def process_dataset(df, parameters):
 
 
     '''
- 

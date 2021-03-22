@@ -1,7 +1,5 @@
 # 2021-re-pendleton-perovskite
 
-
-
 ## Description
 
 Replication of Pendleton et all (2020), a paper about ML understanding of halide perovskite crystal formation without accurate physicochemical features.
