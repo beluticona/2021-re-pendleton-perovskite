@@ -1,13 +1,14 @@
-extrpl: 0          # Run extrapolative models (Leave one amine/organic out)
-intrpl : 1          # Run interpolative models (Standard test train splits )
+extrpl: No         # Run extrapolative models (Leave one amine/organic out)
+intrpl : Yes          # Run interpolative models (Standard test train splits )
 plot_results : 0    # Turn mass plotting on (plots each of the model comparisons to png images)
-shuffle: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
-deep_shuffle : Yes    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
-hyperparam_opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
-# Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
+data_preparation: 
+  shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
+  deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 model:
+  hyperparam_opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
-  cv_folds: 3             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
+  cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
+# Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
       feat: 0    # Forces normalization of _feats_* 
       rxn: 0     # Forces normalization of _rxns_* 
@@ -21,15 +22,16 @@ model:
 onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
 
 dataset:
-    solV-chem: No
-    solUD-chem: No
-    solV-exp: No
-    solUD-exp: No
-    solV-reag: No
-    solUD-reag: No
-    solV-only: No
-    solUD-only: No
-    solUD-prop: No
-    chem-only: No
-    reag-only: No
-    feat-only: No 
+    solV-chem: Yes
+    #solUD-chem: Yes
+
+    #solV-exp: No
+    #solUD-exp: No
+    #solV-reag: No
+    #solUD-reag: No
+    #solV-only: No
+    #solUD-only: No
+    #solUD-prop: No
+    #chem-only: No
+    #reag-only: No
+    #feat-only: No 

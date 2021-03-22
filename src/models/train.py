@@ -47,7 +47,13 @@ def filter_data_for_solUD(df):
 # columns names | new data columns
 
 # col
-
+def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
+def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
+def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
+def tp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 1]
+def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
+def sup1(y_true, y_pred): return np.sum(y_true)
+def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
 def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
 ## if(model_parameters["cv_folds"] == 1):
@@ -69,13 +75,6 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
 
     if(cv > 1):
         # metrics to track
-        def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
-        def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
-        def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
-        def tp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 1]
-        def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
-        def sup1(y_true, y_pred): return np.sum(y_true)
-        def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
         scoring = {#'tp': make_scorer(tp), 
                    'precision': 'precision', 
                    'recall': 'recall', 
