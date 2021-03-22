@@ -64,7 +64,9 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
             'opt': model_parameters['hyperparam_opt'],
             'param_grid': param_grid
     }
+    
     cv = model_parameters['cv']
+
     if(cv > 1):
         # metrics to track
         def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
@@ -87,7 +89,7 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
 
         #shuffle batched experimental data into descrete experiments
         scores = cross_validate(clf, data, crystal_score,
-                                cv=KFold(model_parameters['cv'], shuffle=True),  
+                                cv=KFold(model_parameters['cv'], shuffle=True, random_state = 1),  
                                 scoring=scoring, 
                                 return_train_score=True,
                                 return_estimator=True)
