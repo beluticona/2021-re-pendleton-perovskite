@@ -76,7 +76,8 @@ def process_dataset(df, parameters):
 
     results = {
         'dataset_index': [],
-        'matrix':[],
+        'cv':[],    
+    #    'matrix':[],
         'precision_positive':[],
         'recall_positive':[],
         'f1_positive':[],

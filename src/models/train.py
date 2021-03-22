@@ -17,6 +17,8 @@ from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import make_scorer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.compose import make_column_transformer
+import numpy as np
+
 
 
 def get_solUD_model_columns(df_columns):
@@ -62,24 +64,66 @@ def std_train_test(data, model_parameters, crystal_score,dataset_name, results):
             'opt': model_parameters['hyperparam_opt'],
             'param_grid': param_grid
     }
+    cv = model_parameters['cv']
+    if(cv > 1):
+        # metrics to track
+        def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
+        def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
+        def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
+        def tp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 1]
+        def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
+        def sup1(y_true, y_pred): return np.sum(y_true)
+        def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
+        scoring = {#'tp': make_scorer(tp), 
+                   'precision': 'precision', 
+                   'recall': 'recall', 
+                   'mcc': make_scorer(mcc),
+                   'support_negative': make_scorer(sup0),
+                   'support_positive': make_scorer(sup1),
+                   'f1': 'f1'}
+                   #'tn': make_scorer(tn),
+                   #'fp': make_scorer(fp), 
+                   #'fn': make_scorer(fn), 
 
-    clf.fit(X_train, y_train)
-    pred = clf.predict(X_test)
+        #shuffle batched experimental data into descrete experiments
+        scores = cross_validate(clf, data, crystal_score,
+                                cv=KFold(model_parameters['cv'], shuffle=True),  
+                                scoring=scoring, 
+                                return_train_score=True,
+                                return_estimator=True)
+        for i in range(cv):
+            for metric in results: 
+                value = {
+                    'dataset_index': dataset_name,
+                    'cv': i,
+                    'precision_positive': scores['test_precision'][i],
+                    'recall_positive': scores['test_recall'][i],
+                    'f1_positive': scores['test_f1'][i],
+                    'support_negative': scores['test_support_negative'][i],
+                    'support_positive': scores['test_support_positive'][i],
+                    'matthewCoef': scores['test_mcc'][i]
+                }[metric]
+                results[metric].append(value)
     
-    precision, recall, f1, support = precision_recall_fscore_support(y_test, pred, labels=[0,1])
+    else: 
+        clf.fit(X_train, y_train)
+        pred = clf.predict(X_test)
+        
+        precision, recall, f1, support = precision_recall_fscore_support(y_test, pred, labels=[0,1])
 
-    for metric in results: 
-        value = {
-            'dataset_index': dataset_name,
-            'matrix':confusion_matrix(y_test, pred),
-            'precision_positive': precision[1],
-            'recall_positive': recall[1],
-            'f1_positive':f1[1],
-            'support_negative':support[0],
-            'support_positive':support[1],
-            'matthewCoef':matthews_corrcoef(y_test, pred)
-        }[metric]
-        results[metric].append(value)
+        for metric in results: 
+            value = {
+                'dataset_index': dataset_name,
+                'cv': 1,
+                #'matrix':confusion_matrix(y_test, pred),
+                'precision_positive': precision[1],
+                'recall_positive': recall[1],
+                'f1_positive':f1[1],
+                'support_negative':support[0],
+                'support_positive':support[1],
+                'matthewCoef':matthews_corrcoef(y_test, pred)
+            }[metric]
+            results[metric].append(value)
     
     '''
     scores = cross_validate(clf, data, crystal_score,
