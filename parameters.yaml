@@ -29,8 +29,8 @@ dataset:
     #solUD-exp: No
     #solV-reag: No
     #solUD-reag: No
-    #solV-only: No
-    #solUD-only: No
+    solV-only: No
+    solUD-only: No
     #solUD-prop: No
     #chem-only: No
     #reag-only: No

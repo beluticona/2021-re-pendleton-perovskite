@@ -1,4 +1,3 @@
-import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
 
@@ -13,39 +12,55 @@ from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import GradientBoostingClassifier
 '''
-from sklearn.metrics import confusion_matrix, classification_report, precision_recall_fscore_support
+from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import make_scorer
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.compose import make_column_transformer
 import numpy as np
+import re
+
+
+"""
+Select columns names involved in each subset
+"""
 
 
 def get_sol_ud_model_columns(df_columns):
-    sol_ud_model = list(filter(lambda column_name: column_name.startswith('_rxn_') or column_name.startswith(
+    sol_ud_model_columns = list(filter(lambda column_name: column_name.startswith('_rxn_') or column_name.startswith(
         '_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
-    sol_ud_model.remove('_rxn_organic-inchikey')
-    return sol_ud_model
+    sol_ud_model_columns.remove('_rxn_organic-inchikey')
+    return sol_ud_model_columns
 
 
-# Select columns names involved in each model
+def get_sol_v_model_columns(df_columns):
+    sol_ud_model_columns = get_sol_ud_model_columns(df_columns)
+    sol_v_model_columns = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), sol_ud_model_columns))
+    return sol_v_model_columns
+
+
 def filter_data_for_sol_v(df):
-    sol_ud_model = get_sol_ud_model_columns(df.columns.to_list())
-
-    sol_v_model = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), sol_ud_model))
-
-    # Select data involved in each model
+    sol_v_model = get_sol_v_model_columns(df.columns.to_list())
     sol_v_data = df[sol_v_model].reset_index(drop=True)
-
     return sol_v_data
 
 
 def filter_data_for_sol_ud(df):
     sol_ud_model = get_sol_ud_model_columns(df.columns.to_list())
-
     sol_ud_data = df[sol_ud_model].reset_index(drop=True)
-
     return sol_ud_data
+
+
+def filter_data_for_sol_v_chem(df):
+    df_columns = df.columns.to_list()
+    sol_v_chem_columns = get_sol_v_model_columns(df_columns)
+    regex_for_columns_to_add = ['_raw_reagent_.*_chemicals_.*_actual_amount$',
+                                '_raw_*molweight',
+                                '_feat_VanderWaalsVolume',
+                                '_raw_reagent_\d_volume']
+
+    for reg_string in regex_for_columns_to_add:
+        reg = re.compile(reg_string)
+        sol_v_chem_columns.extend(list(filter(reg.match, df_columns)))
 
 
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
