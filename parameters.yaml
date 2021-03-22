@@ -23,14 +23,13 @@ onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding fr
 
 dataset:
     solV-chem: Yes
+    solUD-only: No
+    solV-only: No
     #solUD-chem: Yes
-
     #solV-exp: No
     #solUD-exp: No
     #solV-reag: No
     #solUD-reag: No
-    solV-only: No
-    solUD-only: No
     #solUD-prop: No
     #chem-only: No
     #reag-only: No
