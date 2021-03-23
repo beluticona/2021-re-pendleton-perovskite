@@ -19,7 +19,6 @@ from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 import re
 
-
 """
 Select columns names involved in each subset
 """
@@ -38,29 +37,35 @@ def get_sol_v_model_columns(df_columns):
     return sol_v_model_columns
 
 
-def filter_data_for_sol_v(df):
-    sol_v_model = get_sol_v_model_columns(df.columns.to_list())
-    sol_v_data = df[sol_v_model].reset_index(drop=True)
-    return sol_v_data
-
-
-def filter_data_for_sol_ud(df):
-    sol_ud_model = get_sol_ud_model_columns(df.columns.to_list())
-    sol_ud_data = df[sol_ud_model].reset_index(drop=True)
-    return sol_ud_data
-
-
-def filter_data_for_sol_v_chem(df):
-    df_columns = df.columns.to_list()
-    sol_v_chem_columns = get_sol_v_model_columns(df_columns)
-    regex_for_columns_to_add = ['_raw_reagent_.*_chemicals_.*_actual_amount$',
-                                '_raw_*molweight',
-                                '_feat_VanderWaalsVolume',
-                                '_raw_reagent_\d_volume']
-
-    for reg_string in regex_for_columns_to_add:
+def extend_with_chem_columns(df_columns, subset_columns_to_extend):
+    regex_for_chem_columns = ['_raw_reagent_.*_chemicals_.*_actual_amount$',
+                              '_raw_*molweight',
+                              '_feat_VanderWaalsVolume',
+                              '_raw_reagent_\d_volume']
+    for reg_string in regex_for_chem_columns:
         reg = re.compile(reg_string)
-        sol_v_chem_columns.extend(list(filter(reg.match, df_columns)))
+        subset_columns_to_extend.extend(list(filter(reg.match, df_columns)))
+
+
+def filter_data_for_sol_v(df, extend=False):
+    """
+    Clean reagent_5_chemical beacause it's full of zeros and null9
+    """
+    df_columns = df.columns.to_list()
+    sol_v_model = get_sol_v_model_columns(df_columns)
+    if extend:
+        extend_with_chem_columns(df_columns, sol_v_model)
+        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0]*df.shape[0]
+    return df[sol_v_model].fillna(0).reset_index(drop=True)
+
+
+def filter_data_for_sol_ud(df, extend=False):
+    df_columns = df.columns.to_list()
+    sol_ud_model = get_sol_ud_model_columns(df_columns)
+    if extend:
+        extend_with_chem_columns(df_columns, sol_ud_model)
+        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0]*df.shape[0]
+    return df[sol_ud_model].fillna(0).reset_index(drop=True)
 
 
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
@@ -73,7 +78,7 @@ def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
-    x_train, x_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
 
     clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
                                metric_params=None, n_jobs=8, p=20)
@@ -90,13 +95,12 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
     cv = model_parameters['cv']
 
     if cv <= 1:
-        clf.fit(x_train, y_train)
-        y_pred = clf.predict(x_test)
+        clf.fit(X_train, y_train)
+        y_pred = clf.predict(X_test)
 
         precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
 
-        for metric in results:
-            value = {
+        result_by_metric = {
                 'dataset_index': dataset_name,
                 'cv': 1,
                 # 'matrix':confusion_matrix(y_test, pred),
@@ -106,8 +110,10 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                 'support_negative': support[0],
                 'support_positive': support[1],
                 'matthewCoef': matthews_corrcoef(y_test, y_pred)
-            }[metric]
-            results[metric].append(value)
+                }
+
+        for metric in results:
+            results[metric].append(result_by_metric[metric])
 
     else:
         # metrics to track
@@ -124,7 +130,7 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
 
         # shuffle batched experimental data into discrete experiments
         scores = cross_validate(clf, data, crystal_score,
-                                cv=KFold(model_parameters['cv'], shuffle=True, random_state=1),
+                                cv=KFold(cv, shuffle=True, random_state=1),
                                 scoring=scoring,
                                 return_train_score=True,
                                 return_estimator=True)

@@ -45,13 +45,15 @@ def prepare_dataset(df, data_preparation):
     # Remove some anomalous entries with dimethyl ammonium still listed as the organic. 
     df.query('_raw_reagent_0_chemicals_0_InChIKey != @dimethyl_ammonium_inchi_key', inplace=True)
 
-    """DECISION FUERTE, POR QUÉ NO CONSIDERAR LOS QUE TENGAN 3?
+    """DECISION FUERTE, POR QUÉ NO CONSIDERAR LOS QUE TENGAN 3? Borra los que tienen 0
      Collect inches of solvents that had at least a successful crystal
     """
 
     successful_inches_keys = df.query('_out_crystalscore == 4')['_rxn_organic-inchikey'].unique()
 
     df = (df[df['_rxn_organic-inchikey'].isin(successful_inches_keys)])
+
+    df.query('_out_crystalscore > 0', inplace=True)
 
     # If it is desired to make a non sense dataset
     if data_preparation["shuffle_enabled"]:
@@ -88,16 +90,19 @@ def process_dataset(df, parameters):
         'matthewCoef': []
     }
 
+    functions_to_select_data = {
+        'solV-only': train.filter_data_for_sol_v,
+        'solUD-only': train.filter_data_for_sol_ud,
+        'solV-chem': train.filter_data_for_sol_v,
+        'solUD-chem': train.filter_data_for_sol_ud
+    }
+
     # for each dataset, train and predict considering parameters
     for dataset_name in parameters["dataset"]:
+        selected_data = functions_to_select_data[dataset_name](df, True)
 
-        selected_data = {
-            'solV-only': train.filter_data_for_sol_v(df),
-            'solUD-conly': train.filter_data_for_sol_ud(df),
-            'solV-chem': train.filter_data_for_sol_v_chem(df)
-        }[dataset_name]
-
-        if interpolate: train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
+        if interpolate:
+            train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
     # save results 
     df = pd.DataFrame.from_dict(results, orient='columns')
