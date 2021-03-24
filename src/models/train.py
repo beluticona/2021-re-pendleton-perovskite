@@ -57,27 +57,22 @@ def extend_with_rxn_columns(df_columns, subset_columns_to_extend, sol_ud_enable=
         subset_columns_to_extend.extend(list(filter(reg.match, df_columns)))
 
 
-def filter_data_for_sol_v(df, chem_extend=False, exp_extend=False):
-    """
-    Clean reagent_5_chemical because it's full of zeros and null9
-    """
+def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled):
     df_columns = df.columns.to_list()
-    sol_v_model = get_sol_v_model_columns(df_columns)
-    if chem_extend:
-        extend_with_chem_columns(df_columns, sol_v_model)
-        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
-    elif exp_extend:
-        extend_with_rxn_columns(df_columns, sol_v_model)
-    return df[sol_v_model].fillna(0).reset_index(drop=True)
+    sol_model_columns = []
+    if type_sol_volume == 1:
+        sol_model_columns = get_sol_v_model_columns(df_columns)
+    elif type_sol_volume == 2:
+        sol_model_columns = get_sol_ud_model_columns(df_columns)
 
-
-def filter_data_for_sol_ud(df, extend=False):
-    df_columns = df.columns.to_list()
-    sol_ud_model = get_sol_ud_model_columns(df_columns)
-    if extend:
-        extend_with_chem_columns(df_columns, sol_ud_model)
+    if chem_extend_enabled:
+        extend_with_chem_columns(df_columns, sol_model_columns)
+        # @TODO: verify if this column can be deleted at the first preliminary filter
+        # Clean reagent_5_chemical because it's full of zeros and null9
         df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
-    return df[sol_ud_model].fillna(0).reset_index(drop=True)
+    elif exp_extend_enabled:
+        extend_with_rxn_columns(df_columns, sol_model_columns)
+    return df[sol_model_columns].fillna(0).reset_index(drop=True)
 
 
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]

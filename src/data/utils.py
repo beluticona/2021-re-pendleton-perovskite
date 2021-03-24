@@ -68,6 +68,13 @@ def prepare_dataset(df, data_preparation):
     return df
 
 
+def detect_type_dataset(dataset_name):
+    if 'solV' in dataset_name:
+        return 1, 'chem' in dataset_name, 'exp' in dataset_name
+    if 'solUD' in dataset_name:
+        return 2, 'chem' in dataset_name, 'exp' in dataset_name
+
+
 def process_dataset(df, parameters):
     # inches_key_count = df['_rxn_organic-inchikey'].value_counts()
 
@@ -90,24 +97,17 @@ def process_dataset(df, parameters):
         'matthewCoef': []
     }
 
-    functions_to_select_data = {
-        'solV-only': train.filter_data_for_sol_v,
-        'solUD-only': train.filter_data_for_sol_ud,
-        'solV-chem': train.filter_data_for_sol_v,
-        'solUD-chem': train.filter_data_for_sol_ud,
-        'solV-exp': train.filter_data_for_sol_v,
-    }
-
     # for each dataset, train and predict considering parameters
     for dataset_name in parameters["dataset"]:
-        selected_data = functions_to_select_data[dataset_name](df, chem_extend=True, exp_extend=False)
+        type_sol_volume, chem_extend_enabled, exp_extend_enabled = detect_type_dataset(dataset_name)
+        selected_data = train.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled)
 
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
     # save results 
     df = pd.DataFrame.from_dict(results, orient='columns')
-    df.to_csv('test4.csv')
+    df.to_csv('test3.csv')
 
     '''
     TODO:
