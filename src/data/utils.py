@@ -94,19 +94,20 @@ def process_dataset(df, parameters):
         'solV-only': train.filter_data_for_sol_v,
         'solUD-only': train.filter_data_for_sol_ud,
         'solV-chem': train.filter_data_for_sol_v,
-        'solUD-chem': train.filter_data_for_sol_ud
+        'solUD-chem': train.filter_data_for_sol_ud,
+        'solV-exp': train.filter_data_for_sol_v,
     }
 
     # for each dataset, train and predict considering parameters
     for dataset_name in parameters["dataset"]:
-        selected_data = functions_to_select_data[dataset_name](df, True)
+        selected_data = functions_to_select_data[dataset_name](df, chem_extend=True, exp_extend=False)
 
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
     # save results 
     df = pd.DataFrame.from_dict(results, orient='columns')
-    df.to_csv('test3.csv')
+    df.to_csv('test4.csv')
 
     '''
     TODO:

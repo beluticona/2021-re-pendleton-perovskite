@@ -47,15 +47,27 @@ def extend_with_chem_columns(df_columns, subset_columns_to_extend):
         subset_columns_to_extend.extend(list(filter(reg.match, df_columns)))
 
 
-def filter_data_for_sol_v(df, extend=False):
+def extend_with_rxn_columns(df_columns, subset_columns_to_extend, sol_ud_enable=False):
+    rxn_regexes = lambda v1: [f"_raw{'_v1-' if v1 else '_'}M_.*_final",
+                              f"_raw_reagent_\d{'_v1-' if v1 else '_'}conc_.*",
+                              "_raw_reagent_\d_volume"]
+    regex_for_rxn_columns = rxn_regexes(sol_ud_enable)
+    for reg_string in regex_for_rxn_columns:
+        reg = re.compile(reg_string)
+        subset_columns_to_extend.extend(list(filter(reg.match, df_columns)))
+
+
+def filter_data_for_sol_v(df, chem_extend=False, exp_extend=False):
     """
-    Clean reagent_5_chemical beacause it's full of zeros and null9
+    Clean reagent_5_chemical because it's full of zeros and null9
     """
     df_columns = df.columns.to_list()
     sol_v_model = get_sol_v_model_columns(df_columns)
-    if extend:
+    if chem_extend:
         extend_with_chem_columns(df_columns, sol_v_model)
-        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0]*df.shape[0]
+        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
+    elif exp_extend:
+        extend_with_rxn_columns(df_columns, sol_v_model)
     return df[sol_v_model].fillna(0).reset_index(drop=True)
 
 
@@ -64,16 +76,28 @@ def filter_data_for_sol_ud(df, extend=False):
     sol_ud_model = get_sol_ud_model_columns(df_columns)
     if extend:
         extend_with_chem_columns(df_columns, sol_ud_model)
-        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0]*df.shape[0]
+        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
     return df[sol_ud_model].fillna(0).reset_index(drop=True)
 
 
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
+
+
 def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
+
+
 def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
+
+
 def tp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 1]
+
+
 def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
+
+
 def sup1(y_true, y_pred): return np.sum(y_true)
+
+
 def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
 
@@ -101,16 +125,16 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
 
         result_by_metric = {
-                'dataset_index': dataset_name,
-                'cv': 1,
-                # 'matrix':confusion_matrix(y_test, pred),
-                'precision_positive': precision[1],
-                'recall_positive': recall[1],
-                'f1_positive': f1[1],
-                'support_negative': support[0],
-                'support_positive': support[1],
-                'matthewCoef': matthews_corrcoef(y_test, y_pred)
-                }
+            'dataset_index': dataset_name,
+            'cv': 1,
+            # 'matrix':confusion_matrix(y_test, pred),
+            'precision_positive': precision[1],
+            'recall_positive': recall[1],
+            'f1_positive': f1[1],
+            'support_negative': support[0],
+            'support_positive': support[1],
+            'matthewCoef': matthews_corrcoef(y_test, y_pred)
+        }
 
         for metric in results:
             results[metric].append(result_by_metric[metric])
@@ -136,49 +160,48 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                                 return_estimator=True)
 
         metrics_by_name = {
-                'dataset_index': dataset_name,
-                'precision_positive': scores['test_precision'],
-                'recall_positive': scores['test_recall'],
-                'f1_positive': scores['test_f1'],
-                'support_negative': scores['test_support_negative'],
-                'support_positive': scores['test_support_positive'],
-                'matthewCoef': scores['test_mcc']
-                }
+            'precision_positive': scores['test_precision'],
+            'recall_positive': scores['test_recall'],
+            'f1_positive': scores['test_f1'],
+            'support_negative': scores['test_support_negative'],
+            'support_positive': scores['test_support_positive'],
+            'matthewCoef': scores['test_mcc']
+        }
 
+        metrics = results.keys()-{'dataset_index', 'cv'}
         for i in range(cv):
-            for metric in results:
-                if metric == 'cv':
-                    results[metric].append(i)
-                else:
-                    results[metric].append(metrics_by_name[metric][i])
+            results['dataset_index'].append(dataset_name)
+            results['cv'].append(i)
+            for metric in metrics:
+                results[metric].append(metrics_by_name[metric][i])
 
-    '''
-    scores = cross_validate(clf, data, crystal_score,
-                            cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
-                            scoring=scoring, 
-                            return_train_score=True,
-                            return_estimator=True)
-    return scores, clf
-
-    clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
-
-    # @TODO:add if hyperparam_opt ON or OFF
-    # default ON
-    clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
-    clf.fit(X, y)
-    clf = clf.best_estimator_
-
-    pred = clf.predict(x_test)
-    cm = confusion_matrix(y_test, pred)
-    cr = classification_report(y_test, pred)
-    precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
-    matt_coeff = matthews_corrcoef(y_test, pred)
-    return {'pred':pred,
-            'cm': cm,
-            'precision':precision,
-            'recall':recall,
-            'f1':f1,
-            'matt_coeff': matt_coeff
-            }
-
-    '''
+            '''
+            scores = cross_validate(clf, data, crystal_score,
+                                    cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
+                                    scoring=scoring, 
+                                    return_train_score=True,
+                                    return_estimator=True)
+            return scores, clf
+        
+            clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
+        
+            # @TODO:add if hyperparam_opt ON or OFF
+            # default ON
+            clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
+            clf.fit(X, y)
+            clf = clf.best_estimator_
+        
+            pred = clf.predict(x_test)
+            cm = confusion_matrix(y_test, pred)
+            cr = classification_report(y_test, pred)
+            precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
+            matt_coeff = matthews_corrcoef(y_test, pred)
+            return {'pred':pred,
+                    'cm': cm,
+                    'precision':precision,
+                    'recall':recall,
+                    'f1':f1,
+                    'matt_coeff': matt_coeff
+                    }
+        
+            '''
