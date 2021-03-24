@@ -71,9 +71,9 @@ def prepare_dataset(df, data_preparation):
 def detect_type_dataset(dataset_name):
     # @TODO Define global constants for SOLV_MODEL 1 and SOLUD_MODEL 2
     if 'solV' in dataset_name:
-        return 1, 'chem' in dataset_name, 'exp' in dataset_name
+        return 1, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
     if 'solUD' in dataset_name:
-        return 2, 'chem' in dataset_name, 'exp' in dataset_name
+        return 2, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
 def process_dataset(df, parameters):
@@ -102,8 +102,8 @@ def process_dataset(df, parameters):
 
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
-        type_sol_volume, chem_extend_enabled, exp_extend_enabled = detect_type_dataset(dataset_name)
-        selected_data = train.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled)
+        type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
+        selected_data = train.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
