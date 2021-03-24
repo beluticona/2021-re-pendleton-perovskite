@@ -106,6 +106,9 @@ def process_dataset(df, parameters):
         type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
         selected_data = utils.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
+        # stratity crystal score out of loop
+        # stratity each dataset in the loop
+        
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
