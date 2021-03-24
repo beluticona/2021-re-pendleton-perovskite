@@ -134,19 +134,23 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                                 scoring=scoring,
                                 return_train_score=True,
                                 return_estimator=True)
+
+        metrics_by_name = {
+                'dataset_index': dataset_name,
+                'precision_positive': scores['test_precision'],
+                'recall_positive': scores['test_recall'],
+                'f1_positive': scores['test_f1'],
+                'support_negative': scores['test_support_negative'],
+                'support_positive': scores['test_support_positive'],
+                'matthewCoef': scores['test_mcc']
+                }
+
         for i in range(cv):
             for metric in results:
-                value = {
-                    'dataset_index': dataset_name,
-                    'cv': i,
-                    'precision_positive': scores['test_precision'][i],
-                    'recall_positive': scores['test_recall'][i],
-                    'f1_positive': scores['test_f1'][i],
-                    'support_negative': scores['test_support_negative'][i],
-                    'support_positive': scores['test_support_positive'][i],
-                    'matthewCoef': scores['test_mcc'][i]
-                }[metric]
-                results[metric].append(value)
+                if metric == 'cv':
+                    results[metric].append(i)
+                else:
+                    results[metric].append(metrics_by_name[metric][i])
 
     '''
     scores = cross_validate(clf, data, crystal_score,
