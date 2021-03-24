@@ -69,6 +69,7 @@ def prepare_dataset(df, data_preparation):
 
 
 def detect_type_dataset(dataset_name):
+    # @TODO Define global constants for SOLV_MODEL 1 and SOLUD_MODEL 2
     if 'solV' in dataset_name:
         return 1, 'chem' in dataset_name, 'exp' in dataset_name
     if 'solUD' in dataset_name:

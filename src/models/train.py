@@ -60,13 +60,14 @@ def extend_with_rxn_columns(df_columns, subset_columns_to_extend, sol_ud_enable=
 def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled):
     df_columns = df.columns.to_list()
     sol_model_columns = []
+    # @TODO Replace constant numbers for global constants
     if type_sol_volume == 1:
         sol_model_columns = get_sol_v_model_columns(df_columns)
     elif type_sol_volume == 2:
         sol_model_columns = get_sol_ud_model_columns(df_columns)
 
     if chem_extend_enabled:
-        extend_with_chem_columns(df_columns, sol_model_columns)
+        extend_with_chem_columns(df_columns, sol_model_columns, type_sol_volume == 2 )
         # @TODO: verify if this column can be deleted at the first preliminary filter
         # Clean reagent_5_chemical because it's full of zeros and null9
         df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
