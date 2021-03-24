@@ -1,124 +1,64 @@
-from src.models import train
-import numpy as np
-import pandas as pd
-
-experiment_version = 1.1
-
-GBL_inchi_key = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
-
-dimethyl_ammonium_inchi_key = 'MXLWMIFDJCGBV-UHFFFAOYSA-N'
+import re
 
 
-def shuffle(df):
-    """Generate a non sense data set:
-    Shuffle all row except by crystal score column
-    """
-    out_hold = df['_out_crystalscore']
-    df = df.reindex(np.random.permutation(df.index)).reset_index(drop=True)
-    df['_out_crystalscore'] = out_hold
-    return df
+def get_sol_ud_model_columns(df_columns):
+    sol_ud_model_columns = list(filter(lambda column_name: column_name.startswith('_rxn_') or column_name.startswith(
+        '_feat_') and not column_name.startswith('_rxn_v0'), df_columns))
+    sol_ud_model_columns.remove('_rxn_organic-inchikey')
+    return sol_ud_model_columns
 
 
-def deep_shuffle(df):
-    # Not shuffled: raw
-    keeped_columns = df.loc[:, '_raw_model_predicted':'_prototype_heteroatomINT']
-    keeped_columns = pd.concat([df['_rxn_organic-inchikey'], keeped_columns], axis=1)
-
-    # Isolated shuffle: all but raw
-    shuffle_rxn = pd.concat([df.loc[:, 'name':'_rxn_M_organic'],
-                             df.loc[:, '_rxn_temperatureC_actual_bulk': '_feat_Hacceptorcount']],
-                            axis=1)
-    shuffled_rxn = shuffle_rxn.apply(np.random.permutation).reset_index(drop=True)
-
-    shuffled_reactions = pd.concat([keeped_columns, shuffled_rxn], axis=1)
-
-    return shuffled_reactions
+def get_sol_v_model_columns(df_columns):
+    sol_ud_model_columns = get_sol_ud_model_columns(df_columns)
+    sol_v_model_columns = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), sol_ud_model_columns))
+    return sol_v_model_columns
 
 
-def prepare_dataset(df, data_preparation):
-    # Select data from version 1.1
-    df.query('_raw_ExpVer == @experiment_version', inplace=True)
-
-    # Select reactions where only GBL is used as solvent 
-    df.query('_raw_reagent_0_chemicals_0_InChIKey == @GBL_inchi_key', inplace=True)
-
-    # Remove some anomalous entries with dimethyl ammonium still listed as the organic. 
-    df.query('_raw_reagent_0_chemicals_0_InChIKey != @dimethyl_ammonium_inchi_key', inplace=True)
-
-    """DECISION FUERTE, POR QUÉ NO CONSIDERAR LOS QUE TENGAN 3? Borra los que tienen 0
-     Collect inches of solvents that had at least a successful crystal
-    """
-
-    successful_inches_keys = df.query('_out_crystalscore == 4')['_rxn_organic-inchikey'].unique()
-
-    df = (df[df['_rxn_organic-inchikey'].isin(successful_inches_keys)])
-
-    df.query('_out_crystalscore > 0', inplace=True)
-
-    # If it is desired to make a non sense dataset
-    if data_preparation["shuffle_enabled"]:
-        df = shuffle(df)
-    elif data_preparation["deep_shuffle_enabled"]:
-        df = deep_shuffle(df)
-
-    # Rename from raw to rxn
-    df.rename(columns={"_raw_v0-M_acid": "_rxn_v0-M_acid", "_raw_v0-M_inorganic": "_rxn_v0-M_inorganic",
-                       "_raw_v0-M_organic": "_rxn_v0-M_organic"}, inplace=True)
-
-    return df
+def extend_by_regexes(df_columns, regexes, subset_columns_to_extend):
+    for reg_string in regexes:
+        reg = re.compile(reg_string)
+        subset_columns_to_extend.extend(list(filter(reg.match, df_columns)))
 
 
-def detect_type_dataset(dataset_name):
-    # @TODO Define global constants for SOLV_MODEL 1 and SOLUD_MODEL 2
-    if 'solV' in dataset_name:
-        return 1, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
-    if 'solUD' in dataset_name:
-        return 2, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+def extend_with_chem_columns(df_columns, subset_columns_to_extend):
+    regex_for_chem_columns = ['_raw_reagent_.*_chemicals_.*_actual_amount$',
+                              '_raw_*molweight',
+                              '_feat_VanderWaalsVolume',
+                              '_raw_reagent_\d_volume']
+    extend_by_regexes(df_columns, regex_for_chem_columns, subset_columns_to_extend)
 
 
-def process_dataset(df, parameters):
-    # inches_key_count = df['_rxn_organic-inchikey'].value_counts()
-
-    # binary class
-    crystal_score = df['_out_crystalscore']
-    crystal_score = (crystal_score == 4).astype(int)
-
-    # extr = parameters["extrpl"]
-    interpolate = parameters["intrpl"]
-
-    results = {
-        'dataset_index': [],
-        'cv': [],
-        #    'matrix':[],
-        'precision_positive': [],
-        'recall_positive': [],
-        'f1_positive': [],
-        'support_negative': [],
-        'support_positive': [],
-        'matthewCoef': []
-    }
-
-    requested_datasets = [dataset_name for (dataset_name,required) in parameters["dataset"].items() if required]
-
-    # for each dataset, train and predict considering parameters
-    for dataset_name in requested_datasets:
-        type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
-        selected_data = train.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
-
-        if interpolate:
-            train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
-
-    # save results 
-    df = pd.DataFrame.from_dict(results, orient='columns')
-    df.to_csv('test3.csv')
-
-    '''
-    TODO:
-        - move filter data columns do data intead of train
-            * data feat scaling will be there
-        - break utils into
-                * main: process_dataset
-                * get_data: filters, prepare, shuffle
+def extend_with_rxn_columns(df_columns, subset_columns_to_extend, sol_ud_enable=False):
+    rxn_regexes = lambda v1: [f"_raw{'_v1-' if v1 else '_'}M_.*_final",
+                              f"_raw_reagent_\d{'_v1-' if v1 else '_'}conc_.*",
+                              "_raw_reagent_\d_volume"]
+    regex_for_rxn_columns = rxn_regexes(sol_ud_enable)
+    extend_by_regexes(df_columns, regex_for_rxn_columns, subset_columns_to_extend)
 
 
-    '''
+def extend_with_reag_columns(df_columns, subset_columns_to_extend, sol_ud_enable=False):
+    rxn_regexes = lambda v1: ['_raw_reagent_\d_volume$',
+                              f"_raw_reagent_\d{'_v1-' if v1 else '_'}conc.*"]
+    regex_for_rxn_columns = rxn_regexes(sol_ud_enable)
+    extend_by_regexes(df_columns, regex_for_rxn_columns, subset_columns_to_extend)
+
+
+def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled):
+    df_columns = df.columns.to_list()
+    sol_model_columns = []
+    # @TODO Replace constant numbers for global constants
+    if type_sol_volume == 1:
+        sol_model_columns = get_sol_v_model_columns(df_columns)
+    elif type_sol_volume == 2:
+        sol_model_columns = get_sol_ud_model_columns(df_columns)
+
+    if chem_extend_enabled:
+        extend_with_chem_columns(df_columns, sol_model_columns)
+        # @TODO: verify if this column can be deleted at the first preliminary filter
+        # Clean reagent_5_chemical because it's full of zeros and null9
+        df['_raw_reagent_5_chemicals_2_actual_amount'] = [0] * df.shape[0]
+    elif exp_extend_enabled:
+        extend_with_rxn_columns(df_columns, sol_model_columns, type_sol_volume == 2)
+    elif reag_extend_enabled:
+        extend_with_reag_columns(df_columns, sol_model_columns, type_sol_volume == 2)
+    return df[sol_model_columns].fillna(0).reset_index(drop=True)

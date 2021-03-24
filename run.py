@@ -1,4 +1,4 @@
-from src.data import utils
+from src.data import process
 from src.config import data_path
 from src.config import data_types_path
 import pandas as pd
@@ -13,12 +13,12 @@ with open('parameters.yaml') as file, open(data_types_path) as json_file:
     
     dtypes = json.load(json_file)   
     
-    df = pd.read_csv(data_path,header=0, dtype = dtypes)
+    df = pd.read_csv(data_path, header=0, dtype=dtypes)
 
-    # Select reactions where the solvent produced at leat a crystal score of 4
-    df = utils.prepare_dataset(df, parameters["data_preparation"])
+    # Select reactions where the solvent produced at least a crystal score of 4
+    df = process.prepare_full_dataset(df, parameters["data_preparation"])
 
-    utils.process_dataset(df, parameters)
+    process.process_dataset(df, parameters)
 
     '''
     - generate results

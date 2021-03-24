@@ -22,12 +22,12 @@ model:
 onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
 
 dataset:
-    solV-chem: No
+    solV-chem: Yes
     solUD-only: No
     #solV-only: No
     #solUD-chem: Yes
     #solV-exp: Yes
-    solUD-exp: No
+    solUD-exp: Yes
     solV-reag: Yes
     #solUD-reag: No
     #solUD-prop: No
