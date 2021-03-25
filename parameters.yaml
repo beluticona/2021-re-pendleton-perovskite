@@ -1,6 +1,6 @@
 extrpl: No         # Run extrapolative models (Leave one amine/organic out)
 intrpl : Yes          # Run interpolative models (Standard test train splits )
-plot_results : 0    # Turn mass plotting on (plots each of the model comparisons to png images)
+plot_results : No    # Turn mass plotting on (plots each of the model comparisons to png images)
 data_preparation: 
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
@@ -10,27 +10,27 @@ model:
   cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
-      feat: 0    # Forces normalization of _feats_* 
-      rxn: 0     # Forces normalization of _rxns_* 
-      raw: 0     # Forces normalization of _raws_* (post calculations of proportional values)
+      feat: No    # Forces normalization of _feats_*
+      rxn: No     # Forces normalization of _rxns_*
+      raw: No     # Forces normalization of _raws_* (post calculations of proportional values)
   std:
-      feat: 0     # Forces standardization of _feats_* 
-      rxn: 0      # Forces standardization of _rxns_* 
-      raw: 0      # Forces standardization of _raws_* (post calculations of proportional values)
+      feat: No     # Forces standardization of _feats_*
+      rxn: No      # Forces standardization of _rxns_*
+      raw: No      # Forces standardization of _raws_* (post calculations of proportional values)
 # for no one hot set drop:0 and empty the keep list
 # Specifically for analyzing how stts models are handling the _feats_
-onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
+  onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
 
 dataset:
     solV-chem: Yes
-    solUD-only: No
-    #solV-only: No
-    #solUD-chem: Yes
-    #solV-exp: Yes
+    solUD-chem: No
+    solV-exp: No
     solUD-exp: No
     solV-reag: No
-    #solUD-reag: No
-    #solUD-prop: No
+    solUD-reag: No
+    solUD-prop: No
+    #solUD-only: No
+    #solV-only: No
     #chem-only: No
     #reag-only: No
     #feat-only: No 

@@ -99,7 +99,7 @@ def process_dataset(df, parameters):
         'matthewCoef': []
     }
 
-    requested_datasets = [dataset_name for (dataset_name,required) in parameters["dataset"].items() if required]
+    requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
 
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
@@ -115,8 +115,8 @@ def process_dataset(df, parameters):
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
     # save results 
-    df = pd.DataFrame.from_dict(results, orient='columns')
-    df.to_csv('test4.csv')
+    return pd.DataFrame.from_dict(results, orient='columns')
+
 
     '''
     TODO:
