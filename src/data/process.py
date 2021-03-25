@@ -78,7 +78,7 @@ def detect_type_dataset(dataset_name):
 
 
 def process_dataset(df, parameters):
-    # inches_key_count = df['_rxn_organic-inchikey'].value_counts()
+    # inchis = df['_rxn_organic-inchikey'].value_counts()
 
     # binary class
     crystal_score = df['_out_crystalscore']
@@ -106,15 +106,17 @@ def process_dataset(df, parameters):
         type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
         selected_data = utils.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
-        # stratity crystal score out of loop
+        # stratify crystal score out of loop
+        if parameters['model']['strat']:
+            selected_data, crystal_score = utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
         # stratity each dataset in the loop
-        
+
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
     # save results 
     df = pd.DataFrame.from_dict(results, orient='columns')
-    df.to_csv('test3.csv')
+    df.to_csv('test4.csv')
 
     '''
     TODO:
