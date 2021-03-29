@@ -5,6 +5,7 @@ data_preparation:
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 model:
+  method : 1
   hyperparam_opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
   cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
@@ -27,7 +28,7 @@ dataset:
     solV-exp: No
     solUD-exp: No
     solV-reag: No
-    solUD-reag: No
+    solUD-reag: Yes
     solUD-prop: No
     #solUD-only: No
     #solV-only: No

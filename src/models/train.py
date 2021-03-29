@@ -1,3 +1,4 @@
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
 
@@ -40,20 +41,33 @@ def sup1(y_true, y_pred): return np.sum(y_true)
 def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
 
-def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
-    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
-
-    clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
-                               metric_params=None, n_jobs=8, p=20)
-    param_grid = {'weights': ['uniform', 'distance'],
-                  'algorithm': ['ball_tree', 'kd_tree', 'brute'],
-                  'n_neighbors': range(3, 9, 2)
-                  }
+def make_classifier(model_parameters):
+    if model_parameters['method'] == 1:
+        clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
+                                   metric_params=None, n_jobs=8, p=20)
+        param_grid = {'weights': ['uniform', 'distance'],
+                      'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                      'n_neighbors': range(3, 9, 2)
+                      }
+    elif model_parameters['method'] == 2:
+        gbt = GradientBoostingClassifier(random_state=42)
+        param_grid = {'min_samples_split': range(2, 10, 2),
+                      'min_samples_leaf': range(2, 5),
+                      'max_depth': range(2, 7),
+                      'learning_rate': [0.05, 0.10, 0.15, 0.20]
+                      }
 
     clf_dict = {'estimator': clf,
                 'opt': model_parameters['hyperparam_opt'],
                 'param_grid': param_grid
                 }
+    return clf, clf_dict
+
+
+def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
+    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
+
+    clf, clf_dict = make_classifier(model_parameters)
 
     cv = model_parameters['cv']
 
@@ -107,7 +121,7 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
             'matthewCoef': scores['test_mcc']
         }
 
-        metrics = results.keys()-{'dataset_index', 'cv'}
+        metrics = results.keys() - {'dataset_index', 'cv'}
         for i in range(cv):
             results['dataset_index'].append(dataset_name)
             results['cv'].append(i)
