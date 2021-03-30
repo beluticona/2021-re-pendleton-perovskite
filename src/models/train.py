@@ -1,6 +1,10 @@
+from sklearn.preprocessing import Normalizer
+from sklearn.compose import make_column_transformer
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 '''
 from sklearn.model_selection import GridSearchCV
@@ -64,15 +68,47 @@ def make_classifier(model_parameters):
     return clf, clf_dict
 
 
+def std_norm_cols(column_list, std_dict, norm_dict):
+    curated_list = []
+    for header_prefix in std_dict:
+        if std_dict[header_prefix] == 1:
+            for column in column_list:
+                if header_prefix in column:
+                    curated_list.append(column)
+    for header_prefix in norm_dict:
+        if norm_dict[header_prefix] == 1:
+            for column in column_list:
+                if header_prefix in column:
+                    curated_list.append(column)
+    return curated_list
+
+
+def feat_scaling(parameters, data_columns):
+    requested_norm = [dataset_name for (dataset_name, required) in parameters["norm"].items() if required]
+    requested_sdt = [dataset_name for (dataset_name, required) in parameters["std"].items() if required]
+    curated_columns = std_norm_cols(data_columns, parameters['std'], parameters['norm'])
+    if len(requested_norm) + len(requested_sdt) == 0:
+        return None
+    elif len(requested_norm) > 0: fun = Normalizer()
+    else: fun = StandardScaler()
+
+    return make_column_transformer((fun, curated_columns), remainder='passthrough')
+
+
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
-    X_train, X_test, y_train, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
+    X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
 
     clf, clf_dict = make_classifier(model_parameters)
+
+    pipeline = Pipeline([
+        ('scale', feat_scaling(model_parameters, data.columns.to_list())),
+        ('clf', clf)
+    ])
 
     cv = model_parameters['cv']
 
     if cv <= 1:
-        clf.fit(X_train, y_train)
+        clf.fit(X, y)
         y_pred = clf.predict(X_test)
 
         precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
@@ -106,7 +142,7 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         # 'fn': make_scorer(fn),
 
         # shuffle batched experimental data into discrete experiments
-        scores = cross_validate(clf, data, crystal_score,
+        scores = cross_validate(pipeline, data, crystal_score,
                                 cv=KFold(cv, shuffle=True, random_state=2),
                                 scoring=scoring,
                                 return_train_score=True,
