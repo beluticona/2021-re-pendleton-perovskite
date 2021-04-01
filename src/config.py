@@ -13,7 +13,7 @@ def file_name_for(parameters):
     file_name = ''
     for setting in parameters:
         if isinstance(parameters[setting], dict):
-            if setting in {'norm', 'sdt'}: file_name += setting + '_'
+            if setting in ['norm', 'std']: file_name += setting + '_'
             file_name += file_name_for(parameters[setting])
         elif not isinstance(parameters[setting], bool):
             file_name += setting + '_' + str(parameters[setting]).lower() + '_'
