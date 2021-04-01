@@ -23,9 +23,10 @@ def extend_by_regexes(df_columns, regexes, subset_columns_to_extend):
 
 
 def extend_with_chem_columns(df_columns, subset_columns_to_extend):
+    # @TODO: _feat_vanderwalls_volume no filtra nada, solV ya lo incluye por ser _featVanderWaalsVolme
     regex_for_chem_columns = ['_raw_reagent_.*_chemicals_.*_actual_amount$',
                               '_raw_*molweight',
-                              '_feat_VanderWaalsVolume',
+                              '_feat_vanderwalls_volume',
                               '_raw_reagent_\d_volume']
     extend_by_regexes(df_columns, regex_for_chem_columns, subset_columns_to_extend)
 

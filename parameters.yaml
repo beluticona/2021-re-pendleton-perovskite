@@ -12,7 +12,7 @@ model:
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
       feat: No    # Forces normalization of _feats_*
-      rxn: No     # Forces normalization of _rxns_*
+      rxn: Yes     # Forces normalization of _rxns_*
       raw: No     # Forces normalization of _raws_* (post calculations of proportional values)
   std:
       feat: No     # Forces standardization of _feats_*

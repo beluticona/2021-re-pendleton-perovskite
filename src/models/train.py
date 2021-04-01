@@ -3,7 +3,7 @@ from sklearn.compose import make_column_transformer
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
-from sklearn.pipeline import Pipeline
+from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 '''
@@ -86,22 +86,24 @@ def std_norm_cols(column_list, std_dict, norm_dict):
 def feat_scaling(parameters, data_columns):
     requested_norm = [dataset_name for (dataset_name, required) in parameters["norm"].items() if required]
     requested_sdt = [dataset_name for (dataset_name, required) in parameters["std"].items() if required]
-    curated_columns = std_norm_cols(data_columns, parameters['std'], parameters['norm'])
+
     if len(requested_norm) + len(requested_sdt) == 0:
         return None
-    elif len(requested_norm) > 0: fun = Normalizer()
-    else: fun = StandardScaler()
+    else:
+        curated_columns = std_norm_cols(data_columns, parameters['std'], parameters['norm'])
+        if len(requested_norm) > 0: fun = Normalizer()
+        else: fun = StandardScaler()
 
     return make_column_transformer((fun, curated_columns), remainder='passthrough')
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
     X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
-
     clf, clf_dict = make_classifier(model_parameters)
 
+    data_preprocess = feat_scaling(model_parameters, data.columns.to_list())
     pipeline = Pipeline([
-        ('scale', feat_scaling(model_parameters, data.columns.to_list())),
+        ('scale', data_preprocess),
         ('clf', clf)
     ])
 
