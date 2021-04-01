@@ -109,7 +109,9 @@ def process_dataset(df, parameters):
         # stratify crystal score out of loop
         if parameters['model']['strat']:
             selected_data, crystal_score = utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
-        # stratity each dataset in the loop
+
+        if parameters['model']['one-hot-encoding']:
+            selected_data = utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)
 
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)

@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import re
 
+from sklearn.preprocessing import OneHotEncoder
+
 
 def get_sol_ud_model_columns(df_columns):
     sol_ud_model_columns = list(filter(lambda column_name: column_name.startswith('_rxn_') or column_name.startswith(
@@ -102,3 +104,16 @@ def stratify(data, crystal_score, inchis_values):
 
     return stratified_data,  stratified_crystal_score
 
+
+def encode_by_amine_inchi(inchi_keys_to_encode, data, data_columns):
+    # @REVIEW: Drop all _feat_ columns and use instead inchi keys encoded
+    #
+    hot_one = OneHotEncoder(categories='auto')
+    hot_one.fit(inchi_keys_to_encode)
+    column_names = ['_onehot_%s' % s for s in hot_one.categories_[0]]
+    hot_df = pd.DataFrame(hot_one.transform(inchi_keys_to_encode).toarray(), columns=column_names)
+    # drop any of the entries we don't care about (if told)
+    feat_cols = [x for x in data_columns if '_feat_' in x]
+    data.drop(feat_cols, axis=1, inplace=True)
+    data = pd.concat([data, hot_df], axis=1)
+    return data
