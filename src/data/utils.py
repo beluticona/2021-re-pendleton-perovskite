@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import re
-
 from sklearn.preprocessing import OneHotEncoder
+from src import constants
 
 
 def get_sol_ud_model_columns(df_columns):
@@ -51,10 +51,9 @@ def extend_with_reag_columns(df_columns, subset_columns_to_extend, sol_ud_enable
 def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled):
     df_columns = df.columns.to_list()
     sol_model_columns = []
-    # @TODO Replace constant numbers for global constants
-    if type_sol_volume == 1:
+    if type_sol_volume == constants.SOLV_MODEL:
         sol_model_columns = get_sol_v_model_columns(df_columns)
-    elif type_sol_volume == 2:
+    elif type_sol_volume == constants.SOLUD_MODEL:
         sol_model_columns = get_sol_ud_model_columns(df_columns)
 
     if chem_extend_enabled:

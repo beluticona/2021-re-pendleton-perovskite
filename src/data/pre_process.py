@@ -1,5 +1,6 @@
 from src.data import utils
 from src.models import train
+from src import constants
 import numpy as np
 import pandas as pd
 
@@ -70,11 +71,10 @@ def prepare_full_dataset(df, data_preparation):
 
 
 def detect_type_dataset(dataset_name):
-    # @TODO Define global constants for SOLV_MODEL 1 and SOLUD_MODEL 2
     if 'solV' in dataset_name:
-        return 1, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        return constants.SOLV_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
     if 'solUD' in dataset_name:
-        return 2, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        return constants.SOLUD_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
 def process_dataset(df, parameters):
