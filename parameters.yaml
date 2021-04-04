@@ -5,7 +5,7 @@ data_preparation:
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 model:
-  method : 1
+  method : 2
   hyperparam_opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
   cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
@@ -20,14 +20,14 @@ model:
       raw: No      # Forces standardization of _raws_* (post calculations of proportional values)
 # for no one hot set drop:0 and empty the keep list
 # Specifically for analyzing how stts models are handling the _feats_
-  onehotSetting: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
+  one-hot-encoding: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
 
 dataset:
-    solV-chem: Yes
+    solV-chem: No
     solUD-chem: No
     solV-exp: No
-    solUD-exp: No
-    solV-reag: Yes
+    solUD-exp: Yes
+    solV-reag: No
     solUD-reag: No
     solUD-prop: No
     #solUD-only: No

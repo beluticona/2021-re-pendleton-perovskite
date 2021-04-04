@@ -1,3 +1,4 @@
+from pandas import np
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
@@ -39,9 +40,9 @@ def make_classifier(model_parameters):
     return clf_dict
 
 
-def simple_fit_predict(X, X_test, clf, dataset_name, results, y, y_test):
-    clf.fit(X, y)
-    y_pred = clf.predict(X_test)
+def simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test):
+    pipeline.fit(X, y)
+    y_pred = pipeline.predict(X_test)
     precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
     result_by_metric = {
         'dataset_index': dataset_name,
@@ -58,7 +59,7 @@ def simple_fit_predict(X, X_test, clf, dataset_name, results, y, y_test):
         results[metric].append(result_by_metric[metric])
 
 
-def cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, dataset_name):
+def cross_validate_fit_predict(crystal_score, model_parameters, data, pipeline, results, dataset_name, curated_columns):
     scoring = {  # 'tp': make_scorer(tp),
         'precision': 'precision',
         'recall': 'recall',
@@ -68,7 +69,7 @@ def cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, datas
         'f1': 'f1'}
     # shuffle batched experimental data into discrete experiments
     scores = cross_validate(pipeline, data, crystal_score,
-                            cv=KFold(cv, shuffle=True, random_state=2),
+                            cv=KFold(model_parameters['cv'], shuffle=True, random_state=2),
                             scoring=scoring,
                             return_train_score=True,
                             return_estimator=True)
@@ -82,11 +83,33 @@ def cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, datas
     }
 
     metrics = results.keys() - {'dataset_index', 'cv'}
-    for i in range(cv):
+    folds = model_parameters['cv']
+    for i in range(folds):
         results['dataset_index'].append(dataset_name)
         results['cv'].append(i)
         for metric in metrics:
             results[metric].append(metrics_by_name[metric][i])
+    '''
+    if model_parameters['method'] == constants.GBC:
+        features_importance_per_fold = [scores['estimator'][f][1].feature_importances_ for f in range(folds)]
+        # reorder column headers from pipeline operations (report correctly!)
+        old_order = list(data.columns)
+        temp_headers = [col for col in old_order if col not in curated_columns]
+        # if no columns are selected for the pipeline, no columns will be moved
+        hold_curated = list(curated_columns)
+        hold_curated.extend(temp_headers)
+        hold_curated = np.array(hold_curated)
+
+        # sort descending [::-1]
+        
+        feat_importance = [list(features_importance_per_fold[i][np.argsort(features_importance_per_fold[i])[::-1]]) for i in range(folds)]
+        order_feat_by_importance = [list(hold_curated[np.argsort(features_importance_per_fold[i])[::-1]]) for i in range(folds)]
+
+        feat_importance_name = pd.DataFrame(feat_importance).T
+        feat_importance_value = pd.DataFrame(order_feat_by_importance).T
+
+        post_process.save_feat_importance(feat_importance_name, feat_importance_value, dataset_name)
+    '''
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
@@ -99,33 +122,12 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         ('clf', clf)
     ])
 
-    cv = model_parameters['cv']
-
-    if cv <= 1:
-        simple_fit_predict(X, X_test, clf, dataset_name, results, y, y_test)
+    if model_parameters['cv'] <= 1:
+        simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test)
     else:
         # metrics to track
-        cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, dataset_name)
+        cross_validate_fit_predict(crystal_score, model_parameters, data, pipeline, results, dataset_name, curated_columns)
 
-
-        '''
-        if model_parameters['method'] == 2:
-            clfs = scores['estimator']
-
-        x = clf.feature_importances_
-
-        #reorder column headers from pipeline operations (report correctly!)
-        old_order = list(data.columns)
-        temp_headers = [col for col in old_order if col not in curated_columns]
-        # if no columns are selected for the pipeline, no columns will be moved
-        hold_curated = list(curated_columns)
-        hold_curated.extend(temp_headers)
-        hold_curated = np.array(hold_curated)
-
-        # sort descending [::-1]
-        feat_importance = list(x[np.argsort(x)[::-1]])
-        order_feat_by_importance = list(hold_curated[np.argsort(x)[::-1]])
-        '''
         '''
         scores = cross_validate(clf, data, crystal_score,
                                 cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
@@ -156,5 +158,3 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                 }
     
         '''
-
-
