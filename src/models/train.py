@@ -6,7 +6,7 @@ from sklearn.model_selection import cross_validate, KFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from src.models.utils import mcc, sup1, sup0
+from src.models.utils import mcc, sup1, sup0, columns_to_scale
 
 '''
 from sklearn.model_selection import GridSearchCV
@@ -44,21 +44,6 @@ def make_classifier(model_parameters):
     return clf_dict
 
 
-def columns_to_scale(column_list, std_dict, norm_dict):
-    curated_list = []
-    for header_prefix in std_dict:
-        if std_dict[header_prefix] == 1:
-            for column in column_list:
-                if header_prefix in column:
-                    curated_list.append(column)
-    for header_prefix in norm_dict:
-        if norm_dict[header_prefix] == 1:
-            for column in column_list:
-                if header_prefix in column:
-                    curated_list.append(column)
-    return curated_list
-
-
 def feat_scaling(parameters, data_columns):
     requested_norm = [dataset_name for (dataset_name, required) in parameters["norm"].items() if required]
     requested_sdt = [dataset_name for (dataset_name, required) in parameters["std"].items() if required]
@@ -73,11 +58,60 @@ def feat_scaling(parameters, data_columns):
     return make_column_transformer((fun, curated_columns), remainder='passthrough'), curated_columns
 
 
+def simple_fit_predict(X, X_test, clf, dataset_name, results, y, y_test):
+    clf.fit(X, y)
+    y_pred = clf.predict(X_test)
+    precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
+    result_by_metric = {
+        'dataset_index': dataset_name,
+        'cv': 1,
+        # 'matrix':confusion_matrix(y_test, pred),
+        'precision_positive': precision[1],
+        'recall_positive': recall[1],
+        'f1_positive': f1[1],
+        'support_negative': support[0],
+        'support_positive': support[1],
+        'matthewCoef': matthews_corrcoef(y_test, y_pred)
+    }
+    for metric in results:
+        results[metric].append(result_by_metric[metric])
+
+
+def cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, dataset_name):
+    scoring = {  # 'tp': make_scorer(tp),
+        'precision': 'precision',
+        'recall': 'recall',
+        'mcc': make_scorer(mcc),
+        'support_negative': make_scorer(sup0),
+        'support_positive': make_scorer(sup1),
+        'f1': 'f1'}
+    # shuffle batched experimental data into discrete experiments
+    scores = cross_validate(pipeline, data, crystal_score,
+                            cv=KFold(cv, shuffle=True, random_state=2),
+                            scoring=scoring,
+                            return_train_score=True,
+                            return_estimator=True)
+    metrics_by_name = {
+        'precision_positive': scores['test_precision'],
+        'recall_positive': scores['test_recall'],
+        'f1_positive': scores['test_f1'],
+        'support_negative': scores['test_support_negative'],
+        'support_positive': scores['test_support_positive'],
+        'matthewCoef': scores['test_mcc']
+    }
+
+    metrics = results.keys() - {'dataset_index', 'cv'}
+    for i in range(cv):
+        results['dataset_index'].append(dataset_name)
+        results['cv'].append(i)
+        for metric in metrics:
+            results[metric].append(metrics_by_name[metric][i])
+
+
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
     X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
     clf_dict = make_classifier(model_parameters)
     clf = clf_dict['estimator']
-
     data_preprocess, curated_columns = feat_scaling(model_parameters, data.columns.to_list())
     pipeline = Pipeline([
         ('scale', data_preprocess),
@@ -87,58 +121,12 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
     cv = model_parameters['cv']
 
     if cv <= 1:
-        clf.fit(X, y)
-        y_pred = clf.predict(X_test)
-
-        precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
-
-        result_by_metric = {
-            'dataset_index': dataset_name,
-            'cv': 1,
-            # 'matrix':confusion_matrix(y_test, pred),
-            'precision_positive': precision[1],
-            'recall_positive': recall[1],
-            'f1_positive': f1[1],
-            'support_negative': support[0],
-            'support_positive': support[1],
-            'matthewCoef': matthews_corrcoef(y_test, y_pred)
-        }
-
-        for metric in results:
-            results[metric].append(result_by_metric[metric])
-
+        simple_fit_predict(X, X_test, clf, dataset_name, results, y, y_test)
     else:
         # metrics to track
-        scoring = {  # 'tp': make_scorer(tp),
-            'precision': 'precision',
-            'recall': 'recall',
-            'mcc': make_scorer(mcc),
-            'support_negative': make_scorer(sup0),
-            'support_positive': make_scorer(sup1),
-            'f1': 'f1'}
+        cross_validate_fit_predict(crystal_score, cv, data, pipeline, results, dataset_name)
 
-        # shuffle batched experimental data into discrete experiments
-        scores = cross_validate(pipeline, data, crystal_score,
-                                cv=KFold(cv, shuffle=True, random_state=2),
-                                scoring=scoring,
-                                return_train_score=True,
-                                return_estimator=True)
 
-        metrics_by_name = {
-            'precision_positive': scores['test_precision'],
-            'recall_positive': scores['test_recall'],
-            'f1_positive': scores['test_f1'],
-            'support_negative': scores['test_support_negative'],
-            'support_positive': scores['test_support_positive'],
-            'matthewCoef': scores['test_mcc']
-        }
-
-        metrics = results.keys() - {'dataset_index', 'cv'}
-        for i in range(cv):
-            results['dataset_index'].append(dataset_name)
-            results['cv'].append(i)
-            for metric in metrics:
-                results[metric].append(metrics_by_name[metric][i])
         '''
         if model_parameters['method'] == 2:
             clfs = scores['estimator']
@@ -187,3 +175,5 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                 }
     
         '''
+
+

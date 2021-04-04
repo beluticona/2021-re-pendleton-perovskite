@@ -16,6 +16,6 @@ def save_and_summary(results, parameters):
 
     summary = summary.join(std).join(min_results).join(max_results)
 
-    summary.to_csv(results_path + summary_results_file_name, index=False)
+    summary.to_csv(results_path + summary_results_file_name)
 
 
