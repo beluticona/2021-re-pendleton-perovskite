@@ -23,8 +23,8 @@ def shuffle(df):
 
 def deep_shuffle(df):
     # Not shuffled: raw
-    keeped_columns = df.loc[:, '_raw_model_predicted':'_prototype_heteroatomINT']
-    keeped_columns = pd.concat([df['_rxn_organic-inchikey'], keeped_columns], axis=1)
+    kept_columns = df.loc[:, '_raw_model_predicted':'_prototype_heteroatomINT']
+    kept_columns = pd.concat([df['_rxn_organic-inchikey'], kept_columns], axis=1)
 
     # Isolated shuffle: all but raw
     shuffle_rxn = pd.concat([df.loc[:, 'name':'_rxn_M_organic'],
@@ -32,7 +32,7 @@ def deep_shuffle(df):
                             axis=1)
     shuffled_rxn = shuffle_rxn.apply(np.random.permutation).reset_index(drop=True)
 
-    shuffled_reactions = pd.concat([keeped_columns, shuffled_rxn], axis=1)
+    shuffled_reactions = pd.concat([kept_columns, shuffled_rxn], axis=1)
 
     return shuffled_reactions
 
@@ -116,8 +116,9 @@ def process_dataset(df, parameters):
         if interpolate:
             train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
 
+
     # save results 
-    return pd.DataFrame.from_dict(results, orient='columns')
+    return results
 
 
     '''

@@ -1,4 +1,4 @@
-from pandas import np
+import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
@@ -59,20 +59,7 @@ def simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test):
         results[metric].append(result_by_metric[metric])
 
 
-def cross_validate_fit_predict(crystal_score, model_parameters, data, pipeline, results, dataset_name, curated_columns):
-    scoring = {  # 'tp': make_scorer(tp),
-        'precision': 'precision',
-        'recall': 'recall',
-        'mcc': make_scorer(utils.mcc),
-        'support_negative': make_scorer(utils.sup0),
-        'support_positive': make_scorer(utils.sup1),
-        'f1': 'f1'}
-    # shuffle batched experimental data into discrete experiments
-    scores = cross_validate(pipeline, data, crystal_score,
-                            cv=KFold(model_parameters['cv'], shuffle=True, random_state=2),
-                            scoring=scoring,
-                            return_train_score=True,
-                            return_estimator=True)
+def cross_validate_fit_predict(scores, model_parameters, data_columns, results, dataset_name, curated_columns):
     metrics_by_name = {
         'precision_positive': scores['test_precision'],
         'recall_positive': scores['test_recall'],
@@ -82,34 +69,48 @@ def cross_validate_fit_predict(crystal_score, model_parameters, data, pipeline, 
         'matthewCoef': scores['test_mcc']
     }
 
-    metrics = results.keys() - {'dataset_index', 'cv'}
     folds = model_parameters['cv']
     for i in range(folds):
         results['dataset_index'].append(dataset_name)
         results['cv'].append(i)
-        for metric in metrics:
+        for metric in metrics_by_name.keys():
             results[metric].append(metrics_by_name[metric][i])
-    '''
+
     if model_parameters['method'] == constants.GBC:
         features_importance_per_fold = [scores['estimator'][f][1].feature_importances_ for f in range(folds)]
         # reorder column headers from pipeline operations (report correctly!)
-        old_order = list(data.columns)
-        temp_headers = [col for col in old_order if col not in curated_columns]
+
+        temp_headers = [col for col in data_columns if col not in curated_columns]
         # if no columns are selected for the pipeline, no columns will be moved
         hold_curated = list(curated_columns)
         hold_curated.extend(temp_headers)
         hold_curated = np.array(hold_curated)
 
+        if constants.FEAT_NAMES_IMPORTANCE not in results:
+            results[constants.FEAT_NAMES_IMPORTANCE] = []
+            results[constants.FEAT_VALUES_IMPORTANCE] = []
+
         # sort descending [::-1]
-        
-        feat_importance = [list(features_importance_per_fold[i][np.argsort(features_importance_per_fold[i])[::-1]]) for i in range(folds)]
-        order_feat_by_importance = [list(hold_curated[np.argsort(features_importance_per_fold[i])[::-1]]) for i in range(folds)]
+        for k in range(folds):
+            results[constants.FEAT_VALUES_IMPORTANCE].append(features_importance_per_fold[k][np.argsort(features_importance_per_fold[k])[::-1]])
+            results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importance_per_fold[k])[::-1]])
 
-        feat_importance_name = pd.DataFrame(feat_importance).T
-        feat_importance_value = pd.DataFrame(order_feat_by_importance).T
 
-        post_process.save_feat_importance(feat_importance_name, feat_importance_value, dataset_name)
-    '''
+def execute_cross_validation(crystal_score, data, folds, pipeline):
+    scoring = {  # 'tp': make_scorer(tp),
+        'precision': 'precision',
+        'recall': 'recall',
+        'mcc': make_scorer(utils.mcc),
+        'support_negative': make_scorer(utils.sup0),
+        'support_positive': make_scorer(utils.sup1),
+        'f1': 'f1'}
+    # shuffle batched experimental data into discrete experiments
+    scores = cross_validate(pipeline, data, crystal_score,
+                            cv=KFold(folds, shuffle=True, random_state=2),
+                            scoring=scoring,
+                            return_train_score=True,
+                            return_estimator=True)
+    return scores
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
@@ -126,35 +127,15 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test)
     else:
         # metrics to track
-        cross_validate_fit_predict(crystal_score, model_parameters, data, pipeline, results, dataset_name, curated_columns)
+        scores = execute_cross_validation(crystal_score, data, model_parameters['cv'], pipeline)
+        cross_validate_fit_predict(scores, model_parameters, data.columns.to_list(), results, dataset_name, curated_columns)
 
         '''
-        scores = cross_validate(clf, data, crystal_score,
-                                cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
-                                scoring=scoring, 
-                                return_train_score=True,
-                                return_estimator=True)
-        return scores, clf
-    
-        clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
     
         # @TODO:add if hyperparam_opt ON or OFF
-        # default ON
+        # default OFF
         clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
         clf.fit(X, y)
         clf = clf.best_estimator_
-    
-        pred = clf.predict(x_test)
-        cm = confusion_matrix(y_test, pred)
-        cr = classification_report(y_test, pred)
-        precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
-        matt_coeff = matthews_corrcoef(y_test, pred)
-        return {'pred':pred,
-                'cm': cm,
-                'precision':precision,
-                'recall':recall,
-                'f1':f1,
-                'matt_coeff': matt_coeff
-                }
     
         '''
