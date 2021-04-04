@@ -3,46 +3,22 @@ from sklearn.compose import make_column_transformer
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_validate, KFold
-from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+
+from src.models.utils import mcc, sup1, sup0
 
 '''
 from sklearn.model_selection import GridSearchCV
-
-from sklearn.preprocessing import Normalizer
-from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
-from sklearn.ensemble import GradientBoostingClassifier
+
 '''
-from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import make_scorer
 from sklearn.neighbors import KNeighborsClassifier
-import numpy as np
-
-
-def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
-
-
-def fp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 1]
-
-
-def fn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 0]
-
-
-def tp(y_true, y_pred): return confusion_matrix(y_true, y_pred)[1, 1]
-
-
-def mcc(y_true, y_pred): return matthews_corrcoef(y_true, y_pred)
-
-
-def sup1(y_true, y_pred): return np.sum(y_true)
-
-
-def sup0(y_true, y_pred): return len(y_true) - np.sum(y_true)
 
 
 def make_classifier(model_parameters):
@@ -54,7 +30,7 @@ def make_classifier(model_parameters):
                       'n_neighbors': range(3, 9, 2)
                       }
     elif model_parameters['method'] == 2:
-        gbt = GradientBoostingClassifier(random_state=42)
+        clf = GradientBoostingClassifier(random_state=42)
         param_grid = {'min_samples_split': range(2, 10, 2),
                       'min_samples_leaf': range(2, 5),
                       'max_depth': range(2, 7),
@@ -65,10 +41,10 @@ def make_classifier(model_parameters):
                 'opt': model_parameters['hyperparam_opt'],
                 'param_grid': param_grid
                 }
-    return clf, clf_dict
+    return clf_dict
 
 
-def std_norm_cols(column_list, std_dict, norm_dict):
+def columns_to_scale(column_list, std_dict, norm_dict):
     curated_list = []
     for header_prefix in std_dict:
         if std_dict[header_prefix] == 1:
@@ -90,18 +66,19 @@ def feat_scaling(parameters, data_columns):
     if len(requested_norm) + len(requested_sdt) == 0:
         return None
     else:
-        curated_columns = std_norm_cols(data_columns, parameters['std'], parameters['norm'])
+        curated_columns = columns_to_scale(data_columns, parameters['std'], parameters['norm'])
         if len(requested_norm) > 0: fun = Normalizer()
         else: fun = StandardScaler()
 
-    return make_column_transformer((fun, curated_columns), remainder='passthrough')
+    return make_column_transformer((fun, curated_columns), remainder='passthrough'), curated_columns
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
     X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
-    clf, clf_dict = make_classifier(model_parameters)
+    clf_dict = make_classifier(model_parameters)
+    clf = clf_dict['estimator']
 
-    data_preprocess = feat_scaling(model_parameters, data.columns.to_list())
+    data_preprocess, curated_columns = feat_scaling(model_parameters, data.columns.to_list())
     pipeline = Pipeline([
         ('scale', data_preprocess),
         ('clf', clf)
@@ -139,9 +116,6 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
             'support_negative': make_scorer(sup0),
             'support_positive': make_scorer(sup1),
             'f1': 'f1'}
-        # 'tn': make_scorer(tn),
-        # 'fp': make_scorer(fp),
-        # 'fn': make_scorer(fn),
 
         # shuffle batched experimental data into discrete experiments
         scores = cross_validate(pipeline, data, crystal_score,
@@ -165,34 +139,51 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
             results['cv'].append(i)
             for metric in metrics:
                 results[metric].append(metrics_by_name[metric][i])
+        '''
+        if model_parameters['method'] == 2:
+            clfs = scores['estimator']
 
-            '''
-            scores = cross_validate(clf, data, crystal_score,
-                                    cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
-                                    scoring=scoring, 
-                                    return_train_score=True,
-                                    return_estimator=True)
-            return scores, clf
-        
-            clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
-        
-            # @TODO:add if hyperparam_opt ON or OFF
-            # default ON
-            clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
-            clf.fit(X, y)
-            clf = clf.best_estimator_
-        
-            pred = clf.predict(x_test)
-            cm = confusion_matrix(y_test, pred)
-            cr = classification_report(y_test, pred)
-            precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
-            matt_coeff = matthews_corrcoef(y_test, pred)
-            return {'pred':pred,
-                    'cm': cm,
-                    'precision':precision,
-                    'recall':recall,
-                    'f1':f1,
-                    'matt_coeff': matt_coeff
-                    }
-        
-            '''
+        x = clf.feature_importances_
+
+        #reorder column headers from pipeline operations (report correctly!)
+        old_order = list(data.columns)
+        temp_headers = [col for col in old_order if col not in curated_columns]
+        # if no columns are selected for the pipeline, no columns will be moved
+        hold_curated = list(curated_columns)
+        hold_curated.extend(temp_headers)
+        hold_curated = np.array(hold_curated)
+
+        # sort descending [::-1]
+        feat_importance = list(x[np.argsort(x)[::-1]])
+        order_feat_by_importance = list(hold_curated[np.argsort(x)[::-1]])
+        '''
+        '''
+        scores = cross_validate(clf, data, crystal_score,
+                                cv=KFold(cv, shuffle=True),  #shuffle batched experimental data into descrete experiments
+                                scoring=scoring, 
+                                return_train_score=True,
+                                return_estimator=True)
+        return scores, clf
+    
+        clf_pipe = Pipeline(steps=[('transform', None), ('clf', model)])
+    
+        # @TODO:add if hyperparam_opt ON or OFF
+        # default ON
+        clf = GridSearchCV(clf_pipe, param_grid=param_grid, refit=True, cv=5, n_jobs=8)
+        clf.fit(X, y)
+        clf = clf.best_estimator_
+    
+        pred = clf.predict(x_test)
+        cm = confusion_matrix(y_test, pred)
+        cr = classification_report(y_test, pred)
+        precision, recall, f1, support = precision_recall_fscore_support(y_test, pred)
+        matt_coeff = matthews_corrcoef(y_test, pred)
+        return {'pred':pred,
+                'cm': cm,
+                'precision':precision,
+                'recall':recall,
+                'f1':f1,
+                'matt_coeff': matt_coeff
+                }
+    
+        '''
