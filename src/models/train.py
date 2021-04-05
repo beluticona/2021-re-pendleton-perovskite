@@ -47,7 +47,6 @@ def simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test):
     result_by_metric = {
         'dataset_index': dataset_name,
         'cv': 1,
-        # 'matrix':confusion_matrix(y_test, pred),
         'precision_positive': precision[1],
         'recall_positive': recall[1],
         'f1_positive': f1[1],
@@ -80,20 +79,24 @@ def cross_validate_fit_predict(scores, model_parameters, data_columns, results, 
         features_importance_per_fold = [scores['estimator'][f][1].feature_importances_ for f in range(folds)]
         # reorder column headers from pipeline operations (report correctly!)
 
-        temp_headers = [col for col in data_columns if col not in curated_columns]
-        # if no columns are selected for the pipeline, no columns will be moved
-        hold_curated = list(curated_columns)
-        hold_curated.extend(temp_headers)
-        hold_curated = np.array(hold_curated)
-
-        if constants.FEAT_NAMES_IMPORTANCE not in results:
-            results[constants.FEAT_NAMES_IMPORTANCE] = []
-            results[constants.FEAT_VALUES_IMPORTANCE] = []
+        hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data_columns, results)
 
         # sort descending [::-1]
         for k in range(folds):
             results[constants.FEAT_VALUES_IMPORTANCE].append(features_importance_per_fold[k][np.argsort(features_importance_per_fold[k])[::-1]])
             results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importance_per_fold[k])[::-1]])
+
+
+def prepare_features_to_be_sort_by_importance(curated_columns, data_columns, results):
+    temp_headers = [col for col in data_columns if col not in curated_columns]
+    # if no columns are selected for the pipeline, no columns will be moved
+    hold_curated = list(curated_columns)
+    hold_curated.extend(temp_headers)
+    hold_curated = np.array(hold_curated)
+    if constants.FEAT_NAMES_IMPORTANCE not in results:
+        results[constants.FEAT_NAMES_IMPORTANCE] = []
+        results[constants.FEAT_VALUES_IMPORTANCE] = []
+    return hold_curated
 
 
 def execute_cross_validation(crystal_score, data, folds, pipeline):
@@ -125,6 +128,12 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
 
     if model_parameters['cv'] <= 1:
         simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test)
+        if model_parameters['method'] == constants.GBC:
+            features_importances = pipeline['model'].feature_importances_
+            hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
+            results[constants.FEAT_VALUES_IMPORTANCE].append(features_importances[np.argsort(features_importances)[::-1]])
+            results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
+
     else:
         # metrics to track
         scores = execute_cross_validation(crystal_score, data, model_parameters['cv'], pipeline)
