@@ -5,7 +5,6 @@ from src.config import data_types_path
 import pandas as pd
 import yaml as yl
 import json
-import numpy as np 
 
 
 with open('parameters.yaml') as file, open(data_types_path) as json_file:

@@ -1,6 +1,5 @@
 from src.config import file_name_for
 from src.config import results_path
-from src import constants
 import pandas as pd
 import collections
 from src import constants
