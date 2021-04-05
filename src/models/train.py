@@ -1,14 +1,15 @@
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_validate, KFold
-from sklearn.pipeline import Pipeline
+from sklearn.svm import LinearSVC
+
 '''
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
 '''
+from sklearn.model_selection import cross_validate, KFold
+from sklearn.pipeline import Pipeline
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import make_scorer
@@ -31,6 +32,17 @@ def make_classifier(model_parameters):
                       'min_samples_leaf': range(2, 5),
                       'max_depth': range(2, 7),
                       'learning_rate': [0.05, 0.10, 0.15, 0.20]
+                      }
+    else:
+        clf = LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+                        intercept_scaling=1, loss='squared_hinge', max_iter=10000,
+                        multi_class='ovr', penalty='l2', random_state=42, tol=0.0001,
+                        verbose=0)
+        param_grid = {'tol': [0.001, 0.0001, 0.00001],
+                      'dual': [True, False],
+                      'fit_intercept': [True, False],
+                      'loss': ['hinge', 'squared_hinge'],
+                      'penalty': ['l1', 'l2']
                       }
 
     clf_dict = {'estimator': clf,
@@ -83,8 +95,10 @@ def cross_validate_fit_predict(scores, model_parameters, data_columns, results, 
 
         # sort descending [::-1]
         for k in range(folds):
-            results[constants.FEAT_VALUES_IMPORTANCE].append(features_importance_per_fold[k][np.argsort(features_importance_per_fold[k])[::-1]])
-            results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importance_per_fold[k])[::-1]])
+            results[constants.FEAT_VALUES_IMPORTANCE].append(
+                features_importance_per_fold[k][np.argsort(features_importance_per_fold[k])[::-1]])
+            results[constants.FEAT_NAMES_IMPORTANCE].append(
+                hold_curated[np.argsort(features_importance_per_fold[k])[::-1]])
 
 
 def prepare_features_to_be_sort_by_importance(curated_columns, data_columns, results):
@@ -131,13 +145,15 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         if model_parameters['method'] == constants.GBC:
             features_importances = pipeline['model'].feature_importances_
             hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
-            results[constants.FEAT_VALUES_IMPORTANCE].append(features_importances[np.argsort(features_importances)[::-1]])
+            results[constants.FEAT_VALUES_IMPORTANCE].append(
+                features_importances[np.argsort(features_importances)[::-1]])
             results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
 
     else:
         # metrics to track
         scores = execute_cross_validation(crystal_score, data, model_parameters['cv'], pipeline)
-        cross_validate_fit_predict(scores, model_parameters, data.columns.to_list(), results, dataset_name, curated_columns)
+        cross_validate_fit_predict(scores, model_parameters, data.columns.to_list(), results, dataset_name,
+                                   curated_columns)
 
         '''
     
