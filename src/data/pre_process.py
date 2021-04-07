@@ -78,13 +78,13 @@ def detect_type_dataset(dataset_name):
 
 
 def process_dataset(df, parameters):
-    # inchis = df['_rxn_organic-inchikey'].value_counts()
+    inchis = df['_rxn_organic-inchikey']
 
     # binary class
     crystal_score = df['_out_crystalscore']
     crystal_score = (crystal_score == 4).astype(int)
 
-    # extr = parameters["extrpl"]
+    extrapolate = parameters["extrpl"]
     interpolate = parameters["intrpl"]
 
     results = {
@@ -114,7 +114,10 @@ def process_dataset(df, parameters):
             selected_data = utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)
 
         if interpolate:
-            train.std_train_test(selected_data, parameters["model"], crystal_score, dataset_name, results)
+            train.std_train_test(selected_data, parameters['model'], crystal_score, dataset_name, results)
+
+        if extrapolate:
+            train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, results)
 
 
     # save results 
