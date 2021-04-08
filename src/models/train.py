@@ -66,7 +66,7 @@ def simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test):
         'support_positive': support[1],
         'matthewCoef': matthews_corrcoef(y_test, y_pred)
     }
-    for metric in results:
+    for metric in result_by_metric.keys():
         results[metric].append(result_by_metric[metric])
 
 
@@ -185,6 +185,14 @@ def amine_slip(selected_data, model_parameters, crystal_score, inchis):
             yield X_train_0, X_test_0, y_train, y_test
 
 
+def get_success_scores(results):
+    for col in ['precision', 'recall', 'f1']:
+        results[col + '_success'] = results[col].apply(lambda x: x[1])
+
+    results['matthewCoef_success'] = results['matthewCoef']
+    return results
+
+
 def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name, inchis, results):
     """
     Strat = 1 : Uniformly sampling 96 experiments for each amine
@@ -203,6 +211,7 @@ def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name
                 ('clf', clf)
             ])
             simple_fit_predict(X_train, X_test, pipeline, dataset_name, results, y_train, y_test)
+            utils.record_amine_info(inchi, results)
             if model_parameters['method'] == constants.GBC:
                 features_importances = pipeline['model'].feature_importances_
                 hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
@@ -210,6 +219,4 @@ def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name
                     features_importances[np.argsort(features_importances)[::-1]])
                 results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
 
-    return results
-
-
+            utils.translate_inchi_key(inchi, results)

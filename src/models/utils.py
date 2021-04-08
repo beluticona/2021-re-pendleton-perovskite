@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.compose import make_column_transformer
 from sklearn.metrics import confusion_matrix, matthews_corrcoef
 from sklearn.preprocessing import Normalizer, StandardScaler
+from src import constants
 
 
 def tn(y_true, y_pred): return confusion_matrix(y_true, y_pred)[0, 0]
@@ -52,3 +53,12 @@ def feat_scaling(parameters, data_columns):
         else: fun = StandardScaler()
 
     return make_column_transformer((fun, curated_columns), remainder='passthrough'), curated_columns
+
+
+def record_amine_info(inchi, results):
+    results['inchi'].append(inchi)
+
+
+def translate_inchi_key(inchi, results):
+    chemical_name = constants.INCHI_TO_CHEMNAME[inchi]
+    results['Chemical Name'].append(chemical_name)

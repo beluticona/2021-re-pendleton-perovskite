@@ -84,9 +84,6 @@ def process_dataset(df, parameters):
     crystal_score = df['_out_crystalscore']
     crystal_score = (crystal_score == 4).astype(int)
 
-    extrapolate = parameters["extrpl"]
-    interpolate = parameters["intrpl"]
-
     results = {
         'dataset_index': [],
         'cv': [],
@@ -98,6 +95,12 @@ def process_dataset(df, parameters):
         'support_positive': [],
         'matthewCoef': []
     }
+
+    extrapolate = parameters["extrpl"]
+    if extrapolate:
+        results['Chemical Name'] = []
+        results['inchi'] = []
+    interpolate = parameters["intrpl"]
 
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
 
@@ -119,8 +122,7 @@ def process_dataset(df, parameters):
         if extrapolate:
             train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, results)
 
-
-    # save results 
+    # save results
     return results
 
 
