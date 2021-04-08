@@ -61,4 +61,6 @@ def record_amine_info(inchi, results):
 
 def translate_inchi_key(inchi, results):
     chemical_name = constants.INCHI_TO_CHEMNAME[inchi]
-    results['Chemical Name'].append(chemical_name)
+    results['chemical-name'].append(chemical_name)
+
+

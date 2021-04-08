@@ -200,23 +200,22 @@ def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name
     """
     mycv_return = amine_slip(data, model_parameters, crystal_score, inchis)
 
-    for fold in range(model_parameters['cv']):
-        for inchi, (X_train, X_test, y_train, y_test) in zip(inchis.unique(), mycv_return):
-            # for each dataset (model0, model1 concentrations)
-            clf_dict = make_classifier(model_parameters)
-            clf = clf_dict['estimator']
-            data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
-            pipeline = Pipeline([
-                ('scale', data_preprocess),
-                ('clf', clf)
-            ])
-            simple_fit_predict(X_train, X_test, pipeline, dataset_name, results, y_train, y_test)
-            utils.record_amine_info(inchi, results)
-            if model_parameters['method'] == constants.GBC:
-                features_importances = pipeline['model'].feature_importances_
-                hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
-                results[constants.FEAT_VALUES_IMPORTANCE].append(
-                    features_importances[np.argsort(features_importances)[::-1]])
-                results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
+    for inchi, (X_train, X_test, y_train, y_test) in zip(inchis.unique(), mycv_return):
+        # for each dataset (model0, model1 concentrations)
+        clf_dict = make_classifier(model_parameters)
+        clf = clf_dict['estimator']
+        data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
+        pipeline = Pipeline([
+            ('scale', data_preprocess),
+            ('clf', clf)
+        ])
+        simple_fit_predict(X_train, X_test, pipeline, dataset_name, results, y_train, y_test)
+        utils.record_amine_info(inchi, results)
+        if model_parameters['method'] == constants.GBC:
+            features_importances = pipeline['model'].feature_importances_
+            hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
+            results[constants.FEAT_VALUES_IMPORTANCE].append(
+                features_importances[np.argsort(features_importances)[::-1]])
+            results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
 
-            utils.translate_inchi_key(inchi, results)
+        utils.translate_inchi_key(inchi, results)

@@ -16,7 +16,8 @@ def save_and_summary(results, parameters):
     results_df = pd.DataFrame.from_dict(results, orient='columns')
 
     results_df.to_csv(results_path + full_results_file_name, index=False)
-    results_df.drop(['cv', 'support_negative', 'support_positive'], axis=1, inplace=True)
+
+    filter_only_metrics_columns(parameters, results_df)
 
     std = results_df.groupby('dataset_index').std().add_suffix('_std')
     min_results = results_df.groupby('dataset_index').min().add_suffix('_min')
@@ -39,3 +40,11 @@ def save_feature_importance(full_results_file_name, results, feature):
     feature_file_name = results_path + feature + '_' + full_results_file_name
     pd.DataFrame(dict([(k, pd.Series(v)) for k, v in multilevel_dictionary.items()])).to_csv(feature_file_name, index=False)
     results.pop(feature, None)
+
+
+def filter_only_metrics_columns(parameters, results_df):
+    if parameters['extrpl']:
+        results_df.drop(['cv', 'chemical-name', 'inchi', 'support_negative', 'support_positive'], axis=1, inplace=True)
+    else:
+        results_df.drop(['cv', 'support_negative', 'support_positive'], axis=1, inplace=True)
+

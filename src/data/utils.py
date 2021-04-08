@@ -116,3 +116,10 @@ def encode_by_amine_inchi(inchi_keys_to_encode, data, data_columns):
     data.drop(feat_cols, axis=1, inplace=True)
     data = pd.concat([data, hot_df], axis=1)
     return data
+
+
+def adapt_results_by_parameters(parameters, results):
+    if parameters["extrpl"]:
+        results['chemical-name'] = []
+        results['inchi'] = []
+    return parameters['extrpl'], parameters['intrpl']

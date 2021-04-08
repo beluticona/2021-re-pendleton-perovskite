@@ -87,7 +87,6 @@ def process_dataset(df, parameters):
     results = {
         'dataset_index': [],
         'cv': [],
-        #    'matrix':[],
         'precision_positive': [],
         'recall_positive': [],
         'f1_positive': [],
@@ -96,11 +95,7 @@ def process_dataset(df, parameters):
         'matthewCoef': []
     }
 
-    extrapolate = parameters["extrpl"]
-    if extrapolate:
-        results['Chemical Name'] = []
-        results['inchi'] = []
-    interpolate = parameters["intrpl"]
+    extrapolate, interpolate = utils.adapt_results_by_parameters(parameters, results)
 
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
 
