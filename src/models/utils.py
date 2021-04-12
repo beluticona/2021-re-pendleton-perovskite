@@ -41,14 +41,14 @@ def columns_to_scale(column_list, std_dict, norm_dict):
     return curated_list
 
 
-def feat_scaling(parameters, data_columns):
-    requested_norm = [dataset_name for (dataset_name, required) in parameters["norm"].items() if required]
-    requested_sdt = [dataset_name for (dataset_name, required) in parameters["std"].items() if required]
+def feat_scaling(model_parameters, data_columns):
+    requested_norm = [dataset_name for (dataset_name, required) in model_parameters["norm"].items() if required]
+    requested_sdt = [dataset_name for (dataset_name, required) in model_parameters["std"].items() if required]
 
     if len(requested_norm) + len(requested_sdt) == 0:
-        return None
+        return None, []
     else:
-        curated_columns = columns_to_scale(data_columns, parameters['std'], parameters['norm'])
+        curated_columns = columns_to_scale(data_columns, model_parameters['std'], model_parameters['norm'])
         if len(requested_norm) > 0: fun = Normalizer()
         else: fun = StandardScaler()
 

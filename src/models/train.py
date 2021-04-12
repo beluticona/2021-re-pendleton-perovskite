@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import LinearSVC
 
 '''
@@ -46,14 +46,13 @@ def make_classifier(model_parameters):
                       }
 
     clf_dict = {'estimator': clf,
-                'opt': model_parameters['hyperparam_opt'],
+                'opt': model_parameters['hyperparam-opt'],
                 'param_grid': param_grid
                 }
     return clf_dict
 
 
-def simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test):
-    pipeline.fit(X, y)
+def simple_fit_predict(X_test, pipeline, dataset_name, results, y_test):
     y_pred = pipeline.predict(X_test)
     precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
     result_by_metric = {
@@ -141,8 +140,17 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         ('clf', clf)
     ])
 
+    if model_parameters['hyperparam-opt']:
+        param_grid = {}
+        for k, v in clf_dict['param_grid'].items():
+            # '__' (double underscore) specfies step to apply param grid to
+            param_grid[f'clf__{k}'] = v
+        pipeline = GridSearchCV(pipeline, param_grid=param_grid, refit=True, cv=5, n_jobs=-1)
+        pipeline.fit(X, y)
+        pipeline = pipeline.best_estimator_
+
     if model_parameters['cv'] <= 1:
-        simple_fit_predict(X, X_test, pipeline, dataset_name, results, y, y_test)
+        simple_fit_predict(X_test, pipeline, dataset_name, results, y_test)
         if model_parameters['method'] == constants.GBC:
             features_importances = pipeline['clf'].feature_importances_
             hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
@@ -201,7 +209,7 @@ def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name
             ('scale', data_preprocess),
             ('clf', clf)
         ])
-        simple_fit_predict(X_train, X_test, pipeline, dataset_name, results, y_train, y_test)
+        simple_fit_predict(X_test, pipeline, dataset_name, results, y_test)
         utils.record_amine_info(inchi, results)
         if model_parameters['method'] == constants.GBC:
             features_importances = pipeline['clf'].feature_importances_
