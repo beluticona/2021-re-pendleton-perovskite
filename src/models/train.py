@@ -29,20 +29,10 @@ def make_classifier(model_parameters):
     elif model_parameters['method'] == constants.GBC:
         clf = GradientBoostingClassifier(random_state=42)
         param_grid = {'min_samples_split': range(2, 10, 2),
-                      'min_samples_leaf': range(2, 5),
+                      'min_samples_leaf': range(2, 7, 2),
+                      'n_estimators': [100, 500],
                       'max_depth': range(2, 7),
                       'learning_rate': [0.05, 0.10, 0.15, 0.20]
-                      }
-    else:
-        clf = LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
-                        intercept_scaling=1, loss='squared_hinge', max_iter=10000,
-                        multi_class='ovr', penalty='l2', random_state=42, tol=0.0001,
-                        verbose=0)
-        param_grid = {'tol': [0.001, 0.0001, 0.00001],
-                      'dual': [True, False],
-                      'fit_intercept': [True, False],
-                      'loss': ['hinge', 'squared_hinge'],
-                      'penalty': ['l1', 'l2']
                       }
 
     clf_dict = {'estimator': clf,
@@ -169,7 +159,7 @@ def amine_slip(selected_data, model_parameters, crystal_score, inchis):
     if model_parameters['strat']:
         indicies = {}
         for i, inchi in enumerate(inchis):
-            indicies[inchi] = np.array(range(96)) + i*96
+            indicies[inchi] = np.array(range(96)) + i * 96
 
         for amine in inchis.keys():
             is_amine = indicies[amine]
@@ -200,15 +190,26 @@ def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name
     """
     mycv_return = amine_slip(data, model_parameters, crystal_score, inchis)
 
+    # for each dataset (model0, model1 concentrations)
+    clf_dict = make_classifier(model_parameters)
+    clf = clf_dict['estimator']
+    data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
+    pipeline = Pipeline([
+        ('scale', data_preprocess),
+        ('clf', clf)
+    ])
+
+    if model_parameters['hyperparam-opt']:
+        param_grid = {}
+        for k, v in clf_dict['param_grid'].items():
+            # '__' (double underscore) specfies step to apply param grid to
+            param_grid[f'clf__{k}'] = v
+        pipeline = GridSearchCV(pipeline, param_grid=param_grid, refit=True, cv=5, n_jobs=-1)
+        pipeline.fit(data, crystal_score)
+        pipeline = pipeline.best_estimator_
+
     for inchi, (X_train, X_test, y_train, y_test) in zip(inchis.unique(), mycv_return):
-        # for each dataset (model0, model1 concentrations)
-        clf_dict = make_classifier(model_parameters)
-        clf = clf_dict['estimator']
-        data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
-        pipeline = Pipeline([
-            ('scale', data_preprocess),
-            ('clf', clf)
-        ])
+        pipeline.fit(X_train, y_train)
         simple_fit_predict(X_test, pipeline, dataset_name, results, y_test)
         utils.record_amine_info(inchi, results)
         if model_parameters['method'] == constants.GBC:
