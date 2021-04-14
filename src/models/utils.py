@@ -64,3 +64,10 @@ def translate_inchi_key(inchi, results):
     results['chemical-name'].append(chemical_name)
 
 
+def no_feat_scaling(model_parameters):
+    std = sum(value for value in model_parameters['std'].values())
+    norm = sum(value for value in model_parameters['norm'].values())
+    return std + norm > 0
+
+
+

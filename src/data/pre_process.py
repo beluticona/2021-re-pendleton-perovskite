@@ -85,7 +85,7 @@ def process_dataset(df, parameters):
     crystal_score = (crystal_score == 4).astype(int)
 
     results = {
-        'dataset_index': [],
+        'data_index': [],
         'cv': [],
         'precision_positive': [],
         'recall_positive': [],
