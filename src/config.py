@@ -21,3 +21,7 @@ def file_name_for(parameters):
             file_name += setting + '_'
     return file_name
 
+
+def set_results_folder(full_results_path):
+    Path(full_results_path).mkdir(parents=True, exist_ok=True)
+
