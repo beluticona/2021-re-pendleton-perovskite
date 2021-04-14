@@ -20,12 +20,39 @@ from src import constants
 
 def make_classifier(model_parameters):
     if model_parameters['method'] == constants.KNN:
-        clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
-                                   metric_params=None, n_jobs=8, p=20)
-        param_grid = {'weights': ['uniform', 'distance'],
-                      'algorithm': ['ball_tree', 'kd_tree', 'brute'],
-                      'n_neighbors': range(3, 9, 2)
-                      }
+        if utils.no_feat_scaling(model_parameters):
+            if model_parameters['hyperparam-opt']:
+                if model_parameters['one-hot-encoding']:
+                    # case encoding
+                    clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
+                                               metric_params=None, n_jobs=8, p=2)
+                    param_grid = {'weights': ['uniform', 'distance'],
+                                  'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                                  'n_neighbors': range(1, 9, 2)
+                                  }
+                else:
+                    # case KNN
+                    clf = KNeighborsClassifier()
+                    param_grid = {'weights': ['uniform', 'distance'],
+                                  'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                                  'n_neighbors': range(3, 9, 2)
+                                  }
+            else:
+                # case KNN 1
+                clf = KNeighborsClassifier(algorithm='ball_tree', leaf_size=30, metric='minkowski',
+                                           metric_params=None, n_jobs=3, n_neighbors=1, p=2,
+                                           weights='uniform')
+                param_grid = {'weights': ['uniform', 'distance'],
+                              'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                              'n_neighbors': range(3, 9, 2)
+                              }
+        else:
+            clf = KNeighborsClassifier(leaf_size=30, metric='minkowski',
+                                       metric_params=None, n_jobs=8, p=20)
+            param_grid = {'weights': ['uniform', 'distance'],
+                          'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                          'n_neighbors': range(3, 9, 2)
+                          }
     elif model_parameters['method'] == constants.GBC:
         clf = GradientBoostingClassifier(random_state=42)
         param_grid = {'min_samples_split': range(2, 10, 2),
