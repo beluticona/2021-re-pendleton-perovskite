@@ -22,7 +22,18 @@ Run:
 
 `pipenv run python -m ipykernel install --user --name=re-pendleton`
 
-`pipenv install -e .` install all packeges found by setup. In this case we want src to be importable from notebooks.
+Install all packages found by setup. In this case we want src to be importable from notebooks.
 
+`pipenv install -e .`
 
+## TODO
+
+    1) Automatize output for case GBC
+        - folder for
+        - make_classifier
+    2) Enable both intr and extr (now if one is on, the other has to be off)
+
+    3) Merge stratified data and all data(run together)
+
+    4) Create only needed folders, now creating all of them (knn only)
 
