@@ -1,5 +1,6 @@
-from src.data import utils
+from src.data import utils, post_process
 from src.models import train
+from src.models import utils as model_utils
 from src import constants
 import numpy as np
 import pandas as pd
@@ -84,41 +85,30 @@ def process_dataset(df, parameters):
     crystal_score = df['_out_crystalscore']
     crystal_score = (crystal_score == 4).astype(int)
 
-    results = {
-        'data_index': [],
-        'cv': [],
-        'precision_positive': [],
-        'recall_positive': [],
-        'f1_positive': [],
-        'support_negative': [],
-        'support_positive': [],
-        'matthewCoef': []
-    }
-
-    extrapolate, interpolate = utils.adapt_results_by_parameters(parameters, results)
-
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
+
+    full_results, interpolate, extrapolate = model_utils.create_results_container(parameters)
 
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
         type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
         selected_data = utils.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
-        # stratify crystal score out of loop
+        # Preparing data
         if parameters['model']['strat']:
             selected_data, crystal_score = utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
 
         if parameters['model']['one-hot-encoding']:
             selected_data = utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)
 
+        # Processing data
         if interpolate:
-            train.std_train_test(selected_data, parameters['model'], crystal_score, dataset_name, results)
+            train.std_train_test(selected_data, parameters['model'], crystal_score, dataset_name, full_results['std'])
 
         if extrapolate:
-            train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, results)
+            train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, full_results['loo'])
 
-    # save results
-    return results
+    post_process.save_results(full_results, parameters)
 
 
     '''

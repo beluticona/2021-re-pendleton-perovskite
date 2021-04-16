@@ -70,4 +70,24 @@ def no_feat_scaling(model_parameters):
     return std + norm > 0
 
 
+def create_results_container(parameters):
+    full_results = {}
+    std_results = {
+        'data_index': [],
+        'cv': [],
+        'precision_positive': [],
+        'recall_positive': [],
+        'f1_positive': [],
+        'support_negative': [],
+        'support_positive': [],
+        'matthewCoef': []
+    }
+    if parameters['intrpl']:
+        full_results['std'] = std_results
+    if parameters['extrpl']:
+        std_loo = std_results.copy()
+        std_loo['chemical-name'] = []
+        std_loo['inchi'] = []
+        full_results['loo'] = std_loo
 
+    return full_results, parameters['intrpl'], parameters['extrpl']

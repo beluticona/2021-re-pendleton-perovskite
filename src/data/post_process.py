@@ -6,43 +6,38 @@ import collections
 from src import constants
 
 
-def save_and_summary(results, parameters):
-    full_results_file_name = file_name_for(parameters)[:-1] + '.csv'
-    # summary_results_file_name = 'summary_' + full_results_file_name
+def save_results(full_results, parameters):
+    full_results_descriptions = file_name_for(parameters)[:-1] + '.csv'
     full_results_path = results_path + folder_for(parameters)
     set_results_folder(full_results_path)
 
     if parameters['model']['method'] == constants.GBC:
-        save_feature_importance(full_results_file_name, results, constants.FEAT_VALUES_IMPORTANCE)
-        save_feature_importance(full_results_file_name, results, constants.FEAT_NAMES_IMPORTANCE)
-
-    results_df = pd.DataFrame.from_dict(results, orient='columns')
-
-    # results_df.to_csv(results_path + full_results_file_name, index=False)
+        # TO REFACTOR
+        save_feature_importance(full_results_descriptions, full_results, constants.FEAT_VALUES_IMPORTANCE)
+        save_feature_importance(full_results_descriptions, full_results, constants.FEAT_NAMES_IMPORTANCE)
     if parameters['intrpl']:
-        results_df.to_csv(full_results_path + 'StandardTestTrain_Full.csv')
-    else:
-        results_df.to_csv(full_results_path + 'LeaveOneOut_Full.csv')
+        save_full_and_summary_for(full_results['std'], full_results_path, 'StandardTestTrain_Full.csv', 'StandardTestTrain_Summary.csv', parameters)
+    if parameters['exptrpl']:
+        save_full_and_summary_for(full_results['loo'], full_results_path, 'LeaveOneOut_Full.csv', 'LeaveOneOut_Summary.csv', parameters)
 
-    filter_only_metrics_columns(parameters, results_df)
+    f = open(results_path + 'info.txt', "a")
+    f.write(full_results_descriptions)
+    f.close()
 
-    std = results_df.groupby('data_index').std().add_suffix('_std')
-    min_results = results_df.groupby('data_index').min().add_suffix('_min')
-    max_results = results_df.groupby('data_index').max().add_suffix('_max')
-    summary = results_df.groupby('data_index').mean().add_suffix('_mean')
+
+def save_full_and_summary_for(dict_results, full_results_path, full_result_filename, summary_filename, parameters):
+    df_results = pd.DataFrame.from_dict(dict_results, orient='columns')
+    df_results.to_csv(full_results_path + full_result_filename)
+    filter_only_metrics_columns(parameters, df_results)
+
+    std = df_results.groupby('data_index').std().add_suffix('_std')
+    min_results = df_results.groupby('data_index').min().add_suffix('_min')
+    max_results = df_results.groupby('data_index').max().add_suffix('_max')
+    summary = df_results.groupby('data_index').mean().add_suffix('_mean')
 
     summary = summary.join(std).join(min_results).join(max_results)
 
-    # summary.to_csv(results_path + summary_results_file_name)
-
-    if parameters['intrpl']:
-        results_df.to_csv(full_results_path + 'StandardTestTrain_Summary.csv')
-    else:
-        results_df.to_csv(full_results_path + 'LeaveOneOut_Summary.csv')
-
-    f = open(results_path + 'info.txt', "a")
-    f.write(full_results_file_name)
-    f.close()
+    summary.to_csv(full_results_path + summary_filename)
 
 
 def save_feature_importance(full_results_file_name, results, feature):
@@ -75,7 +70,7 @@ def folder_for(parameters):
         folder += '_std' + str(std-1)
     if norm > 0:
         folder += '_norm' + str(norm-1)
-    if parameters['mode']['one-hot-encodinng']:
+    if parameters['model']['one-hot-encoding']:
         folder += '_hot_encode'
     return folder + '/'
     # @TODO: Case GBC
