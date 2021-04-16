@@ -73,7 +73,7 @@ def simple_fit_predict(X_test, pipeline, dataset_name, results, y_test):
     y_pred = pipeline.predict(X_test)
     precision, recall, f1, support = precision_recall_fscore_support(y_test, y_pred, labels=[0, 1])
     result_by_metric = {
-        'dataset_index': dataset_name,
+        'data_index': dataset_name,
         'cv': 1,
         'precision_positive': precision[1],
         'recall_positive': recall[1],
@@ -98,7 +98,7 @@ def cross_validate_fit_predict(scores, model_parameters, data_columns, results, 
 
     folds = model_parameters['cv']
     for i in range(folds):
-        results['dataset_index'].append(dataset_name)
+        results['data_index'].append(dataset_name)
         results['cv'].append(i)
         for metric in metrics_by_name.keys():
             results[metric].append(metrics_by_name[metric][i])

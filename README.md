@@ -37,3 +37,5 @@ Install all packages found by setup. In this case we want src to be importable f
 
     4) Create only needed folders, now creating all of them (knn only)
 
+    5) RF features importances
+
