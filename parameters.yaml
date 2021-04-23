@@ -1,4 +1,4 @@
-extrpl: Yes         # Run extrapolative models (Leave one amine/organic out)
+extrpl: No         # Run extrapolative models (Leave one amine/organic out)
 intrpl : Yes          # Run interpolative models (Standard test train splits )
 plot_results : No    # Turn mass plotting on (plots each of the model comparisons to png images)
 data_preparation: 
@@ -11,8 +11,8 @@ model:
   cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
-      feat: Yes    # Forces normalization of _feats_*
-      rxn: Yes     # Forces normalization of _rxns_*
+      feat: No    # Forces normalization of _feats_*
+      rxn: No     # Forces normalization of _rxns_*
       raw: No     # Forces normalization of _raws_* (post calculations of proportional values)
   std:
       feat: No     # Forces standardization of _feats_*
@@ -23,15 +23,15 @@ model:
   one-hot-encoding: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
 
 dataset:
-    solV-chem: Yes
-    solUD-chem: No
+    solV-chem: No
     solV-exp: No
-    solUD-exp: No
     solV-reag: No
+    solUD-exp: No
+    solUD-chem: No
     solUD-reag: No
     solUD-prop: No
-    #solUD-only: No
-    #solV-only: No
-    #chem-only: No
-    #reag-only: No
-    #feat-only: No 
+    solUD-only: No
+    solV-only: No
+    chem-only: Yes
+    reag-only: Yes
+    exp-only: Yes

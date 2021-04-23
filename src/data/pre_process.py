@@ -1,7 +1,7 @@
 from src.data import utils, post_process
 from src.models import train
 from src.models import utils as model_utils
-from src.constants import SOLV_MODEL, SOLUD_MODEL
+from src.constants import SOLV_MODEL, SOLUD_MODEL, NO_MODEL
 import numpy as np
 import pandas as pd
 
@@ -71,10 +71,12 @@ def prepare_full_dataset(df, data_preparation):
 
 
 def detect_type_dataset(dataset_name):
+    type_sol = NO_MODEL
     if 'solV' in dataset_name:
-        return SOLV_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        type_sol = SOLV_MODEL 
     if 'solUD' in dataset_name:
-        return SOLUD_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        type_sol = SOLUD_MODEL
+    return type_sol, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
 def process_dataset(df, parameters):

@@ -19,6 +19,11 @@ def get_sol_v_model_columns(df_columns):
     return sol_v_model_columns
 
 
+def get_sol_no_model_columns(df_columns):
+    sol_no_model_columns = list(filter(lambda column_name: column_name.startswith('_feat_'), df_columns))
+    return sol_no_model_columns
+
+
 def extend_by_regexes(df_columns, regexes, subset_columns_to_extend):
     for reg_string in regexes:
         reg = re.compile(reg_string)
@@ -65,7 +70,8 @@ def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_en
         sol_model_columns = get_sol_v_model_columns(df_columns)
     elif type_sol_volume == constants.SOLUD_MODEL:
         sol_model_columns = get_sol_ud_model_columns(df_columns)
-
+    elif type_sol_volume == constants.NO_MODEL:
+        sol_model_columns = get_sol_no_model_columns(df_columns)
     if chem_extend_enabled:
         extend_with_chem_columns(df_columns, sol_model_columns)
         # @TODO: verify if this column can be deleted at the first preliminary filter
