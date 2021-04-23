@@ -39,3 +39,17 @@ Install all packages found by setup. In this case we want src to be importable f
 
     5) RF features importances
 
+## Subconjuntos de predictotes
+
+    SolV                9 sc(3 diff)  + 67 feat -1 = 75 (72 comun)
+    SolUD               9 sc (3 diff) + 67 feat -1 = 75 (72 comun)
+    SolV + Chem         36 + 75
+    SolUD + Chem        36 + 75
+    SolV + Exp         192 (7 comun) + 
+    SolUD + Exp        170 (7 comun) + 
+    "_raw{'_v1-' if v1 else '_'}M_.*_final",
+
+    SolV + Reag         123 (7 comun) + 75 - 3 raw_v0M = 195 (79 en comun)
+    SolUD + Reag         141 (7 comun) +75 - 3 _rxn_M = 213 (79 en comun)
+
+
