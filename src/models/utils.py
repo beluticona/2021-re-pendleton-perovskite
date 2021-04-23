@@ -67,11 +67,22 @@ def translate_inchi_key(inchi, results):
 def no_feat_scaling(model_parameters):
     std = sum(value for value in model_parameters['std'].values())
     norm = sum(value for value in model_parameters['norm'].values())
-    return std + norm > 0
+    return std + norm == 0
 
 
 def create_results_container(parameters):
     full_results = {}
+    if parameters['intrpl']:
+        full_results['std'] = result_container()
+    if parameters['extrpl']:
+        std_loo = result_container()
+        std_loo['chemical-name'] = []
+        std_loo['inchi'] = []
+        full_results['loo'] = std_loo
+
+    return full_results, parameters['intrpl'], parameters['extrpl']
+
+def result_container():
     std_results = {
         'data_index': [],
         'cv': [],
@@ -82,12 +93,4 @@ def create_results_container(parameters):
         'support_positive': [],
         'matthewCoef': []
     }
-    if parameters['intrpl']:
-        full_results['std'] = std_results
-    if parameters['extrpl']:
-        std_loo = std_results.copy()
-        std_loo['chemical-name'] = []
-        std_loo['inchi'] = []
-        full_results['loo'] = std_loo
-
-    return full_results, parameters['intrpl'], parameters['extrpl']
+    return std_results

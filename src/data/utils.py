@@ -15,6 +15,7 @@ def get_sol_ud_model_columns(df_columns):
 def get_sol_v_model_columns(df_columns):
     sol_ud_model_columns = get_sol_ud_model_columns(df_columns)
     sol_v_model_columns = list(filter(lambda column_name: not column_name.startswith('_rxn_M_'), sol_ud_model_columns))
+    sol_v_model_columns += '_raw_v0-M_acid _raw_v0-M_inorganic _raw_v0-M_organic'.split(' ')
     return sol_v_model_columns
 
 
@@ -46,6 +47,15 @@ def extend_with_reag_columns(df_columns, subset_columns_to_extend, sol_ud_enable
                               f"_raw_reagent_\d{'_v1-' if v1 else '_'}conc.*"]
     regex_for_rxn_columns = rxn_regexes(sol_ud_enable)
     extend_by_regexes(df_columns, regex_for_rxn_columns, subset_columns_to_extend)
+    model0C = '_raw_v0-M_acid _raw_v0-M_inorganic _raw_v0-M_organic'.split(' ')
+    model1C = '_rxn_M_acid _rxn_M_inorganic _rxn_M_organic'.split(' ')
+    set_to_delete = []
+    if (sol_ud_enable):
+        set_to_delete = set(model1C)
+    else:
+        #solV
+        set_to_delete = set(model0C)
+    return list(set(subset_columns_to_extend)-set_to_delete)   
 
 
 def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled):
@@ -64,7 +74,7 @@ def filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_en
     elif exp_extend_enabled:
         extend_with_rxn_columns(df_columns, sol_model_columns, type_sol_volume == 2)
     elif reag_extend_enabled:
-        extend_with_reag_columns(df_columns, sol_model_columns, type_sol_volume == 2)
+        sol_model_columns = extend_with_reag_columns(df_columns, sol_model_columns, type_sol_volume == 2)
     return df[sol_model_columns].fillna(0).reset_index(drop=True)
 
 

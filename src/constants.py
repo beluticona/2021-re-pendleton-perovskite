@@ -3,6 +3,10 @@ KNN = 1
 GBC = 2
 SVM = 3
 
+# Methods
+STD_CV = 1
+LOO = 2
+
 # Solution volume
 SOLV_MODEL = 1
 SOLUD_MODEL = 2

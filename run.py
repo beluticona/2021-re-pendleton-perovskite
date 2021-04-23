@@ -1,13 +1,12 @@
 from src.data import pre_process
 from src.data import post_process
-from src.config import data_path
-from src.config import data_types_path
+from src.config import data_path, parameters_path, data_types_path
 import pandas as pd
 import yaml as yl
 import json
 
 
-with open('parameters.yaml') as file, open(data_types_path) as json_file:
+with open(parameters_path) as file, open(data_types_path) as json_file:
 
     parameters = yl.safe_load(file)
 
@@ -21,14 +20,8 @@ with open('parameters.yaml') as file, open(data_types_path) as json_file:
     pre_process.process_dataset(df, parameters)
 
 
-
     '''
-    - generate full_results
-        * from yaml
-            - classifiers
-            - std norm ...
-
-    # fijar semilla
+    # fijar semilla global
     
 
     '''

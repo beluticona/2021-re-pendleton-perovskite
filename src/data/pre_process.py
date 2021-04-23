@@ -1,7 +1,7 @@
 from src.data import utils, post_process
 from src.models import train
 from src.models import utils as model_utils
-from src import constants
+from src.constants import SOLV_MODEL, SOLUD_MODEL
 import numpy as np
 import pandas as pd
 
@@ -10,7 +10,6 @@ experiment_version = 1.1
 GBL_inchi_key = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
 
 dimethyl_ammonium_inchi_key = 'MXLWMIFDJCGBV-UHFFFAOYSA-N'
-
 
 def shuffle(df):
     """Generate a non sense data set:
@@ -65,17 +64,17 @@ def prepare_full_dataset(df, data_preparation):
         df = deep_shuffle(df)
 
     # Rename from raw to rxn
-    df.rename(columns={"_raw_v0-M_acid": "_rxn_v0-M_acid", "_raw_v0-M_inorganic": "_rxn_v0-M_inorganic",
-                       "_raw_v0-M_organic": "_rxn_v0-M_organic"}, inplace=True)
+    #df.rename(columns={"_raw_v0-M_acid": "_rxn_v0-M_acid", "_raw_v0-M_inorganic": "_rxn_v0-M_inorganic",
+    #                   "_raw_v0-M_organic": "_rxn_v0-M_organic"}, inplace=True)
 
     return df
 
 
 def detect_type_dataset(dataset_name):
     if 'solV' in dataset_name:
-        return constants.SOLV_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        return SOLV_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
     if 'solUD' in dataset_name:
-        return constants.SOLUD_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+        return SOLUD_MODEL, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
 def process_dataset(df, parameters):
@@ -104,10 +103,13 @@ def process_dataset(df, parameters):
         # Processing data
         if interpolate:
             train.std_train_test(selected_data, parameters['model'], crystal_score, dataset_name, full_results['std'])
+        
+        print('Complete: dataset '+ dataset_name + 'intrpl')
 
         if extrapolate:
             train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, full_results['loo'])
 
+        print('Complete: dataset '+ dataset_name + 'all')
     post_process.save_results(full_results, parameters)
 
 
