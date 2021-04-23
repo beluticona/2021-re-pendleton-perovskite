@@ -2,13 +2,12 @@
 
 ## Description
 
-Replication of Pendleton et all (2020), a paper about ML understanding of halide perovskite crystal formation without accurate physicochemical features.
+This project is based on Pendleton et all (2020), a paper about ML understanding of halide perovskite crystal formation without accurate physicochemical features. We proposed a several of modifications and improvements (or at least we are trying).
 
-Original paper available at:
+Available at:
 
 > Pendleton, I. M. *et al.* Can Machines “Learn” Halide Perovskite Crystal Formation without Accurate Physicochemical Features? *J. Phys. Chem. C* **124**, 13982–13992 (2020).
 
-The main goal of this project is to reproduce results from the original paper, as well as to provide a fully reproducible version on GitHub.
 
 ## Reproduction
 
