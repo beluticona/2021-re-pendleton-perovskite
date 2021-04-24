@@ -55,7 +55,7 @@ def prepare_full_dataset(df, data_preparation):
 
     df = (df[df['_rxn_organic-inchikey'].isin(successful_inches_keys)])
 
-    df.query('_out_crystalscore > 0', inplace=True)
+    #df.query('_out_crystalscore > 0', inplace=True)
 
     # If it is desired to make a non sense dataset
     if data_preparation["shuffle_enabled"]:
@@ -76,7 +76,7 @@ def detect_type_dataset(dataset_name):
         type_sol = SOLV_MODEL 
     if 'solUD' in dataset_name:
         type_sol = SOLUD_MODEL
-    return type_sol, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
+    return type_sol, 'feat' in dataset_name, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
 def process_dataset(df, parameters):
@@ -92,8 +92,8 @@ def process_dataset(df, parameters):
 
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
-        type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
-        selected_data = utils.filter_required_data(df, type_sol_volume, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
+        type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
+        selected_data = utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
         # Preparing data
         if parameters['model']['strat']:

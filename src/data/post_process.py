@@ -78,5 +78,7 @@ def folder_for(parameters):
         folder += '_norm' + str(norm-1)
     if parameters['model']['one-hot-encoding']:
         folder += '_hot_encode'
+    if parameters['data_preparation']['deep_shuffle_enabled'] or parameters['data_preparation']['deep_shuffle_enabled']:
+        folder += '_shuffle'
     return folder + '/'
     # @TODO: Case GBC

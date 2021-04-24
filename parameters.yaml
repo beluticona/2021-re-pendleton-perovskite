@@ -8,7 +8,7 @@ model:
   method : 1
   hyperparam-opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
-  cv: 2             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
+  cv: 6             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
       feat: No    # Forces normalization of _feats_*
@@ -26,12 +26,18 @@ dataset:
     solV-chem: No
     solV-exp: No
     solV-reag: No
-    solUD-exp: No
-    solUD-chem: No
-    solUD-reag: No
-    solUD-prop: No
-    solUD-only: No
     solV-only: No
+    solV-feat: No
+    solUD-prop: No
+    solUD-feat-chem: Yes
+    solUD-exp-chem: Yes
+    solUD-feat-exp: Yes
+    solUD-exp: Yes
+    solUD-chem: Yes
+    solUD-reag: Yes
+    solUD-feat: Yes
+    solUD-only: Yes
     chem-only: Yes
     reag-only: Yes
     exp-only: Yes
+    feat-only: Yes

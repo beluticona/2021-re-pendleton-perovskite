@@ -10,7 +10,7 @@ LOO = 2
 # Solution volume
 SOLV_MODEL = 1
 SOLUD_MODEL = 2
-NO_MODEL = 3
+NO_MODEL = 0
 
 FEAT_VALUES_IMPORTANCE = 'feats_importance_values'
 FEAT_NAMES_IMPORTANCE = 'feats_names_by_importance'
