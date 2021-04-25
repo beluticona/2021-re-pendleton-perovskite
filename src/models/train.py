@@ -100,6 +100,7 @@ def cross_validate_fit_predict(scores, model_parameters, data_columns, results, 
     for i in range(folds):
         results['data_index'].append(dataset_name)
         results['cv'].append(i)
+        results['sample_fraction'].append(model_parameters['sample_fraction'])
         for metric in metrics_by_name.keys():
             results[metric].append(metrics_by_name[metric][i])
 

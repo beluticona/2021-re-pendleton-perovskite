@@ -1,4 +1,6 @@
-from src.data import utils, post_process
+
+from src.data import utils
+from src.data import post_process
 from src.models import train
 from src.models import utils as model_utils
 from src.constants import SOLV_MODEL, SOLUD_MODEL, NO_MODEL
@@ -79,7 +81,7 @@ def detect_type_dataset(dataset_name):
     return type_sol, 'feat' in dataset_name, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
-def process_dataset(df, parameters):
+def process_dataset(df, parameters, full_results, interpolate, extrapolate):
     inchis = df['_rxn_organic-inchikey']
 
     # binary class
@@ -87,8 +89,6 @@ def process_dataset(df, parameters):
     crystal_score = (crystal_score == 4).astype(int)
 
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
-
-    full_results, interpolate, extrapolate = model_utils.create_results_container(parameters)
 
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
@@ -111,8 +111,8 @@ def process_dataset(df, parameters):
         if extrapolate:
             train.leave_one_out_train_test(selected_data, parameters['model'], crystal_score, dataset_name, inchis, full_results['loo'])
 
-        print('Complete: dataset '+ dataset_name + 'all')
-    post_process.save_results(full_results, parameters)
+        print('Complete: dataset '+ dataset_name + 'all' + str(parameters['model']['sample_fraction']))
+    
 
 
     '''

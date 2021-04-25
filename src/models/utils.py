@@ -85,6 +85,7 @@ def create_results_container(parameters):
 def result_container():
     std_results = {
         'data_index': [],
+        'sample_fraction': [],
         'cv': [],
         'precision_positive': [],
         'recall_positive': [],
