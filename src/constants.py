@@ -4,6 +4,7 @@ GBC = 2
 SVM = 3
 
 # Methods
+VOTING = 0
 STD_CV = 1
 LOO = 2
 

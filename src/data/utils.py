@@ -80,6 +80,7 @@ def filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_e
         extend_with_rxn_columns(df_columns, sol_model_columns, type_sol_volume == 2)
     if reag_extend_enabled:
         sol_model_columns = extend_with_reag_columns(df_columns, sol_model_columns, type_sol_volume == 2)
+    sol_model_columns = list(set(sol_model_columns))
     return df[sol_model_columns].fillna(0).reset_index(drop=True)
 
 

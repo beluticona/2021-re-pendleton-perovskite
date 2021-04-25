@@ -14,12 +14,27 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import make_scorer
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import VotingClassifier
 from src.models import utils
 from src import constants
 
 
+def make_voting_clf():
+    knn = KNeighborsClassifier(algorithm='ball_tree', leaf_size=30, metric='minkowski',
+                                           metric_params=None, n_jobs=3, n_neighbors=1, p=2,
+                                           weights='uniform')
+    gbc = GradientBoostingClassifier(random_state=42)
+    ensemble = VotingClassifier(estimators=[('knn1', knn), ('gbc1', gbc)], voting='hard')
+    return ensemble
+
+
 def make_classifier(model_parameters):
-    if model_parameters['method'] == constants.KNN:
+    param_grid = {'weights': ['uniform', 'distance'],
+                'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                'n_neighbors': range(3, 9, 2)
+                }
+    method = model_parameters['method']
+    if method == constants.KNN:
         if utils.no_feat_scaling(model_parameters):
             if model_parameters['hyperparam-opt']:
                 if model_parameters['one-hot-encoding']:
@@ -53,7 +68,7 @@ def make_classifier(model_parameters):
                           'algorithm': ['ball_tree', 'kd_tree', 'brute'],
                           'n_neighbors': range(3, 9, 2)
                           }
-    elif model_parameters['method'] == constants.GBC:
+    elif method == constants.GBC:
         clf = GradientBoostingClassifier(random_state=42)
         param_grid = {'min_samples_split': range(2, 10, 2),
                       'min_samples_leaf': range(2, 7, 2),
@@ -61,6 +76,8 @@ def make_classifier(model_parameters):
                       'max_depth': range(2, 7),
                       'learning_rate': [0.05, 0.10, 0.15, 0.20]
                       }
+    elif method == constants.VOTING:
+        clf = make_voting_clf()
 
     clf_dict = {'estimator': clf,
                 'opt': model_parameters['hyperparam-opt'],

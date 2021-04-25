@@ -1,7 +1,7 @@
 from src.config import file_name_for
 from src.config import results_path
 from src.config import set_results_folder
-from src.constants import GBC, KNN, FEAT_NAMES_IMPORTANCE, FEAT_VALUES_IMPORTANCE, STD_CV, LOO
+from src.constants import GBC, KNN, VOTING, FEAT_NAMES_IMPORTANCE, FEAT_VALUES_IMPORTANCE, STD_CV, LOO
 import pandas as pd
 import collections
 
@@ -62,6 +62,8 @@ def folder_for(parameters):
         folder += 'knn'
     elif method == GBC:
         folder += 'gbc'
+    elif method == VOTING:
+        folder += 'voting'
     if not parameters['model']['hyperparam-opt']:
         folder += '1'
     norm = sum(value for value in parameters['model']['norm'].values())

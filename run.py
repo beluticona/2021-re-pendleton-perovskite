@@ -18,7 +18,7 @@ with open(parameters_path) as file, open(data_types_path) as json_file:
     # Select reactions where the solvent produced at least a crystal score of 4
     df = pre_process.prepare_full_dataset(df, parameters["data_preparation"])
 
-    sampling_fractions = [round(0.1*n,2) for n in range(1,11)]
+    sampling_fractions = [round(0.1*n,2) for n in range(10,11)]
 
     full_results, interpolate, extrapolate = model_utils.create_results_container(parameters)
 
