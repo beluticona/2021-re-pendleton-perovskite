@@ -6,7 +6,7 @@ data_dir = Path('.')
 data_path = 'data/raw/full-perovskite-data.csv' 
 data_types_path = 'data/raw/types.json'
 parameters_path = 'parameters.yaml'
-results_path = 'results/alternative/ensamble/'
+results_path = 'results/alternative/best_worst20/'
 
 
 def file_name_for(parameters):

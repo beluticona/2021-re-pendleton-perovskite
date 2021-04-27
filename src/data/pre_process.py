@@ -89,11 +89,15 @@ def process_dataset(df, parameters, full_results, interpolate, extrapolate):
     crystal_score = (crystal_score == 4).astype(int)
 
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
-
+    if parameters['fixed-predictors']:
+        requested_datasets = ['selected-predictors']
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
-        type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
-        selected_data = utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
+        if parameters['fixed-predictors']:
+            selected_data = utils.filter_top_worst_cols(df, parameters)
+        else:
+            type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
+            selected_data = utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
         # Preparing data
         if parameters['model']['strat']:

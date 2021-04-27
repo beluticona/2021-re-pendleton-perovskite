@@ -133,3 +133,11 @@ def encode_by_amine_inchi(inchi_keys_to_encode, data, data_columns):
     data = pd.concat([data, hot_df], axis=1)
     return data
 
+
+def filter_top_worst_cols(df, parameters):
+    cols = parameters['col_num_selected']
+    selected_features = constants.features_sorted_by_importance[:cols]
+    if parameters['top-tail'] == 0:
+        tail = len(constants.features_sorted_by_importance)-3*cols
+        selected_features = constants.features_sorted_by_importance[cols*2:-tail]
+    return df[selected_features].fillna(0).reset_index(drop=True)

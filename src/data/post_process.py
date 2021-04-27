@@ -57,6 +57,11 @@ def summarize_results(results_df, validation):
 
 def folder_for(parameters):
     folder = ''
+    if parameters['fixed-predictors']:
+        if parameters['top-tail'] == 1:
+            folder+='best_features'
+        else:
+            folder+='worst_features'
     method = parameters['model']['method']
     if method == KNN:
         folder += 'knn'
