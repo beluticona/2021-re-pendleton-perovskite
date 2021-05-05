@@ -80,12 +80,13 @@ def create_results_container(parameters):
         std_loo['inchi'] = []
         full_results['loo'] = std_loo
 
-    return full_results, parameters['intrpl'], parameters['extrpl']
+    return full_results
 
 def result_container():
     std_results = {
         'data_index': [],
         'sample_fraction': [],
+        'seed': [],
         'cv': [],
         'precision_positive': [],
         'recall_positive': [],

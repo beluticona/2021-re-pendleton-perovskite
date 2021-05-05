@@ -18,14 +18,18 @@ with open(parameters_path) as file, open(data_types_path) as json_file:
     # Select reactions where the solvent produced at least a crystal score of 4
     df = pre_process.prepare_full_dataset(df, parameters["data_preparation"])
 
-    sampling_fractions = [round(0.1*n,2) for n in range(10,11)]
+    sampling_fractions = [round(0.1*n,2) for n in range(2,11)]
 
-    full_results, interpolate, extrapolate = model_utils.create_results_container(parameters)
+    full_results = model_utils.create_results_container(parameters)
 
-    for fraction in sampling_fractions:
-        frac_df = df.groupby('_out_crystalscore').sample(frac=fraction, random_state=2)
-        parameters['model']['sample_fraction'] = fraction 
-        pre_process.process_dataset(frac_df, parameters, full_results, interpolate, extrapolate)
+    random_seeds = [random_seed for random_seed in range(parameters['runs'])]
+
+    for seed in random_seeds:
+        for fraction in sampling_fractions:
+            frac_df = df.groupby('_out_crystalscore').sample(frac=fraction, random_state=seed)
+            parameters['model']['sample_fraction'] = fraction 
+            parameters['model']['seed'] = seed 
+            pre_process.process_dataset(frac_df, parameters, full_results)
 
     post_process.save_results(full_results, parameters)
 

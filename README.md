@@ -38,6 +38,8 @@ Install all packages found by setup. In this case we want src to be importable f
 
     5) RF features importances
 
+    6) seed choose number of runs
+
 ## Subconjuntos de predictotes
 
     SolV                9 sc(3 diff)  + 67 feat -1 = 75 (72 comun)
@@ -50,5 +52,10 @@ Install all packages found by setup. In this case we want src to be importable f
 
     SolV + Reag         123 (7 comun) + 75 - 3 raw_v0M = 195 (79 en comun)
     SolUD + Reag         141 (7 comun) +75 - 3 _rxn_M = 213 (79 en comun)
+
+# to merge:
+    - folder name case GBC
+    - save_results for GBC
+
 
 

@@ -19,11 +19,11 @@ from src.models import utils
 from src import constants
 
 
-def make_voting_clf():
+def make_voting_clf(seed):
     knn = KNeighborsClassifier(algorithm='ball_tree', leaf_size=30, metric='minkowski',
                                            metric_params=None, n_jobs=3, n_neighbors=1, p=2,
                                            weights='uniform')
-    gbc = GradientBoostingClassifier(random_state=42)
+    gbc = GradientBoostingClassifier(random_state=seed)
     ensemble = VotingClassifier(estimators=[('knn1', knn), ('gbc1', gbc)], voting='hard')
     return ensemble
 
@@ -69,7 +69,7 @@ def make_classifier(model_parameters):
                           'n_neighbors': range(3, 9, 2)
                           }
     elif method == constants.GBC:
-        clf = GradientBoostingClassifier(random_state=42)
+        clf = GradientBoostingClassifier(random_state=model_parameters['seed'])
         param_grid = {'min_samples_split': range(2, 10, 2),
                       'min_samples_leaf': range(2, 7, 2),
                       'n_estimators': [100, 500],
@@ -77,7 +77,7 @@ def make_classifier(model_parameters):
                       'learning_rate': [0.05, 0.10, 0.15, 0.20]
                       }
     elif method == constants.VOTING:
-        clf = make_voting_clf()
+        clf = make_voting_clf(model_parameters['seed'])
 
     clf_dict = {'estimator': clf,
                 'opt': model_parameters['hyperparam-opt'],
@@ -118,6 +118,7 @@ def cross_validate_fit_predict(scores, model_parameters, data_columns, results, 
         results['data_index'].append(dataset_name)
         results['cv'].append(i)
         results['sample_fraction'].append(model_parameters['sample_fraction'])
+        results['seed'].append(model_parameters['seed'])
         for metric in metrics_by_name.keys():
             results[metric].append(metrics_by_name[metric][i])
 
@@ -147,7 +148,7 @@ def prepare_features_to_be_sort_by_importance(curated_columns, data_columns, res
     return hold_curated
 
 
-def execute_cross_validation(crystal_score, data, folds, pipeline):
+def execute_cross_validation(crystal_score, data, folds, pipeline, seed):
     scoring = {  # 'tp': make_scorer(tp),
         'precision': 'precision',
         'recall': 'recall',
@@ -157,7 +158,7 @@ def execute_cross_validation(crystal_score, data, folds, pipeline):
         'f1': 'f1'}
     # shuffle batched experimental data into discrete experiments
     scores = cross_validate(pipeline, data, crystal_score,
-                            cv=KFold(folds, shuffle=True, random_state=2),
+                            cv=KFold(folds, shuffle=True, random_state=seed),
                             scoring=scoring,
                             return_train_score=True,
                             return_estimator=True)
@@ -165,7 +166,8 @@ def execute_cross_validation(crystal_score, data, folds, pipeline):
 
 
 def std_train_test(data, model_parameters, crystal_score, dataset_name, results):
-    X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=42)
+    seed = model_parameters['seed']
+    X, X_test, y, y_test = train_test_split(data, crystal_score, test_size=0.2, random_state=seed)
     data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
 
     clf_dict = make_classifier(model_parameters)
@@ -195,7 +197,7 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
 
     else:
         # metrics to track
-        scores = execute_cross_validation(crystal_score, data, model_parameters['cv'], pipeline)
+        scores = execute_cross_validation(crystal_score, data, model_parameters['cv'], pipeline, seed)
         cross_validate_fit_predict(scores, model_parameters, data.columns.to_list(), results, dataset_name,
                                    curated_columns)
 

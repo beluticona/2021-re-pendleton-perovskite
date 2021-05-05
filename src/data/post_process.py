@@ -28,12 +28,16 @@ def save_full_and_summary_for(dict_results, full_results_path, full_result_filen
 
     summarize_results(df_results, validation)
 
-    std = df_results.groupby(['data_index', 'sample_fraction']).std().add_suffix(' std')
-    min_results = df_results.groupby(['data_index', 'sample_fraction']).min().add_suffix(' min')
-    max_results = df_results.groupby(['data_index', 'sample_fraction']).max().add_suffix(' max')
-    summary = df_results.groupby(['data_index', 'sample_fraction']).mean().add_suffix(' mean')
+    cols_to_group_by = ['data_index', 'sample_fraction', 'seed']
 
-    summary = summary.join(std).join(min_results).join(max_results)
+    std = df_results.groupby(cols_to_group_by).std().add_suffix(' std')
+    min_results = df_results.groupby(cols_to_group_by).min().add_suffix(' min')
+    max_results = df_results.groupby(cols_to_group_by).max().add_suffix(' max')
+    summary = df_results.groupby(cols_to_group_by).mean().add_suffix(' mean')
+
+    summary = summary.join(std).join(min_results).join(max_results).reset_index()
+
+    summary = summary.groupby(['data_index', 'sample_fraction']).mean().drop('seed', axis=1)
 
     summary.to_csv(full_results_path + summary_filename)
 
@@ -59,9 +63,9 @@ def folder_for(parameters):
     folder = ''
     if parameters['fixed-predictors']:
         if parameters['top-tail'] == 1:
-            folder+='best_features'
+            folder+='best_features-'
         else:
-            folder+='worst_features'
+            folder+='worst_features-'
     method = parameters['model']['method']
     if method == KNN:
         folder += 'knn'

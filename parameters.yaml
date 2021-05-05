@@ -5,10 +5,10 @@ data_preparation:
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 model:
-  method : 1
-  hyperparam-opt : No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
+  method: 2
+  hyperparam-opt: No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
-  cv: 6             # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
+  cv: 6            # Number of cross validation folds (For all data) after hyperparameter tuning                     ## See line approx 747 for more gridsearchCV cv values
 # Enable only norm or std (not both at the same time... makes no sense) any combination of norm0-2 is fine same with std0-2
   norm:
       feat: No    # Forces normalization of _feats_*
@@ -29,15 +29,21 @@ dataset:
     solV-only: No
     solV-feat: No
     solUD-prop: No
-    solUD-feat-chem: Yes
-    solUD-exp-chem: Yes
-    solUD-feat-exp: Yes
-    solUD-exp: Yes
+    solUD-feat-chem:  Yes
+    solUD-exp-chem: No
+    solUD-feat-exp: No
+    solUD-exp: No
     solUD-chem: Yes
-    solUD-reag: Yes
+    solUD-reag: No
     solUD-feat: Yes
     solUD-only: Yes
     chem-only: Yes
-    reag-only: Yes
-    exp-only: Yes
+    reag-only: No
+    exp-only: No
     feat-only: Yes
+    solUD-feat-chem-exp: No
+
+runs: 10
+fixed-predictors: No
+col_num_selected: 20
+top-tail: 1

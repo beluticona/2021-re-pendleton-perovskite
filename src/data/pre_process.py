@@ -81,7 +81,8 @@ def detect_type_dataset(dataset_name):
     return type_sol, 'feat' in dataset_name, 'chem' in dataset_name, 'exp' in dataset_name, 'reag' in dataset_name
 
 
-def process_dataset(df, parameters, full_results, interpolate, extrapolate):
+def process_dataset(df, parameters, full_results):
+    interpolate, extrapolate = parameters['intrpl'], parameters['extrpl']
     inchis = df['_rxn_organic-inchikey']
 
     # binary class
