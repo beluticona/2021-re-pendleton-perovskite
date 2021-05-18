@@ -10,8 +10,12 @@ numpy = "*"
 src = {editable = true, path = "."}
 pyyaml = "*"
 sklearn = "*"
+seaborn = "*"
+plotly = "*"
+chart-studio = "*"
 
 [dev-packages]
+rope = "*"
 
 [requires]
 python_version = "3.6"
