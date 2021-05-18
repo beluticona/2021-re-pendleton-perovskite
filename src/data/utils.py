@@ -1,8 +1,9 @@
+from sklearn.preprocessing import OneHotEncoder
+from src import constants
+from src.constants import experiment_version, GBL_inchi_key, dimethyl_ammonium_inchi_key
 import pandas as pd
 import numpy as np
 import re
-from sklearn.preprocessing import OneHotEncoder
-from src import constants
 
 
 def get_sol_ud_model_columns(df_columns):
@@ -141,3 +142,13 @@ def filter_top_worst_cols(df, parameters):
         tail = len(constants.features_sorted_by_importance)-3*cols
         selected_features = constants.features_sorted_by_importance[cols*2:-tail]
     return df[selected_features].fillna(0).reset_index(drop=True)
+
+
+def select_experiment_version_and_used_solvent(df):
+    df.query('_raw_ExpVer == @experiment_version', inplace=True)
+
+    # Select reactions where only GBL is used as solvent 
+    df.query('_raw_reagent_0_chemicals_0_InChIKey == @GBL_inchi_key', inplace=True)
+
+    # Remove some anomalous entries with dimethyl ammonium still listed as the organic. 
+    df.query('_raw_reagent_0_chemicals_0_InChIKey != @dimethyl_ammonium_inchi_key', inplace=True)

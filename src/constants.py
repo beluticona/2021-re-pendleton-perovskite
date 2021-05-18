@@ -16,6 +16,13 @@ NO_MODEL = 0
 FEAT_VALUES_IMPORTANCE = 'feats_importance_values'
 FEAT_NAMES_IMPORTANCE = 'feats_names_by_importance'
 
+# Data pre-process
+experiment_version = 1.1
+
+GBL_inchi_key = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
+
+dimethyl_ammonium_inchi_key = 'MXLWMIFDJCGBV-UHFFFAOYSA-N'
+
 # Dictionary from inchi key to its chemical name
 INCHI_TO_CHEMNAME = {'null': 'null',
                      'YEJRWHAVMIAJKC-UHFFFAOYSA-N': 'Gamma-Butyrolactone',

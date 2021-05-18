@@ -1,5 +1,5 @@
 
-from src.data import utils
+from src.data import utils as data_utils
 from src.data import post_process
 from src.models import train
 from src.models import utils as model_utils
@@ -7,11 +7,6 @@ from src.constants import SOLV_MODEL, SOLUD_MODEL, NO_MODEL
 import numpy as np
 import pandas as pd
 
-experiment_version = 1.1
-
-GBL_inchi_key = 'YEJRWHAVMIAJKC-UHFFFAOYSA-N'
-
-dimethyl_ammonium_inchi_key = 'MXLWMIFDJCGBV-UHFFFAOYSA-N'
 
 def shuffle(df):
     """Generate a non sense data set:
@@ -41,13 +36,7 @@ def deep_shuffle(df):
 
 def prepare_full_dataset(df, data_preparation):
     # Select data from version 1.1
-    df.query('_raw_ExpVer == @experiment_version', inplace=True)
-
-    # Select reactions where only GBL is used as solvent 
-    df.query('_raw_reagent_0_chemicals_0_InChIKey == @GBL_inchi_key', inplace=True)
-
-    # Remove some anomalous entries with dimethyl ammonium still listed as the organic. 
-    df.query('_raw_reagent_0_chemicals_0_InChIKey != @dimethyl_ammonium_inchi_key', inplace=True)
+    data_utils.select_experiment_version_and_used_solvent(df)
 
     """DECISION FUERTE, POR QUÉ NO CONSIDERAR LOS QUE TENGAN 3? Borra los que tienen 0
      Collect inches of solvents that had at least a successful crystal
@@ -71,7 +60,6 @@ def prepare_full_dataset(df, data_preparation):
 
     return df
 
-
 def detect_type_dataset(dataset_name):
     type_sol = NO_MODEL
     if 'solV' in dataset_name:
@@ -85,9 +73,13 @@ def process_dataset(df, parameters, full_results):
     interpolate, extrapolate = parameters['intrpl'], parameters['extrpl']
     inchis = df['_rxn_organic-inchikey']
 
-    # binary class
+    # Binary class
     crystal_score = df['_out_crystalscore']
     crystal_score = (crystal_score == 4).astype(int)
+    df['_out_crystalscore'] = crystal_score
+
+    # Split train & test
+    X, X_test, y, y_test = train.train_test_split(df, crystal_score, test_size=0.2, random_state=seed)
 
     requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
     if parameters['fixed-predictors']:
@@ -95,17 +87,17 @@ def process_dataset(df, parameters, full_results):
     # for each dataset, train and predict considering parameters
     for dataset_name in requested_datasets:
         if parameters['fixed-predictors']:
-            selected_data = utils.filter_top_worst_cols(df, parameters)
+            selected_data = data_utils.filter_top_worst_cols(df, parameters)
         else:
             type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
-            selected_data = utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
+            selected_data = data_utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
 
         # Preparing data
         if parameters['model']['strat']:
-            selected_data, crystal_score = utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
+            selected_data, crystal_score = data_utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
 
         if parameters['model']['one-hot-encoding']:
-            selected_data = utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)
+            selected_data = data_utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)
 
         # Processing data
         if interpolate:
@@ -130,3 +122,4 @@ def process_dataset(df, parameters, full_results):
 
 
     '''
+

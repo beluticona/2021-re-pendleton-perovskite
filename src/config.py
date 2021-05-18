@@ -2,11 +2,12 @@
 
 from pathlib import Path
 
-data_dir = Path('.')
-data_path = 'data/raw/full-perovskite-data.csv' 
-data_types_path = 'data/raw/types.json'
-parameters_path = 'parameters.yaml'
-results_path = 'results/alternative/cant_exp_seed/'
+data_dir = Path('./')
+data_path = data_dir / 'data/raw/full-perovskite-data.csv' 
+data_types_path = data_dir / 'data/raw/types.json'
+parameters_path = data_dir / 'parameters.yaml'
+results_path = data_dir / 'results/alternative/cant_exp_seed/'
+notebook_path = data_dir /'notebooks/results/'
 
 
 def file_name_for(parameters):
