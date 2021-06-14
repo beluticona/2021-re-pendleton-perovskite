@@ -35,8 +35,6 @@ def deep_shuffle(df):
 
 
 def prepare_full_dataset(df, data_preparation):
-    # Select data from version 1.1
-    data_utils.select_experiment_version_and_used_solvent(df)
 
     """DECISION FUERTE, POR QUÉ NO CONSIDERAR LOS QUE TENGAN 3? Borra los que tienen 0
      Collect inches of solvents that had at least a successful crystal
@@ -60,7 +58,8 @@ def prepare_full_dataset(df, data_preparation):
 
     return df
 
-def detect_type_dataset(dataset_name):
+
+def get_predictors_types(dataset_name):
     type_sol = NO_MODEL
     if 'solV' in dataset_name:
         type_sol = SOLV_MODEL 
@@ -78,23 +77,26 @@ def process_dataset(df, parameters, full_results):
     crystal_score = (crystal_score == 4).astype(int)
     df['_out_crystalscore'] = crystal_score
 
-    # Split train & test
-    X, X_test, y, y_test = train.train_test_split(df, crystal_score, test_size=0.2, random_state=seed)
+    # Preparing data
+    if parameters['model']['strat']:
+        #TODO: solo pasar df, tomar max cant de distintos inchikeys
+        selected_data, crystal_score = data_utils.stratify(df, crystal_score, df['_rxn_organic-inchikey'].values)
 
-    requested_datasets = [dataset_name for (dataset_name, required) in parameters["dataset"].items() if required]
+    # Split train & test
+    #X, X_test, y, y_test = train.train_test_split(df, crystal_score, test_size=0.2, random_state=parameters['model']['seed'])
+
+    # Select predictors combinations to run  
+    selected_predictors_combinations = [predictors_combination for (predictors_combination, required) in parameters["dataset"].items() if required]
     if parameters['fixed-predictors']:
-        requested_datasets = ['selected-predictors']
-    # for each dataset, train and predict considering parameters
-    for dataset_name in requested_datasets:
+        selected_predictors_combinations = ['selected-predictors']
+
+    # for each combination, train and predict considering parameters
+    for dataset_name in selected_predictors_combinations:
         if parameters['fixed-predictors']:
             selected_data = data_utils.filter_top_worst_cols(df, parameters)
         else:
-            type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = detect_type_dataset(dataset_name)
+            type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled = get_predictors_types(dataset_name)
             selected_data = data_utils.filter_required_data(df, type_sol_volume, feat_extend_enabled, chem_extend_enabled, exp_extend_enabled, reag_extend_enabled)
-
-        # Preparing data
-        if parameters['model']['strat']:
-            selected_data, crystal_score = data_utils.stratify(selected_data, crystal_score, df['_rxn_organic-inchikey'].values)
 
         if parameters['model']['one-hot-encoding']:
             selected_data = data_utils.encode_by_amine_inchi(df[['_rxn_organic-inchikey']], selected_data, df.columns)

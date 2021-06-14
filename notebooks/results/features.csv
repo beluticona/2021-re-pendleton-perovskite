@@ -1,0 +1,2707 @@
+feats_importance_values,feats_names_by_importance
+"[0.22842081 0.18604353 0.17251794 0.1607025  0.02889141 0.02535146
+ 0.016499   0.01644982 0.01578197 0.01251689 0.01094054 0.01090473
+ 0.00957372 0.00926739 0.0089192  0.00793859 0.00670298 0.00636143
+ 0.00625854 0.00622692 0.00614402 0.00580205 0.00554874 0.00485705
+ 0.0045371  0.00344753 0.00325271 0.00319542 0.00306115 0.00221543
+ 0.00201742 0.00194175 0.00128986 0.00124497 0.00105296 0.00102827
+ 0.00074791 0.00056178 0.00054996 0.00048793 0.00039275 0.00035386
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.        ]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionArea'
+ '_feat_MinimalProjectionRadius' '_feat_ChainAtomCount'
+ '_feat_Aliphatic AtomCount' '_feat_AliphaticRingCount' '_feat_ASA_H'
+ '_feat_Accsitecount' '_feat_AvgPol' '_feat_MolPol' '_feat_AtomCount_N'
+ '_feat_Refractivity' '_feat_minimalprojectionsize' '_feat_ASA_P'
+ '_feat_msareaASAp' '_feat_fr_amidine' '_rxn_temperatureC_actual_bulk'
+ '_feat_molsurfaceareaVDWp' '_feat_VanderWaalsVolume'
+ '_feat_maximalprojectionsize' '_feat_ASA+' '_feat_HyperWienerIndex'
+ '_feat_molsurfaceareaASAp' '_feat_AtomCount_C' '_feat_msareaVDWp'
+ '_feat_fr_NH2' '_feat_MaximalProjectionRadius' '_feat_Hacceptorcount'
+ '_feat_ProtPolarSurfaceArea' '_feat_VanderWaalsSurfaceArea'
+ '_feat_HeteroaliphaticRingCount' '_feat_CyclomaticNumber'
+ '_feat_LargestRingSize' '_feat_MaximalProjectionArea'
+ '_feat_donsitecount' '_feat_SmallestRingSize' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_feat_WienerPolarity' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_Protpsa' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.26817202e-01 2.09639989e-01 1.63145387e-01 1.43633611e-01
+ 2.57521306e-02 2.23723186e-02 2.20762464e-02 2.01025763e-02
+ 1.76165411e-02 1.65401719e-02 1.47580480e-02 1.18347673e-02
+ 1.09879708e-02 1.04867929e-02 1.04422734e-02 9.29475987e-03
+ 9.18757061e-03 8.87879122e-03 6.81024279e-03 5.85968125e-03
+ 5.33053013e-03 5.00782141e-03 3.81138234e-03 3.44966568e-03
+ 2.56542229e-03 2.10532788e-03 1.64271780e-03 1.45500104e-03
+ 1.16050905e-03 9.24051218e-04 8.68608210e-04 8.39236339e-04
+ 7.61915466e-04 6.88910792e-04 6.34579989e-04 6.02638552e-04
+ 5.99298121e-04 4.62924804e-04 2.98148336e-04 2.67477053e-04
+ 1.71920200e-04 9.34989851e-05 2.13432645e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_P' '_feat_minimalprojectionsize'
+ '_feat_Aliphatic AtomCount' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_MinimalProjectionRadius'
+ '_rxn_temperatureC_actual_bulk' '_feat_MinimalProjectionArea'
+ '_feat_ASA_H' '_feat_Accsitecount' '_feat_AliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_MolPol' '_feat_maximalprojectionsize'
+ '_feat_fr_amidine' '_feat_molsurfaceareaASAp' '_feat_AtomCount_C'
+ '_feat_msareaVDWp' '_feat_AvgPol' '_feat_HeteroaliphaticRingCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_ASA+'
+ '_feat_VanderWaalsSurfaceArea' '_feat_fr_NH2'
+ '_feat_ProtPolarSurfaceArea' '_feat_msareaASAp' '_feat_Refractivity'
+ '_feat_RotatableBondCount' '_feat_MaximalProjectionArea' '_feat_fr_NH0'
+ '_feat_molsurfaceareaVDWp' '_feat_donorcount' '_feat_WienerPolarity'
+ '_feat_PolarSurfaceArea' '_feat_fr_NH1' '_feat_HyperWienerIndex'
+ '_feat_Protpsa' '_rxn_mixingtime1S' '_feat_Hdonorcount'
+ '_feat_ChiralCenterCount' '_feat_donsitecount' '_feat_AromaticAtomCount'
+ '_feat_HeteroaromaticRing Count' '_feat_fr_ArN' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_feat_acceptorcount'
+ '_rxn_mixingtime2S' '_rxn_stirrateRPM' '_rxn_reactiontimeS'
+ '_feat_AtomCount_N' '_feat_SmallestRingSize' '_feat_Hacceptorcount'
+ '_feat_CarboRingCount' '_feat_VanderWaalsVolume' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_CyclomaticNumber' '_feat_fr_guanido'
+ '_feat_fr_quatN' '_feat_LargestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_AromaticRingCount'
+ '_feat_BondCount' '_feat_CarboaromaticRingCount' '_feat_fr_Ar_NH']"
+"[2.23563984e-01 1.93830753e-01 1.62923154e-01 1.43284906e-01
+ 3.02937529e-02 2.71354771e-02 2.62018987e-02 2.18077042e-02
+ 2.13896721e-02 1.93275675e-02 1.84291837e-02 1.45998528e-02
+ 1.30796128e-02 1.00439095e-02 9.87055066e-03 9.71877870e-03
+ 7.74616106e-03 6.75056801e-03 4.44146174e-03 4.35812111e-03
+ 3.69169448e-03 3.54194099e-03 3.27216398e-03 3.18759594e-03
+ 3.11490652e-03 2.65240312e-03 1.99249255e-03 1.87784016e-03
+ 1.47703991e-03 1.36280014e-03 1.31863106e-03 9.22564784e-04
+ 8.04371657e-04 6.01469880e-04 4.87992680e-04 4.85846796e-04
+ 3.99889843e-04 1.12855538e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_BalabanIndex'
+ '_feat_CarboaliphaticRingCount' '_feat_Aliphatic AtomCount'
+ '_feat_maximalprojectionsize' '_feat_ASA_P' '_feat_ASA_H'
+ '_feat_MinimalProjectionArea' '_feat_ChainAtomCount' '_feat_ASA'
+ '_feat_MinimalProjectionRadius' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_Accsitecount' '_rxn_temperatureC_actual_bulk'
+ '_feat_VanderWaalsVolume' '_feat_MolPol' '_feat_AtomCount_C'
+ '_feat_fr_amidine' '_feat_msareaVDWp' '_feat_AliphaticRingCount'
+ '_feat_msareaASAp' '_feat_molsurfaceareaVDWp' '_feat_molsurfaceareaASAp'
+ '_feat_AvgPol' '_feat_Refractivity' '_feat_donorcount'
+ '_feat_minimalprojectionsize' '_feat_MaximalProjectionArea'
+ '_feat_MaximalProjectionRadius' '_feat_WienerPolarity'
+ '_feat_VanderWaalsSurfaceArea' '_feat_ASA+' '_feat_Hacceptorcount'
+ '_feat_PolarSurfaceArea' '_feat_donsitecount' '_feat_SmallestRingSize'
+ '_feat_Hdonorcount' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_HeteroaromaticRing Count'
+ '_feat_acceptorcount' '_rxn_mixingtime2S' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_rxn_stirrateRPM'
+ '_feat_ProtPolarSurfaceArea' '_rxn_reactiontimeS'
+ '_feat_HeteroaliphaticRingCount' '_feat_LargestRingSize'
+ '_feat_CyclomaticNumber' '_feat_fr_NH2' '_feat_RingAtomCount'
+ '_feat_WienerIndex' '_feat_HyperWienerIndex' '_feat_BondCount'
+ '_feat_Protpsa' '_rxn_mixingtime1S' '_feat_fr_dihydropyridine'
+ '_feat_CarboaromaticRingCount' '_feat_fr_piperzine'
+ '_feat_CarboRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_NH0' '_feat_fr_ArN' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_NH1' '_feat_fr_Ar_NH']"
+"[2.28278260e-01 2.20237248e-01 1.55120340e-01 1.50187124e-01
+ 2.76369296e-02 1.96368758e-02 1.86834023e-02 1.85106647e-02
+ 1.84277121e-02 1.61732358e-02 1.44416665e-02 1.27115876e-02
+ 1.10565208e-02 1.10211015e-02 9.47390729e-03 7.81261064e-03
+ 6.49438170e-03 6.48332910e-03 5.79753076e-03 5.20082380e-03
+ 4.57967720e-03 4.57211121e-03 2.86572195e-03 2.73586685e-03
+ 2.69638664e-03 2.40724705e-03 2.01173119e-03 1.99993133e-03
+ 1.67337620e-03 1.46547054e-03 1.46526384e-03 1.41981414e-03
+ 1.34759784e-03 1.14671389e-03 1.02254039e-03 9.49701133e-04
+ 7.12067601e-04 6.32063297e-04 2.75786397e-04 2.56547128e-04
+ 2.26176691e-04 1.52955406e-04 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_MinimalProjectionRadius' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Aliphatic AtomCount'
+ '_feat_minimalprojectionsize' '_feat_ASA_P' '_feat_MinimalProjectionArea'
+ '_feat_Refractivity' '_feat_ASA_H' '_rxn_temperatureC_actual_bulk'
+ '_feat_Accsitecount' '_feat_VanderWaalsSurfaceArea' '_feat_fr_amidine'
+ '_feat_MolPol' '_feat_AtomCount_C' '_feat_ASA+'
+ '_feat_AliphaticRingCount' '_feat_fr_guanido' '_feat_Protpsa'
+ '_feat_molsurfaceareaASAp' '_feat_MaximalProjectionRadius'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_msareaVDWp'
+ '_feat_maximalprojectionsize' '_feat_msareaASAp'
+ '_feat_molsurfaceareaVDWp' '_feat_WienerIndex' '_feat_fr_NH1'
+ '_feat_WienerPolarity' '_feat_fr_NH2' '_feat_AvgPol' '_feat_donorcount'
+ '_feat_VanderWaalsVolume' '_feat_HyperWienerIndex' '_feat_donsitecount'
+ '_rxn_mixingtime2S' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_HeteroaromaticRing Count' '_feat_AromaticAtomCount'
+ '_feat_acceptorcount' '_feat_fr_piperdine' '_feat_Hacceptorcount'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_rxn_stirrateRPM'
+ '_feat_ProtPolarSurfaceArea' '_feat_MaximalProjectionArea'
+ '_rxn_reactiontimeS' '_feat_Hdonorcount' '_feat_PolarSurfaceArea'
+ '_feat_CarboaromaticRingCount' '_feat_fr_quatN' '_rxn_mixingtime1S'
+ '_feat_BondCount' '_feat_AromaticRingCount' '_feat_RotatableBondCount'
+ '_feat_RingAtomCount' '_feat_LargestRingSize' '_feat_fr_dihydropyridine'
+ '_feat_SmallestRingSize' '_feat_fr_piperzine' '_feat_CarboRingCount'
+ '_feat_fr_NH0' '_feat_CyclomaticNumber' '_feat_fr_ArN'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_Ar_NH']"
+"[2.22716525e-01 2.01786642e-01 1.62002408e-01 1.43056376e-01
+ 3.38947411e-02 2.49767444e-02 2.24845252e-02 1.95902563e-02
+ 1.84202838e-02 1.75210416e-02 1.63620433e-02 1.19521217e-02
+ 1.03970095e-02 9.59630445e-03 8.52033392e-03 8.11477153e-03
+ 7.81214594e-03 7.26678102e-03 6.53369586e-03 6.16819539e-03
+ 4.70582246e-03 4.60558122e-03 3.30475044e-03 3.30177784e-03
+ 3.28198136e-03 2.83838710e-03 2.70545817e-03 2.29108386e-03
+ 2.01026745e-03 1.63243381e-03 1.52227027e-03 1.33039669e-03
+ 9.98092494e-04 9.16115904e-04 8.92672302e-04 7.90295852e-04
+ 7.66466976e-04 7.47700152e-04 5.18600986e-04 4.47333024e-04
+ 3.76004531e-04 3.24922484e-04 2.75747005e-04 2.39524618e-04
+ 3.36722786e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_maximalprojectionsize'
+ '_feat_MinimalProjectionArea' '_feat_ASA_H' '_feat_fr_NH2'
+ '_feat_MinimalProjectionRadius' '_feat_Accsitecount' '_feat_ASA_P'
+ '_feat_msareaASAp' '_feat_ChainAtomCount' '_rxn_temperatureC_actual_bulk'
+ '_feat_minimalprojectionsize' '_feat_Refractivity'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_AtomCount_C'
+ '_feat_molsurfaceareaASAp' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_VanderWaalsSurfaceArea' '_feat_AvgPol' '_feat_molsurfaceareaVDWp'
+ '_feat_acceptorcount' '_feat_MaximalProjectionArea' '_feat_fr_quatN'
+ '_feat_fr_amidine' '_feat_MaximalProjectionRadius'
+ '_feat_VanderWaalsVolume' '_feat_MolPol' '_feat_AtomCount_N'
+ '_feat_HeteroaliphaticRingCount' '_feat_ASA+' '_feat_msareaVDWp'
+ '_feat_donorcount' '_feat_donsitecount' '_feat_AliphaticRingCount'
+ '_feat_Hdonorcount' '_feat_HyperWienerIndex' '_feat_ProtPolarSurfaceArea'
+ '_feat_PolarSurfaceArea' '_rxn_mixingtime1S' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_HeteroaromaticRing Count'
+ '_feat_fr_piperdine' '_feat_Hacceptorcount' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_rxn_mixingtime2S' '_rxn_stirrateRPM'
+ '_rxn_reactiontimeS' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_CarboaromaticRingCount' '_feat_Protpsa' '_feat_BondCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_WienerIndex'
+ '_feat_RingAtomCount' '_feat_LargestRingSize' '_feat_fr_guanido'
+ '_feat_SmallestRingSize' '_feat_fr_NH1' '_feat_fr_dihydropyridine'
+ '_feat_WienerPolarity' '_feat_CyclomaticNumber' '_feat_fr_piperzine'
+ '_feat_CarboRingCount' '_feat_fr_Ar_NH']"
+"[0.22017975 0.19636501 0.15614056 0.14397895 0.03869065 0.02067219
+ 0.01998842 0.01832186 0.01740466 0.01683612 0.016042   0.01511522
+ 0.01374229 0.01260042 0.01229634 0.01227414 0.01204308 0.01156104
+ 0.00530889 0.00449437 0.00448796 0.00408989 0.00363387 0.00356301
+ 0.00330015 0.0027638  0.0023088  0.00188274 0.00155875 0.00152112
+ 0.00147519 0.00120588 0.00076428 0.00059403 0.00057978 0.00046125
+ 0.00044013 0.00040579 0.00036384 0.00027479 0.00026898 0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.        ]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_H' '_feat_maximalprojectionsize'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_CarboaliphaticRingCount'
+ '_feat_MinimalProjectionArea' '_feat_ChainAtomCount'
+ '_feat_Aliphatic AtomCount' '_feat_ASA' '_feat_AliphaticRingCount'
+ '_feat_ASA_P' '_feat_MinimalProjectionRadius' '_feat_Accsitecount'
+ '_feat_fr_amidine' '_feat_ASA+' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_C' '_feat_MaximalProjectionRadius' '_feat_Refractivity'
+ '_feat_VanderWaalsSurfaceArea' '_feat_molsurfaceareaVDWp'
+ '_feat_msareaASAp' '_feat_molsurfaceareaASAp'
+ '_feat_HeteroaliphaticRingCount' '_feat_HyperWienerIndex' '_feat_Protpsa'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_Imine' '_feat_WienerPolarity'
+ '_feat_VanderWaalsVolume' '_feat_msareaVDWp'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Hdonorcount'
+ '_feat_MolPol' '_feat_minimalprojectionsize' '_feat_fr_NH1'
+ '_feat_AvgPol' '_feat_Hacceptorcount' '_feat_AromaticAtomCount'
+ '_feat_ChiralCenterCount' '_feat_fr_piperdine' '_feat_SmallestRingSize'
+ '_feat_MaximalProjectionArea' '_feat_donsitecount' '_feat_AtomCount_N'
+ '_feat_fr_pyridine' '_feat_CyclomaticNumber' '_feat_donorcount'
+ '_feat_fr_NH2' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_CarboRingCount' '_feat_fr_dihydropyridine'
+ '_feat_fr_guanido' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_WienerIndex' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.29125683e-01 2.09022207e-01 1.40957514e-01 1.40931617e-01
+ 3.34744808e-02 2.78440700e-02 2.32550207e-02 2.03873809e-02
+ 1.85687788e-02 1.56949170e-02 1.26458395e-02 1.17041358e-02
+ 1.15049612e-02 1.10069656e-02 8.66985181e-03 8.15125916e-03
+ 8.11072234e-03 7.57309026e-03 6.80389955e-03 5.89524042e-03
+ 5.26927475e-03 5.17931624e-03 5.16127208e-03 4.37484805e-03
+ 3.43157589e-03 3.40294327e-03 3.03925309e-03 2.85423850e-03
+ 2.50452257e-03 1.98486188e-03 1.58822664e-03 1.57939685e-03
+ 1.51144712e-03 1.32591365e-03 1.26873150e-03 1.23455959e-03
+ 1.13764889e-03 6.02862564e-04 5.56283855e-04 4.03549630e-04
+ 2.52027941e-04 9.61132817e-06 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_ASA_P' '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_H'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ChainAtomCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_minimalprojectionsize' '_feat_ASA'
+ '_feat_MinimalProjectionRadius' '_feat_MinimalProjectionArea'
+ '_feat_maximalprojectionsize' '_feat_AvgPol' '_feat_msareaVDWp'
+ '_feat_Accsitecount' '_feat_MaximalProjectionArea' '_feat_fr_guanido'
+ '_feat_fr_amidine' '_feat_AtomCount_N' '_feat_BondCount'
+ '_feat_VanderWaalsSurfaceArea' '_feat_molsurfaceareaASAp' '_feat_ASA+'
+ '_feat_AliphaticRingCount' '_feat_WienerIndex' '_feat_AtomCount_C'
+ '_feat_fr_Imine' '_feat_MaximalProjectionRadius' '_feat_Refractivity'
+ '_feat_Protpsa' '_feat_HeteroaliphaticRingCount'
+ '_feat_molsurfaceareaVDWp' '_feat_WienerPolarity' '_feat_msareaASAp'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_HyperWienerIndex'
+ '_feat_donorcount' '_feat_CarboaromaticRingCount' '_feat_fr_ArN'
+ '_feat_MolPol' '_rxn_reactiontimeS' '_feat_ProtPolarSurfaceArea'
+ '_rxn_stirrateRPM' '_feat_fr_pyridine' '_rxn_mixingtime2S'
+ '_feat_fr_piperdine' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_AromaticAtomCount'
+ '_feat_Hdonorcount' '_feat_donsitecount' '_feat_ChiralCenterCount'
+ '_feat_PolarSurfaceArea' '_feat_Hacceptorcount' '_feat_AromaticRingCount'
+ '_feat_fr_NH0' '_feat_SmallestRingSize' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_CyclomaticNumber' '_feat_fr_dihydropyridine'
+ '_feat_fr_NH2' '_feat_fr_NH1' '_feat_LargestRingSize' '_feat_fr_quatN'
+ '_feat_RingAtomCount' '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[2.21410690e-01 2.10989290e-01 1.66968087e-01 1.44791997e-01
+ 4.14398619e-02 2.44455943e-02 2.43544562e-02 2.18905768e-02
+ 1.82100545e-02 1.69028141e-02 1.40684965e-02 1.32738935e-02
+ 1.00759604e-02 9.09884653e-03 7.36184430e-03 6.08056448e-03
+ 6.05571560e-03 5.88547107e-03 5.33022871e-03 4.73884824e-03
+ 3.74553662e-03 3.66230775e-03 2.89649581e-03 2.76492636e-03
+ 2.21777019e-03 2.19544132e-03 1.76424308e-03 1.22600289e-03
+ 1.14140288e-03 7.52074128e-04 5.54030312e-04 5.10556360e-04
+ 4.75020804e-04 4.40487170e-04 4.07423143e-04 3.43318507e-04
+ 3.26056343e-04 3.17955804e-04 2.52119215e-04 2.46937809e-04
+ 1.84081381e-04 1.14517388e-04 8.80027965e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_P' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_MinimalProjectionArea' '_feat_ASA'
+ '_feat_fr_amidine' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Accsitecount' '_feat_ASA_H' '_feat_ChainAtomCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_molsurfaceareaVDWp'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionRadius'
+ '_feat_MolPol' '_feat_VanderWaalsSurfaceArea'
+ '_feat_maximalprojectionsize' '_feat_msareaVDWp'
+ '_feat_minimalprojectionsize' '_feat_VanderWaalsVolume'
+ '_feat_AliphaticRingCount' '_feat_ASA+' '_feat_MaximalProjectionArea'
+ '_feat_WienerIndex' '_feat_AvgPol' '_feat_MaximalProjectionRadius'
+ '_feat_ProtPolarSurfaceArea' '_feat_BondCount' '_feat_fr_NH0'
+ '_feat_donsitecount' '_feat_Hacceptorcount' '_feat_acceptorcount'
+ '_feat_Protpsa' '_feat_HeteroaliphaticRingCount' '_feat_WienerPolarity'
+ '_feat_Refractivity' '_feat_molsurfaceareaASAp' '_feat_LargestRingSize'
+ '_feat_ChiralCenterCount' '_feat_AtomCount_N' '_feat_AromaticAtomCount'
+ '_feat_fr_piperdine' '_feat_fr_Imine' '_feat_AtomCount_C'
+ '_feat_fr_pyridine' '_feat_SmallestRingSize' '_feat_CyclomaticNumber'
+ '_feat_donorcount' '_feat_fr_NH2' '_feat_fr_NH1' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_RingAtomCount' '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_msareaASAp' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_Ar_NH']"
+"[2.10505835e-01 1.85479665e-01 1.84145429e-01 1.25660779e-01
+ 4.12364851e-02 2.82076307e-02 2.04284059e-02 1.94172750e-02
+ 1.51827609e-02 1.40264245e-02 1.28743708e-02 1.12486518e-02
+ 1.01163235e-02 8.73354222e-03 8.54217523e-03 8.53170994e-03
+ 8.22137459e-03 8.02401660e-03 7.79549011e-03 7.69573329e-03
+ 7.05553330e-03 6.71147507e-03 6.42498611e-03 6.22387730e-03
+ 6.00528489e-03 4.74259484e-03 3.99928404e-03 3.49858980e-03
+ 2.11847161e-03 2.05391809e-03 1.83381735e-03 1.79735036e-03
+ 1.61032493e-03 1.51960436e-03 1.27286802e-03 1.18272222e-03
+ 1.04747618e-03 1.03128433e-03 9.36244872e-04 6.76869084e-04
+ 5.97093850e-04 4.89177758e-04 4.82247571e-04 4.25968964e-04
+ 1.88855748e-04 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_P' '_feat_CarboaliphaticRingCount' '_feat_Aliphatic AtomCount'
+ '_feat_MinimalProjectionArea' '_feat_BalabanIndex' '_feat_ChainAtomCount'
+ '_feat_minimalprojectionsize' '_feat_ASA' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_C' '_feat_Accsitecount' '_feat_maximalprojectionsize'
+ '_feat_MinimalProjectionRadius' '_feat_AliphaticRingCount'
+ '_feat_msareaVDWp' '_feat_Protpsa'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_molsurfaceareaASAp'
+ '_feat_MaximalProjectionArea' '_feat_ASA_H' '_feat_VanderWaalsVolume'
+ '_feat_VanderWaalsSurfaceArea' '_feat_msareaASAp'
+ '_feat_HyperWienerIndex' '_feat_ASA+' '_feat_ProtPolarSurfaceArea'
+ '_feat_MolPol' '_feat_acceptorcount' '_feat_Refractivity' '_feat_fr_NH2'
+ '_feat_molsurfaceareaVDWp' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_MaximalProjectionRadius' '_feat_WienerPolarity' '_feat_fr_NH0'
+ '_feat_fr_NH1' '_feat_AtomCount_N' '_feat_fr_quatN' '_feat_AvgPol'
+ '_feat_donsitecount' '_feat_WienerIndex' '_feat_SmallestRingSize'
+ '_feat_fr_pyridine' '_feat_Hacceptorcount' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_fr_amidine' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_HeteroaliphaticRingCount' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_fr_guanido' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[2.62546205e-01 1.80241564e-01 1.61761331e-01 1.38388478e-01
+ 2.63531004e-02 2.45652862e-02 1.92145684e-02 1.54168636e-02
+ 1.54095084e-02 1.36575427e-02 1.19197780e-02 1.15479071e-02
+ 1.11438718e-02 1.06253954e-02 1.02586634e-02 9.74582007e-03
+ 8.42583309e-03 8.15378379e-03 8.03839089e-03 7.71076320e-03
+ 5.67416062e-03 5.52570655e-03 5.12481153e-03 4.65765365e-03
+ 4.65656190e-03 3.57668345e-03 3.53976607e-03 3.51201735e-03
+ 2.55473498e-03 1.83791847e-03 9.43383047e-04 7.33032634e-04
+ 6.96091311e-04 6.61858324e-04 5.09057676e-04 3.53231517e-04
+ 2.37206833e-04 2.72649062e-05 2.42294630e-05 2.03498262e-05
+ 9.62569542e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA' '_feat_CarboaliphaticRingCount'
+ '_feat_minimalprojectionsize' '_feat_ASA_P' '_feat_ChainAtomCount'
+ '_feat_ASA_H' '_feat_Aliphatic AtomCount' '_feat_MinimalProjectionRadius'
+ '_feat_maximalprojectionsize' '_feat_MinimalProjectionArea'
+ '_feat_AliphaticRingCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Accsitecount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_MaximalProjectionRadius' '_feat_Refractivity' '_feat_AtomCount_C'
+ '_feat_VanderWaalsSurfaceArea' '_feat_ASA+'
+ '_rxn_temperatureC_actual_bulk' '_feat_molsurfaceareaVDWp'
+ '_feat_molsurfaceareaASAp' '_feat_AvgPol' '_feat_Protpsa'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_amidine' '_feat_fr_NH2'
+ '_feat_msareaVDWp' '_feat_fr_NH0' '_feat_MaximalProjectionArea'
+ '_feat_VanderWaalsVolume' '_feat_CyclomaticNumber' '_feat_fr_Imine'
+ '_feat_Hacceptorcount' '_feat_acceptorcount' '_feat_AromaticRingCount'
+ '_feat_SmallestRingSize' '_feat_HeteroaliphaticRingCount'
+ '_feat_AromaticAtomCount' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_donsitecount' '_feat_fr_piperdine' '_feat_fr_pyridine'
+ '_feat_MolPol' '_feat_WienerPolarity' '_feat_donorcount' '_feat_fr_NH1'
+ '_feat_fr_dihydropyridine' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_LargestRingSize' '_feat_fr_guanido'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_HyperWienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_msareaASAp' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.20823061e-01 2.12896088e-01 1.59059697e-01 1.31817549e-01
+ 2.85843626e-02 2.56047253e-02 2.01166049e-02 2.01099869e-02
+ 1.80031485e-02 1.45421769e-02 1.41372371e-02 1.31740079e-02
+ 1.22937958e-02 1.18430261e-02 1.16035525e-02 1.07443231e-02
+ 9.33876156e-03 6.68085641e-03 6.20191521e-03 5.69942983e-03
+ 5.35091163e-03 4.84282131e-03 4.67034870e-03 4.62059506e-03
+ 4.16418588e-03 3.57629644e-03 3.34857224e-03 2.05572831e-03
+ 1.89492953e-03 1.85870528e-03 1.71028905e-03 1.68685026e-03
+ 1.45991364e-03 1.30448479e-03 1.07636504e-03 6.90545561e-04
+ 6.64057356e-04 6.18329156e-04 3.74395251e-04 3.13302553e-04
+ 2.67451711e-04 1.36138118e-04 4.04783065e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_H' '_feat_Aliphatic AtomCount' '_feat_BalabanIndex'
+ '_feat_MinimalProjectionArea' '_feat_CarboaliphaticRingCount'
+ '_feat_minimalprojectionsize' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ASA' '_feat_MinimalProjectionRadius' '_feat_ASA_P' '_feat_fr_NH2'
+ '_feat_ChainAtomCount' '_feat_Accsitecount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_rxn_temperatureC_actual_bulk'
+ '_feat_Refractivity' '_feat_AtomCount_C' '_feat_msareaASAp'
+ '_feat_molsurfaceareaASAp' '_feat_MolPol' '_feat_MaximalProjectionRadius'
+ '_feat_AliphaticRingCount' '_feat_BondCount' '_feat_Hacceptorcount'
+ '_feat_fr_Imine' '_feat_molsurfaceareaVDWp' '_feat_msareaVDWp'
+ '_feat_AvgPol' '_feat_WienerPolarity' '_feat_ASA+' '_feat_WienerIndex'
+ '_feat_AtomCount_N' '_feat_VanderWaalsVolume'
+ '_feat_VanderWaalsSurfaceArea' '_feat_Protpsa'
+ '_feat_MaximalProjectionArea' '_feat_maximalprojectionsize'
+ '_feat_fr_amidine' '_feat_LargestRingSize' '_feat_ProtPolarSurfaceArea'
+ '_feat_ChiralCenterCount' '_feat_SmallestRingSize'
+ '_feat_AromaticAtomCount' '_feat_fr_pyridine'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_piperdine'
+ '_feat_CyclomaticNumber' '_feat_donsitecount' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_RingAtomCount' '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.08668001e-01 2.00903357e-01 1.69285247e-01 1.65145297e-01
+ 2.48830152e-02 1.93677118e-02 1.78985097e-02 1.78415883e-02
+ 1.67201564e-02 1.25194613e-02 1.16066190e-02 1.14617226e-02
+ 1.11449244e-02 1.10977713e-02 1.08018225e-02 1.00641542e-02
+ 9.73640758e-03 8.46882492e-03 7.03369167e-03 6.53035426e-03
+ 5.16743311e-03 5.11836604e-03 4.61030070e-03 4.25543064e-03
+ 3.79064596e-03 3.65485957e-03 3.58124787e-03 3.36075052e-03
+ 3.08018046e-03 3.05950224e-03 2.48190383e-03 1.41398348e-03
+ 1.14137019e-03 7.43628396e-04 7.29431274e-04 7.19455327e-04
+ 4.51487934e-04 4.04549466e-04 3.82793624e-04 2.55293312e-04
+ 2.37325033e-04 1.81424091e-04 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_CarboaliphaticRingCount' '_feat_BalabanIndex'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_P' '_feat_ASA_H'
+ '_feat_MinimalProjectionArea' '_feat_ChainAtomCount' '_feat_fr_NH2'
+ '_feat_ASA' '_feat_Accsitecount' '_feat_MinimalProjectionRadius'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_maximalprojectionsize'
+ '_feat_minimalprojectionsize' '_feat_MolPol' '_feat_Refractivity'
+ '_feat_fr_amidine' '_feat_AliphaticRingCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_MaximalProjectionArea'
+ '_feat_VanderWaalsSurfaceArea' '_feat_AtomCount_C' '_feat_msareaVDWp'
+ '_feat_donorcount' '_feat_RotatableBondCount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Hacceptorcount'
+ '_feat_HyperWienerIndex' '_feat_molsurfaceareaVDWp'
+ '_feat_ProtPolarSurfaceArea' '_feat_molsurfaceareaASAp'
+ '_feat_HeteroaliphaticRingCount' '_feat_MaximalProjectionRadius'
+ '_feat_AvgPol' '_feat_Protpsa' '_feat_ASA+' '_feat_VanderWaalsVolume'
+ '_feat_fr_NH1' '_feat_fr_piperdine' '_feat_HeteroaromaticRing Count'
+ '_feat_AromaticAtomCount' '_feat_fr_Imine' '_feat_fr_pyridine'
+ '_feat_donsitecount' '_feat_ChiralCenterCount' '_feat_AtomCount_N'
+ '_rxn_mixingtime2S' '_rxn_stirrateRPM' '_rxn_reactiontimeS'
+ '_feat_SmallestRingSize' '_feat_acceptorcount' '_feat_Hdonorcount'
+ '_feat_CyclomaticNumber' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_fr_piperzine'
+ '_feat_CarboaromaticRingCount' '_feat_fr_NH0' '_feat_WienerPolarity'
+ '_feat_AromaticRingCount' '_feat_fr_ArN' '_feat_msareaASAp'
+ '_feat_PolarSurfaceArea' '_feat_fr_quatN' '_feat_fr_guanido'
+ '_feat_LargestRingSize' '_feat_fr_Ar_NH']"
+"[2.11341652e-01 2.10685778e-01 1.75544226e-01 1.13666554e-01
+ 3.50604025e-02 3.04642097e-02 2.53927190e-02 2.27203575e-02
+ 1.75326342e-02 1.71600198e-02 1.58017215e-02 1.27005282e-02
+ 1.10270488e-02 1.06068885e-02 8.38687975e-03 8.29576639e-03
+ 7.77694293e-03 6.70709443e-03 5.97178967e-03 5.61524250e-03
+ 5.02927164e-03 4.67776847e-03 4.38102737e-03 4.22810727e-03
+ 4.22306817e-03 3.67136896e-03 3.47032896e-03 3.38198385e-03
+ 2.54052485e-03 2.07972450e-03 1.94471301e-03 1.53088313e-03
+ 1.24612227e-03 9.89141820e-04 9.63859717e-04 6.44306079e-04
+ 5.87333691e-04 5.06639113e-04 5.00682079e-04 3.26856925e-04
+ 2.44613774e-04 2.04518979e-04 6.35334081e-05 5.50485343e-05
+ 4.56308043e-05 4.48734953e-06 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_P' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_BalabanIndex' '_feat_MinimalProjectionArea'
+ '_feat_Aliphatic AtomCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_minimalprojectionsize' '_feat_molsurfaceareaVDWp' '_feat_ASA_H'
+ '_feat_fr_NH2' '_feat_MinimalProjectionRadius' '_feat_Accsitecount'
+ '_feat_ChainAtomCount' '_rxn_temperatureC_actual_bulk' '_feat_ASA+'
+ '_feat_msareaVDWp' '_feat_PolarSurfaceArea' '_feat_AtomCount_C'
+ '_feat_AliphaticRingCount' '_feat_Refractivity' '_feat_WienerIndex'
+ '_feat_HyperWienerIndex' '_feat_BondCount' '_feat_MaximalProjectionArea'
+ '_feat_molsurfaceareaASAp' '_feat_MolPol' '_feat_AtomCount_N'
+ '_feat_MaximalProjectionRadius' '_feat_maximalprojectionsize'
+ '_feat_fr_quatN' '_feat_Protpsa' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_AvgPol' '_feat_fr_NH1' '_feat_WienerPolarity'
+ '_feat_VanderWaalsVolume' '_feat_fr_Imine' '_feat_ProtPolarSurfaceArea'
+ '_feat_fr_amidine' '_feat_VanderWaalsSurfaceArea'
+ '_feat_RotatableBondCount' '_feat_Hacceptorcount' '_feat_donsitecount'
+ '_feat_fr_piperdine' '_feat_SmallestRingSize' '_feat_AromaticAtomCount'
+ '_feat_fr_pyridine' '_feat_ChiralCenterCount'
+ '_feat_HeteroaliphaticRingCount' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_fr_guanido' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_msareaASAp' '_feat_fr_Ar_NH']"
+"[2.29016385e-01 1.97771503e-01 1.79631442e-01 1.47659841e-01
+ 2.81376921e-02 1.81152290e-02 1.70377562e-02 1.56027865e-02
+ 1.54988989e-02 1.49291373e-02 1.43828498e-02 1.42964431e-02
+ 1.25178511e-02 9.50046913e-03 8.68519293e-03 7.55295608e-03
+ 7.45704436e-03 6.16819950e-03 6.13780099e-03 6.11112421e-03
+ 5.63748554e-03 5.38269163e-03 5.17264114e-03 4.80319952e-03
+ 3.74645215e-03 2.29332237e-03 1.97304790e-03 1.93310686e-03
+ 1.90673848e-03 1.46378664e-03 1.36783453e-03 1.01512003e-03
+ 9.45118012e-04 9.30848564e-04 9.10468668e-04 7.67960664e-04
+ 6.48690630e-04 6.35009137e-04 6.21394733e-04 5.71166013e-04
+ 4.60316209e-04 3.25023677e-04 2.29700293e-04 3.89625102e-05
+ 9.31187268e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_ChainAtomCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ASA_H' '_feat_Aliphatic AtomCount' '_feat_CarboaliphaticRingCount'
+ '_feat_BalabanIndex' '_feat_minimalprojectionsize' '_feat_ASA'
+ '_feat_fr_NH2' '_feat_AliphaticRingCount' '_feat_fr_amidine'
+ '_feat_Refractivity' '_feat_Accsitecount' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_C' '_feat_MinimalProjectionArea' '_feat_ASA_P'
+ '_feat_donorcount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_VanderWaalsSurfaceArea' '_feat_ASA+' '_feat_msareaASAp'
+ '_feat_msareaVDWp' '_feat_MolPol' '_feat_AvgPol'
+ '_feat_MinimalProjectionRadius' '_feat_maximalprojectionsize'
+ '_feat_WienerIndex' '_feat_molsurfaceareaASAp' '_feat_acceptorcount'
+ '_feat_donsitecount' '_feat_VanderWaalsVolume' '_feat_PolarSurfaceArea'
+ '_feat_molsurfaceareaVDWp' '_feat_HeteroaliphaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_NH0' '_feat_MaximalProjectionRadius'
+ '_feat_HyperWienerIndex' '_feat_CarboRingCount' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_MaximalProjectionArea'
+ '_feat_Hacceptorcount' '_feat_ProtPolarSurfaceArea' '_rxn_stirrateRPM'
+ '_rxn_reactiontimeS' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_rxn_mixingtime2S' '_feat_AromaticAtomCount' '_feat_fr_pyridine'
+ '_feat_fr_quatN' '_feat_SmallestRingSize' '_feat_CyclomaticNumber'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_Protpsa'
+ '_feat_fr_ArN' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_Hdonorcount' '_feat_AromaticRingCount' '_feat_fr_guanido'
+ '_feat_fr_NH1' '_feat_HeteroaromaticRing Count' '_feat_WienerPolarity'
+ '_feat_fr_Ar_NH']"
+"[2.63942034e-01 1.94601332e-01 1.48501598e-01 1.47197597e-01
+ 2.47560131e-02 2.32728259e-02 2.30855938e-02 2.09310520e-02
+ 1.84298054e-02 1.67278423e-02 1.49332553e-02 1.19574169e-02
+ 1.15358740e-02 9.76073444e-03 6.28666079e-03 5.69324104e-03
+ 5.63484966e-03 5.56020613e-03 4.57453044e-03 4.44017327e-03
+ 4.36383284e-03 4.31911230e-03 3.99497349e-03 3.87487273e-03
+ 3.30697872e-03 3.22330034e-03 3.05780255e-03 2.88619343e-03
+ 2.65525632e-03 1.66807440e-03 1.47356862e-03 7.55497960e-04
+ 5.40943918e-04 5.02489500e-04 4.41831112e-04 4.21651516e-04
+ 2.88335871e-04 2.33668024e-04 1.21953564e-04 3.96643363e-05
+ 7.36233287e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_maximalprojectionsize' '_feat_ChainAtomCount' '_feat_BalabanIndex'
+ '_feat_CarboaliphaticRingCount' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionRadius' '_feat_MinimalProjectionArea'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_P'
+ '_feat_LengthPerpendicularToTheMinArea' '_rxn_temperatureC_actual_bulk'
+ '_feat_ASA_H' '_feat_ASA' '_feat_RotatableBondCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_fr_amidine'
+ '_feat_Accsitecount' '_feat_MolPol' '_feat_ASA+'
+ '_feat_VanderWaalsVolume' '_feat_WienerIndex' '_feat_msareaVDWp'
+ '_feat_Refractivity' '_feat_molsurfaceareaVDWp' '_feat_HyperWienerIndex'
+ '_feat_AliphaticRingCount' '_feat_fr_NH0' '_feat_AtomCount_C'
+ '_feat_Protpsa' '_feat_msareaASAp' '_feat_MaximalProjectionRadius'
+ '_feat_MaximalProjectionArea' '_feat_fr_Imine' '_feat_molsurfaceareaASAp'
+ '_feat_AvgPol' '_feat_SmallestRingSize' '_feat_donorcount'
+ '_feat_CarboaromaticRingCount' '_feat_HeteroaromaticRing Count'
+ '_feat_AtomCount_N' '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_PolarSurfaceArea' '_feat_AromaticAtomCount' '_feat_Hdonorcount'
+ '_feat_fr_piperdine' '_feat_VanderWaalsSurfaceArea' '_feat_acceptorcount'
+ '_feat_fr_pyridine' '_rxn_mixingtime2S' '_feat_ProtPolarSurfaceArea'
+ '_rxn_stirrateRPM' '_rxn_reactiontimeS' '_feat_fr_ArN'
+ '_feat_Hacceptorcount' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_dihydropyridine'
+ '_feat_CyclomaticNumber' '_feat_WienerPolarity' '_feat_fr_NH2'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_feat_fr_quatN'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_AromaticRingCount' '_feat_fr_Ar_NH']"
+"[2.54882193e-01 1.93174306e-01 1.63551068e-01 1.27221227e-01
+ 3.84715943e-02 2.76308827e-02 1.86664603e-02 1.81194159e-02
+ 1.79506913e-02 1.57494188e-02 1.47028849e-02 1.46355708e-02
+ 1.37070614e-02 9.70901184e-03 7.52979257e-03 6.70042760e-03
+ 6.00364941e-03 5.69718614e-03 5.36408181e-03 4.78074095e-03
+ 4.58367709e-03 4.55299231e-03 4.04861344e-03 2.61370344e-03
+ 2.25445612e-03 2.16891469e-03 2.06992393e-03 1.72206485e-03
+ 1.56397180e-03 1.51131474e-03 1.46988894e-03 1.20067598e-03
+ 1.04626388e-03 8.18134647e-04 6.54904860e-04 5.94142738e-04
+ 5.54522067e-04 4.70099446e-04 4.52996670e-04 4.31791072e-04
+ 4.05738920e-04 3.64770028e-04 1.98774195e-04 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_MinimalProjectionArea' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_ASA_H' '_feat_maximalprojectionsize' '_feat_ASA_P'
+ '_feat_minimalprojectionsize' '_feat_Accsitecount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ChainAtomCount'
+ '_feat_fr_amidine' '_feat_Refractivity' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_C' '_feat_AvgPol' '_feat_MaximalProjectionRadius'
+ '_feat_MinimalProjectionRadius' '_feat_msareaASAp'
+ '_feat_molsurfaceareaVDWp' '_feat_Hacceptorcount' '_feat_Protpsa'
+ '_feat_RotatableBondCount' '_feat_ProtPolarSurfaceArea'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_HyperWienerIndex'
+ '_feat_fr_NH2' '_feat_msareaVDWp' '_feat_fr_Imine' '_feat_ASA+'
+ '_feat_molsurfaceareaASAp' '_feat_VanderWaalsVolume'
+ '_feat_PolarSurfaceArea' '_feat_MolPol' '_feat_MaximalProjectionArea'
+ '_feat_WienerIndex' '_feat_Hdonorcount' '_feat_AliphaticRingCount'
+ '_feat_AtomCount_N' '_feat_AromaticAtomCount' '_feat_fr_pyridine'
+ '_feat_ChiralCenterCount' '_feat_donsitecount' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_piperdine'
+ '_feat_CyclomaticNumber' '_feat_donorcount' '_feat_WienerPolarity'
+ '_feat_fr_NH1' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_VanderWaalsSurfaceArea'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_Ar_NH']"
+"[2.10506110e-01 2.00281462e-01 1.77683368e-01 1.45843936e-01
+ 2.88625777e-02 2.72991581e-02 2.39085389e-02 2.32595541e-02
+ 1.65976007e-02 1.63701534e-02 1.56066353e-02 1.32627595e-02
+ 1.23758389e-02 1.14882481e-02 1.06768936e-02 9.22434538e-03
+ 8.89832465e-03 6.30274499e-03 6.17362101e-03 5.15571409e-03
+ 4.89817655e-03 4.35484010e-03 3.69749530e-03 2.72468985e-03
+ 2.52726918e-03 2.36244750e-03 1.72996926e-03 1.40601914e-03
+ 1.40215184e-03 1.36153435e-03 1.00887800e-03 6.89286512e-04
+ 5.79678177e-04 5.54710687e-04 4.70702120e-04 3.40193190e-04
+ 7.48892422e-05 3.94848657e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_H' '_feat_CarboaliphaticRingCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Aliphatic AtomCount'
+ '_feat_ASA' '_feat_MinimalProjectionArea' '_feat_BalabanIndex'
+ '_feat_ChainAtomCount' '_feat_minimalprojectionsize'
+ '_rxn_temperatureC_actual_bulk' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_AliphaticRingCount' '_feat_Accsitecount'
+ '_feat_maximalprojectionsize' '_feat_AtomCount_C'
+ '_feat_MinimalProjectionRadius' '_feat_VanderWaalsSurfaceArea'
+ '_feat_AvgPol' '_feat_fr_amidine' '_feat_molsurfaceareaVDWp'
+ '_feat_RotatableBondCount' '_feat_molsurfaceareaASAp' '_feat_ASA_P'
+ '_feat_msareaASAp' '_feat_donsitecount' '_feat_msareaVDWp' '_feat_fr_NH1'
+ '_feat_Refractivity' '_feat_HyperWienerIndex' '_feat_WienerIndex'
+ '_feat_ASA+' '_feat_MaximalProjectionRadius' '_feat_Hdonorcount'
+ '_feat_Protpsa' '_feat_AtomCount_N' '_feat_Hacceptorcount'
+ '_feat_ChiralCenterCount' '_feat_WienerPolarity'
+ '_feat_AromaticAtomCount' '_feat_SmallestRingSize' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_feat_ProtPolarSurfaceArea'
+ '_feat_HeteroaliphaticRingCount' '_feat_MaximalProjectionArea'
+ '_feat_MolPol' '_feat_CyclomaticNumber' '_feat_donorcount' '_feat_fr_NH2'
+ '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[0.22050038 0.20716384 0.15517622 0.12599402 0.0313474  0.02474203
+ 0.02469909 0.02334947 0.01966684 0.01867534 0.01541737 0.01317617
+ 0.01281943 0.01171005 0.00904507 0.00846684 0.00816768 0.00810245
+ 0.00779646 0.0071237  0.006936   0.00523509 0.00444762 0.00355168
+ 0.00296512 0.00295378 0.00294266 0.00226908 0.00215235 0.00196153
+ 0.00165366 0.001545   0.00117037 0.00106145 0.00102481 0.00096499
+ 0.00096344 0.00094377 0.00048383 0.00046839 0.00038906 0.00030909
+ 0.00023632 0.00023106 0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.        ]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA' '_feat_ASA_H' '_feat_ASA_P' '_feat_BalabanIndex'
+ '_feat_CarboaliphaticRingCount' '_feat_ChainAtomCount'
+ '_feat_MinimalProjectionRadius' '_feat_MinimalProjectionArea'
+ '_feat_Aliphatic AtomCount' '_feat_MolPol' '_feat_fr_amidine'
+ '_rxn_temperatureC_actual_bulk' '_feat_AliphaticRingCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Accsitecount'
+ '_feat_Hacceptorcount' '_feat_ProtPolarSurfaceArea' '_feat_msareaVDWp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_AvgPol' '_feat_VanderWaalsVolume'
+ '_feat_minimalprojectionsize' '_feat_Refractivity' '_feat_AtomCount_C'
+ '_feat_CarboaromaticRingCount' '_feat_donorcount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_HyperWienerIndex'
+ '_feat_molsurfaceareaASAp' '_feat_WienerPolarity'
+ '_feat_maximalprojectionsize' '_feat_PolarSurfaceArea'
+ '_feat_molsurfaceareaVDWp' '_feat_fr_NH1' '_feat_MaximalProjectionArea'
+ '_feat_Protpsa' '_feat_msareaASAp' '_feat_fr_NH2' '_feat_ASA+'
+ '_feat_MaximalProjectionRadius' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_donsitecount' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_feat_AromaticAtomCount' '_feat_Hdonorcount'
+ '_feat_acceptorcount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_LargestRingSize' '_feat_SmallestRingSize' '_feat_CarboRingCount'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_fr_dihydropyridine' '_feat_fr_piperzine'
+ '_feat_fr_NH0' '_feat_HeteroaliphaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_ArN' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_CyclomaticNumber' '_feat_fr_Ar_NH']"
+"[2.23576835e-01 2.10562845e-01 1.62730466e-01 1.47938959e-01
+ 3.59514228e-02 2.02133967e-02 1.68182577e-02 1.53905755e-02
+ 1.43380193e-02 1.33425044e-02 1.28065775e-02 1.13758947e-02
+ 9.41839582e-03 8.45394567e-03 8.33644222e-03 7.58545124e-03
+ 7.55254716e-03 6.97183703e-03 6.46077476e-03 5.30999528e-03
+ 5.17363917e-03 5.09738149e-03 5.07760410e-03 4.89971259e-03
+ 4.86570018e-03 4.02788300e-03 3.62303150e-03 3.30512893e-03
+ 2.50879719e-03 2.28094895e-03 1.67751136e-03 1.55267692e-03
+ 1.47489845e-03 1.44497524e-03 1.40148769e-03 1.27794085e-03
+ 1.18738219e-03 8.97124149e-04 8.57038371e-04 8.51856471e-04
+ 4.84315835e-04 3.98428912e-04 3.76853253e-04 1.22541250e-04
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_Aliphatic AtomCount' '_feat_ChainAtomCount'
+ '_feat_MinimalProjectionArea' '_feat_MinimalProjectionRadius'
+ '_feat_ASA_H' '_feat_Accsitecount' '_feat_fr_NH2'
+ '_feat_minimalprojectionsize' '_feat_Hacceptorcount'
+ '_feat_molsurfaceareaVDWp' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ASA+' '_feat_fr_amidine' '_feat_Refractivity' '_feat_donorcount'
+ '_rxn_temperatureC_actual_bulk' '_feat_ASA_P'
+ '_feat_VanderWaalsSurfaceArea' '_feat_MaximalProjectionRadius'
+ '_feat_AtomCount_C' '_feat_AvgPol' '_feat_msareaASAp'
+ '_feat_MaximalProjectionArea' '_feat_MolPol' '_feat_VanderWaalsVolume'
+ '_feat_AtomCount_N' '_feat_molsurfaceareaASAp'
+ '_feat_HeteroaliphaticRingCount' '_feat_RotatableBondCount'
+ '_feat_fr_Imine' '_feat_maximalprojectionsize' '_feat_msareaVDWp'
+ '_feat_fr_NH0' '_feat_BondCount' '_feat_PolarSurfaceArea'
+ '_feat_ProtPolarSurfaceArea' '_feat_Protpsa' '_feat_AromaticAtomCount'
+ '_rxn_stirrateRPM' '_feat_fr_piperdine' '_feat_donsitecount'
+ '_feat_fr_pyridine' '_rxn_reactiontimeS' '_feat_ChiralCenterCount'
+ '_rxn_mixingtime2S' '_feat_acceptorcount' '_feat_SmallestRingSize'
+ '_feat_fr_quatN' '_feat_AliphaticRingCount' '_feat_CyclomaticNumber'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_LargestRingSize'
+ '_feat_fr_ArN' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_Hdonorcount'
+ '_feat_AromaticRingCount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_CarboRingCount' '_feat_fr_guanido' '_feat_fr_NH1'
+ '_feat_HeteroaromaticRing Count' '_feat_WienerPolarity' '_feat_fr_Ar_NH']"
+"[2.31008361e-01 2.01733296e-01 1.73627170e-01 1.38167906e-01
+ 2.92338737e-02 2.25789523e-02 2.23138153e-02 1.95520407e-02
+ 1.94964166e-02 1.46590706e-02 1.36226903e-02 1.11810859e-02
+ 1.11244768e-02 1.02414853e-02 1.01811448e-02 8.63871013e-03
+ 7.66622020e-03 6.86879614e-03 5.80133979e-03 5.36932496e-03
+ 4.64555036e-03 4.07094016e-03 3.95740178e-03 2.76237421e-03
+ 2.64421063e-03 2.52421056e-03 2.40768470e-03 2.35302751e-03
+ 2.06063993e-03 2.02019771e-03 1.92318191e-03 1.78794826e-03
+ 8.18492423e-04 8.07174526e-04 5.31106259e-04 3.72131247e-04
+ 3.52809532e-04 3.03979588e-04 2.82057229e-04 1.53693657e-04
+ 1.43744383e-04 1.12664430e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_CarboaliphaticRingCount'
+ '_feat_ASA' '_feat_ASA_H' '_feat_ASA_P' '_feat_Accsitecount'
+ '_feat_maximalprojectionsize' '_feat_minimalprojectionsize'
+ '_feat_ChainAtomCount' '_feat_MinimalProjectionRadius' '_feat_fr_NH2'
+ '_feat_MinimalProjectionArea' '_feat_molsurfaceareaVDWp'
+ '_feat_AtomCount_C' '_feat_AvgPol' '_feat_Refractivity' '_feat_MolPol'
+ '_feat_AliphaticRingCount' '_feat_AromaticAtomCount' '_feat_BondCount'
+ '_feat_molsurfaceareaASAp' '_rxn_temperatureC_actual_bulk'
+ '_feat_RotatableBondCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_HyperWienerIndex' '_feat_MaximalProjectionArea'
+ '_feat_ProtPolarSurfaceArea' '_feat_WienerIndex' '_feat_WienerPolarity'
+ '_feat_msareaASAp' '_feat_fr_Imine' '_feat_VanderWaalsSurfaceArea'
+ '_feat_msareaVDWp' '_feat_fr_NH1' '_feat_acceptorcount'
+ '_feat_donorcount' '_feat_CarboaromaticRingCount' '_feat_CarboRingCount'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_fr_amidine' '_feat_fr_pyridine' '_feat_HeteroaromaticRing Count'
+ '_feat_fr_piperdine' '_feat_Hdonorcount' '_feat_PolarSurfaceArea'
+ '_feat_fr_ArN' '_feat_fr_NH0' '_feat_donsitecount'
+ '_feat_ChiralCenterCount' '_feat_AtomCount_N' '_feat_Hacceptorcount'
+ '_feat_AromaticRingCount' '_feat_fr_piperzine' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_ASA+' '_feat_CyclomaticNumber'
+ '_feat_fr_dihydropyridine' '_feat_Protpsa' '_feat_LargestRingSize'
+ '_feat_fr_guanido' '_feat_fr_quatN' '_feat_MaximalProjectionRadius'
+ '_feat_RingAtomCount' '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_fr_Ar_NH']"
+"[2.12292538e-01 2.09290307e-01 1.62936713e-01 1.32632619e-01
+ 3.13173904e-02 2.37028495e-02 2.11495037e-02 1.95487682e-02
+ 1.64753071e-02 1.44535970e-02 1.37898543e-02 1.35807174e-02
+ 1.11520762e-02 1.07495060e-02 1.03845819e-02 1.00149260e-02
+ 9.90017308e-03 9.82108937e-03 7.69671827e-03 6.60363906e-03
+ 5.46982648e-03 5.44234526e-03 4.92648343e-03 4.78116918e-03
+ 4.38683849e-03 3.25501286e-03 3.22573693e-03 2.65046358e-03
+ 2.14929415e-03 2.02185200e-03 1.75468716e-03 1.59407988e-03
+ 1.42136806e-03 1.37590992e-03 1.36918762e-03 1.25705278e-03
+ 1.21126748e-03 8.73505733e-04 8.22288186e-04 7.64477396e-04
+ 7.62033365e-04 5.76312317e-04 1.88440130e-04 1.20434765e-04
+ 1.01091822e-04 5.96633744e-06 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_H' '_feat_ASA' '_feat_CarboaliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_BalabanIndex' '_feat_AliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_P' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionArea' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_MinimalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_Hacceptorcount' '_feat_fr_amidine' '_feat_msareaASAp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_Accsitecount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_AtomCount_C'
+ '_feat_msareaVDWp' '_feat_AvgPol' '_feat_molsurfaceareaASAp'
+ '_feat_RotatableBondCount' '_feat_maximalprojectionsize' '_feat_MolPol'
+ '_feat_VanderWaalsVolume' '_feat_ASA+' '_feat_MaximalProjectionRadius'
+ '_feat_WienerPolarity' '_feat_HyperWienerIndex'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_quatN' '_feat_fr_NH2'
+ '_feat_donsitecount' '_feat_WienerIndex' '_feat_fr_NH0'
+ '_feat_PolarSurfaceArea' '_feat_Refractivity' '_feat_BondCount'
+ '_feat_ProtPolarSurfaceArea' '_feat_donorcount' '_feat_AromaticRingCount'
+ '_feat_ChiralCenterCount' '_rxn_reactiontimeS'
+ '_feat_MaximalProjectionArea' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_fr_pyridine' '_feat_fr_Imine' '_feat_fr_piperdine'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_AromaticAtomCount' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_AtomCount_N' '_feat_CarboaromaticRingCount'
+ '_feat_molsurfaceareaVDWp' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_SmallestRingSize' '_feat_fr_dihydropyridine' '_feat_Protpsa'
+ '_feat_CyclomaticNumber' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_mixingtime1S' '_feat_fr_Ar_NH']"
+"[2.36791905e-01 1.82712886e-01 1.54330219e-01 1.46304512e-01
+ 3.07903954e-02 2.54897290e-02 2.16970590e-02 2.02793489e-02
+ 1.97320225e-02 1.81459090e-02 1.68148559e-02 1.41832565e-02
+ 1.30598932e-02 1.25038660e-02 1.06769309e-02 9.98837903e-03
+ 8.25443358e-03 5.91612240e-03 5.53138446e-03 5.29318160e-03
+ 4.87837586e-03 4.79583874e-03 4.76145360e-03 3.66471110e-03
+ 3.46804371e-03 3.33014195e-03 2.83433517e-03 2.48373737e-03
+ 2.11588015e-03 2.02670517e-03 1.64643640e-03 1.29910690e-03
+ 1.17531561e-03 9.84601381e-04 6.40675920e-04 4.90726156e-04
+ 3.48425915e-04 3.37645169e-04 1.37755781e-04 3.29877915e-05
+ 1.91031202e-05 1.74467407e-05 1.42613421e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_ASA_P' '_feat_CarboaliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Aliphatic AtomCount'
+ '_feat_fr_amidine' '_feat_ASA_H' '_feat_MinimalProjectionArea'
+ '_feat_minimalprojectionsize' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Refractivity' '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_C'
+ '_feat_molsurfaceareaASAp' '_feat_molsurfaceareaVDWp' '_feat_MolPol'
+ '_feat_Accsitecount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_maximalprojectionsize' '_feat_RotatableBondCount'
+ '_feat_AliphaticRingCount' '_feat_MinimalProjectionRadius' '_feat_AvgPol'
+ '_feat_ProtPolarSurfaceArea' '_feat_WienerIndex' '_feat_ASA+'
+ '_feat_Protpsa' '_feat_MaximalProjectionArea' '_feat_HyperWienerIndex'
+ '_feat_msareaASAp' '_feat_VanderWaalsVolume' '_feat_fr_NH0'
+ '_feat_fr_NH2' '_feat_PolarSurfaceArea' '_feat_CarboRingCount'
+ '_feat_MaximalProjectionRadius' '_feat_msareaVDWp'
+ '_feat_SmallestRingSize' '_feat_Hacceptorcount' '_feat_fr_pyridine'
+ '_feat_fr_piperdine' '_feat_fr_Imine' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_AromaticAtomCount' '_feat_donsitecount'
+ '_feat_HeteroaliphaticRingCount' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_fr_dihydropyridine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_fr_piperzine' '_feat_LargestRingSize' '_feat_WienerPolarity'
+ '_feat_RingAtomCount' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_NH1' '_feat_fr_Ar_NH']"
+"[2.14960716e-01 1.95554471e-01 1.63929213e-01 1.52266299e-01
+ 2.70085661e-02 2.50995904e-02 2.47271118e-02 2.21054880e-02
+ 2.00683963e-02 1.72055127e-02 1.59717952e-02 1.40280196e-02
+ 1.29156076e-02 1.24478840e-02 1.18438313e-02 7.48263723e-03
+ 6.29696761e-03 5.85061342e-03 5.80233285e-03 4.75750782e-03
+ 4.67846850e-03 4.22944456e-03 4.05215739e-03 3.68829628e-03
+ 3.41583423e-03 3.38616803e-03 3.37388780e-03 2.27009173e-03
+ 2.10340424e-03 1.67331029e-03 1.15594863e-03 1.08021432e-03
+ 9.96636761e-04 8.30093197e-04 8.22499887e-04 6.15836657e-04
+ 5.19292238e-04 4.97959195e-04 2.69721847e-04 1.81720113e-05
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_minimalprojectionsize' '_feat_BalabanIndex' '_feat_ASA_P'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_H' '_feat_Aliphatic AtomCount'
+ '_feat_MinimalProjectionArea' '_feat_Accsitecount'
+ '_feat_MinimalProjectionRadius' '_feat_ChainAtomCount' '_feat_ASA'
+ '_feat_MolPol' '_feat_fr_amidine' '_feat_VanderWaalsSurfaceArea'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_AvgPol' '_feat_fr_NH2'
+ '_feat_donsitecount' '_feat_msareaVDWp' '_feat_ASA+'
+ '_feat_maximalprojectionsize' '_feat_LengthPerpendicularToTheMaxArea'
+ '_rxn_temperatureC_actual_bulk' '_feat_molsurfaceareaVDWp'
+ '_feat_Protpsa' '_feat_AliphaticRingCount' '_feat_CarboaromaticRingCount'
+ '_feat_HyperWienerIndex' '_feat_msareaASAp' '_feat_molsurfaceareaASAp'
+ '_feat_BondCount' '_feat_fr_NH0' '_feat_Refractivity' '_feat_AtomCount_C'
+ '_feat_ProtPolarSurfaceArea' '_feat_MaximalProjectionArea'
+ '_feat_Hacceptorcount' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_SmallestRingSize' '_feat_HeteroaliphaticRingCount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_feat_CyclomaticNumber' '_feat_WienerPolarity'
+ '_feat_donorcount' '_feat_fr_NH1' '_feat_fr_piperzine'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_dihydropyridine' '_feat_fr_guanido'
+ '_feat_LargestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.44705721e-01 1.91974116e-01 1.54433256e-01 1.34350860e-01
+ 3.02619933e-02 2.18976064e-02 2.06971123e-02 1.77505138e-02
+ 1.74564207e-02 1.69337729e-02 1.38340913e-02 1.29799145e-02
+ 1.19191475e-02 1.14947505e-02 1.13962924e-02 1.06898080e-02
+ 1.01433843e-02 9.55988272e-03 9.14592411e-03 6.39119154e-03
+ 4.85665327e-03 4.40941586e-03 4.01194979e-03 3.46589670e-03
+ 3.45672499e-03 3.02316791e-03 2.49171281e-03 2.43502462e-03
+ 1.98753588e-03 1.76673250e-03 1.69472013e-03 1.48621069e-03
+ 1.17439429e-03 1.09574267e-03 1.05624837e-03 8.29889227e-04
+ 7.46285682e-04 6.11032366e-04 4.56586885e-04 3.69001910e-04
+ 2.67025232e-04 1.91242941e-04 1.01045984e-04 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_minimalprojectionsize'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionArea'
+ '_feat_MinimalProjectionRadius' '_feat_ASA_H'
+ '_feat_maximalprojectionsize' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ASA' '_feat_Accsitecount' '_feat_PolarSurfaceArea'
+ '_feat_ChainAtomCount' '_rxn_temperatureC_actual_bulk' '_feat_Protpsa'
+ '_feat_AtomCount_C' '_feat_msareaASAp' '_feat_molsurfaceareaVDWp'
+ '_feat_ASA_P' '_feat_AvgPol' '_feat_BondCount' '_feat_AromaticAtomCount'
+ '_feat_AliphaticRingCount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_Refractivity' '_feat_ASA+' '_feat_donsitecount' '_feat_msareaVDWp'
+ '_feat_VanderWaalsVolume' '_feat_MaximalProjectionArea' '_feat_fr_Imine'
+ '_feat_MolPol' '_feat_HeteroaliphaticRingCount'
+ '_feat_molsurfaceareaASAp' '_feat_fr_NH0' '_feat_RotatableBondCount'
+ '_feat_MaximalProjectionRadius' '_feat_ProtPolarSurfaceArea'
+ '_feat_SmallestRingSize' '_feat_fr_piperdine' '_feat_fr_amidine'
+ '_feat_Hacceptorcount' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_fr_pyridine' '_feat_WienerPolarity' '_feat_CyclomaticNumber'
+ '_feat_donorcount' '_feat_fr_NH2' '_feat_fr_NH1' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_Ar_NH']"
+"[2.39468174e-01 1.92140168e-01 1.64915698e-01 1.40169032e-01
+ 3.10287544e-02 2.25364972e-02 2.04960519e-02 1.79984013e-02
+ 1.54356686e-02 1.19586720e-02 1.03998805e-02 1.01405459e-02
+ 9.99091505e-03 9.93297943e-03 8.62176443e-03 8.18289990e-03
+ 8.11151168e-03 7.94929515e-03 7.37103461e-03 7.35671809e-03
+ 7.14391165e-03 6.97833817e-03 6.76970513e-03 5.72681918e-03
+ 5.51887361e-03 4.79995004e-03 3.62101043e-03 2.51051299e-03
+ 1.65712059e-03 1.64900605e-03 1.31718342e-03 1.26165670e-03
+ 1.17446285e-03 1.01858668e-03 7.65054948e-04 7.48411487e-04
+ 7.02647962e-04 5.20496149e-04 4.50156340e-04 4.02918617e-04
+ 2.43023660e-04 2.41124287e-04 2.02010227e-04 1.79275485e-04
+ 1.00127096e-04 9.29552831e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount' '_feat_ASA_P'
+ '_feat_Aliphatic AtomCount' '_feat_ASA' '_feat_maximalprojectionsize'
+ '_feat_LengthPerpendicularToTheMinArea' '_rxn_temperatureC_actual_bulk'
+ '_feat_ASA_H' '_feat_molsurfaceareaASAp' '_feat_MinimalProjectionRadius'
+ '_feat_Accsitecount' '_feat_acceptorcount' '_feat_ChainAtomCount'
+ '_feat_Refractivity' '_feat_minimalprojectionsize' '_feat_AvgPol'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionArea'
+ '_feat_AliphaticRingCount' '_feat_ASA+' '_feat_msareaASAp'
+ '_feat_molsurfaceareaVDWp' '_feat_WienerPolarity'
+ '_feat_MaximalProjectionRadius' '_feat_AtomCount_C' '_feat_donorcount'
+ '_feat_fr_NH2' '_feat_fr_quatN' '_feat_msareaVDWp'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_Imine'
+ '_feat_MaximalProjectionArea' '_feat_fr_NH0' '_feat_HyperWienerIndex'
+ '_feat_VanderWaalsVolume' '_feat_PolarSurfaceArea' '_feat_Protpsa'
+ '_feat_VanderWaalsSurfaceArea' '_feat_MolPol' '_feat_fr_amidine'
+ '_feat_Hacceptorcount' '_feat_ChiralCenterCount' '_feat_AtomCount_N'
+ '_feat_donsitecount' '_feat_LargestRingSize' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_feat_AromaticAtomCount' '_feat_fr_piperdine'
+ '_feat_fr_pyridine' '_feat_ProtPolarSurfaceArea' '_rxn_mixingtime2S'
+ '_feat_CyclomaticNumber' '_feat_HeteroaromaticRing Count'
+ '_feat_AromaticRingCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_piperzine'
+ '_feat_RotatableBondCount' '_feat_SmallestRingSize'
+ '_feat_CarboRingCount' '_feat_fr_ArN' '_feat_fr_guanido' '_feat_fr_NH1'
+ '_feat_RingAtomCount' '_feat_Hdonorcount' '_feat_fr_Ar_NH']"
+"[2.04371174e-01 2.00766939e-01 1.67056725e-01 1.50908489e-01
+ 4.08227581e-02 3.57371657e-02 1.70659257e-02 1.57633508e-02
+ 1.54690537e-02 1.50759559e-02 1.33066132e-02 1.24223002e-02
+ 1.11213299e-02 1.07636120e-02 9.33243380e-03 8.17315018e-03
+ 7.63118870e-03 7.35320456e-03 6.82345261e-03 6.08713840e-03
+ 5.09861686e-03 4.81351685e-03 4.79633290e-03 3.78462159e-03
+ 3.71030573e-03 3.44302743e-03 3.32377505e-03 2.65485742e-03
+ 2.56915324e-03 2.12603371e-03 1.74118093e-03 1.13852481e-03
+ 1.13610322e-03 7.97696914e-04 6.86549276e-04 6.00976072e-04
+ 5.18339943e-04 3.34596014e-04 3.28859240e-04 1.88989176e-04
+ 1.52848002e-04 3.00704358e-06 1.28236155e-07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_ASA_H' '_feat_minimalprojectionsize'
+ '_feat_CarboaliphaticRingCount' '_feat_maximalprojectionsize'
+ '_feat_Aliphatic AtomCount' '_feat_ASA' '_feat_fr_NH2'
+ '_feat_Accsitecount' '_feat_MinimalProjectionArea' '_feat_ChainAtomCount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_molsurfaceareaASAp'
+ '_rxn_temperatureC_actual_bulk' '_feat_Refractivity' '_feat_AtomCount_C'
+ '_feat_MolPol' '_feat_MinimalProjectionRadius' '_feat_ASA_P'
+ '_feat_MaximalProjectionRadius' '_feat_fr_guanido'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_AliphaticRingCount'
+ '_feat_VanderWaalsSurfaceArea' '_feat_PolarSurfaceArea'
+ '_feat_msareaASAp' '_feat_molsurfaceareaVDWp' '_feat_fr_amidine'
+ '_feat_HyperWienerIndex' '_feat_AromaticRingCount' '_feat_AvgPol'
+ '_feat_HeteroaliphaticRingCount' '_feat_AromaticAtomCount'
+ '_feat_ProtPolarSurfaceArea' '_feat_donsitecount' '_feat_fr_quatN'
+ '_feat_CarboRingCount' '_feat_WienerPolarity' '_feat_Protpsa'
+ '_feat_Hacceptorcount' '_feat_AtomCount_N' '_feat_SmallestRingSize'
+ '_feat_ChiralCenterCount' '_feat_ASA+' '_feat_msareaVDWp'
+ '_feat_fr_piperdine' '_feat_fr_Imine' '_feat_fr_pyridine'
+ '_feat_MaximalProjectionArea' '_feat_donorcount' '_feat_CyclomaticNumber'
+ '_feat_fr_piperzine' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_fr_dihydropyridine' '_feat_fr_NH1'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_CarboaromaticRingCount' '_feat_RotatableBondCount'
+ '_feat_fr_Ar_NH']"
+"[2.20501245e-01 2.14769658e-01 1.55138510e-01 1.39833728e-01
+ 3.72296206e-02 2.38174450e-02 2.34995269e-02 2.29109784e-02
+ 2.02001262e-02 1.69529524e-02 1.25266598e-02 1.20419682e-02
+ 1.05133781e-02 8.49496033e-03 8.12123275e-03 7.31564210e-03
+ 7.09372634e-03 7.04868775e-03 6.87017933e-03 5.44077363e-03
+ 5.32393082e-03 4.91328127e-03 4.61307480e-03 4.37086713e-03
+ 3.73365136e-03 3.42757465e-03 3.20482131e-03 1.86104052e-03
+ 1.42518261e-03 1.40980224e-03 9.21217922e-04 7.43218117e-04
+ 7.37189511e-04 6.99529600e-04 6.69889125e-04 5.36643895e-04
+ 4.87727453e-04 3.66183391e-04 1.61356559e-04 3.39499883e-05
+ 2.86864473e-05 5.11572660e-06 5.06693473e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_P' '_feat_ASA' '_feat_Aliphatic AtomCount'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_MinimalProjectionArea' '_feat_ASA_H'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionRadius'
+ '_feat_Accsitecount' '_feat_AliphaticRingCount' '_feat_AvgPol'
+ '_feat_fr_NH2' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ChainAtomCount' '_feat_msareaVDWp' '_feat_minimalprojectionsize'
+ '_rxn_temperatureC_actual_bulk' '_feat_MolPol' '_feat_fr_amidine'
+ '_feat_MaximalProjectionRadius' '_feat_AtomCount_C' '_feat_WienerIndex'
+ '_feat_MaximalProjectionArea' '_feat_molsurfaceareaVDWp' '_feat_ASA+'
+ '_feat_VanderWaalsSurfaceArea' '_feat_BondCount'
+ '_feat_maximalprojectionsize' '_feat_fr_NH0' '_feat_msareaASAp'
+ '_feat_HeteroaliphaticRingCount' '_feat_Refractivity' '_feat_fr_NH1'
+ '_feat_HyperWienerIndex' '_feat_molsurfaceareaASAp'
+ '_feat_Hacceptorcount' '_feat_Hdonorcount' '_feat_fr_quatN'
+ '_feat_ChiralCenterCount' '_feat_CyclomaticNumber'
+ '_feat_SmallestRingSize' '_feat_fr_Imine' '_feat_AromaticAtomCount'
+ '_feat_fr_pyridine' '_feat_AtomCount_N' '_feat_donsitecount'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_piperdine' '_feat_donorcount'
+ '_feat_WienerPolarity' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_dihydropyridine' '_feat_fr_guanido'
+ '_feat_Protpsa' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[2.07637248e-01 1.90734383e-01 1.90568282e-01 1.53750350e-01
+ 2.97824847e-02 2.76781640e-02 2.47572516e-02 2.05993949e-02
+ 1.50736583e-02 1.46721210e-02 1.32291438e-02 1.28939753e-02
+ 1.05463663e-02 9.71523665e-03 8.28108824e-03 7.84612612e-03
+ 6.47767051e-03 6.34410746e-03 6.21559905e-03 6.10581028e-03
+ 5.66960820e-03 4.57369756e-03 3.51001767e-03 3.30338345e-03
+ 3.20746299e-03 2.78838108e-03 2.27501452e-03 2.11185527e-03
+ 1.53743609e-03 1.39897514e-03 1.10391720e-03 8.75899771e-04
+ 7.97441937e-04 7.59162635e-04 7.58971441e-04 6.11670720e-04
+ 5.94519105e-04 4.24273871e-04 3.60628709e-04 3.23742797e-04
+ 1.05479009e-04 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_acid' '_rxn_M_inorganic' '_feat_ASA-'
+ '_feat_CarboaliphaticRingCount' '_feat_BalabanIndex' '_feat_ASA_H'
+ '_feat_ASA_P' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Aliphatic AtomCount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_minimalprojectionsize' '_feat_AtomCount_C' '_feat_ChainAtomCount'
+ '_feat_MinimalProjectionArea' '_feat_molsurfaceareaVDWp' '_feat_ASA'
+ '_feat_Accsitecount' '_feat_MinimalProjectionRadius'
+ '_feat_molsurfaceareaASAp' '_feat_Refractivity' '_feat_AvgPol'
+ '_feat_VanderWaalsSurfaceArea' '_feat_msareaVDWp' '_feat_Protpsa'
+ '_feat_fr_amidine' '_feat_RotatableBondCount'
+ '_feat_maximalprojectionsize' '_feat_Hacceptorcount'
+ '_feat_HeteroaliphaticRingCount' '_rxn_temperatureC_actual_bulk'
+ '_feat_WienerIndex' '_feat_VanderWaalsVolume' '_feat_WienerPolarity'
+ '_feat_MaximalProjectionArea' '_feat_fr_NH0' '_feat_AliphaticRingCount'
+ '_feat_PolarSurfaceArea' '_feat_MolPol' '_feat_fr_NH1' '_feat_BondCount'
+ '_feat_SmallestRingSize' '_feat_ASA+' '_feat_AromaticAtomCount'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_pyridine' '_feat_fr_Imine'
+ '_feat_AtomCount_N' '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_fr_piperdine' '_feat_CyclomaticNumber' '_feat_donorcount'
+ '_feat_fr_NH2' '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_RingAtomCount' '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_msareaASAp' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.23558518e-01 2.14189540e-01 1.56293121e-01 1.26918020e-01
+ 2.90908064e-02 2.72808581e-02 2.35200220e-02 1.85799857e-02
+ 1.73755705e-02 1.63458471e-02 1.25827460e-02 1.23163404e-02
+ 1.09068183e-02 1.03541802e-02 1.00078694e-02 9.38223125e-03
+ 7.26498323e-03 6.56578142e-03 6.43890918e-03 6.21709396e-03
+ 4.99227804e-03 4.76647115e-03 4.71521731e-03 4.56182431e-03
+ 3.79576621e-03 3.56499392e-03 3.27943733e-03 3.16282718e-03
+ 2.59362036e-03 2.33675240e-03 2.23987438e-03 2.17330283e-03
+ 2.16852146e-03 1.65322999e-03 1.56793128e-03 1.51024696e-03
+ 1.03604535e-03 8.91371064e-04 8.56209574e-04 8.49730955e-04
+ 7.72318131e-04 5.86130459e-04 2.89984341e-04 2.59548098e-04
+ 1.05527984e-04 7.71889019e-05 2.82914708e-06 1.57863804e-06
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionRadius' '_feat_ASA' '_feat_ASA_H' '_feat_ASA_P'
+ '_feat_molsurfaceareaASAp' '_feat_fr_amidine'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_maximalprojectionsize'
+ '_feat_Accsitecount' '_feat_ChainAtomCount' '_feat_msareaASAp'
+ '_feat_MinimalProjectionArea' '_rxn_temperatureC_actual_bulk'
+ '_feat_ProtPolarSurfaceArea' '_feat_molsurfaceareaVDWp'
+ '_feat_AtomCount_N' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_Protpsa' '_feat_VanderWaalsSurfaceArea' '_feat_msareaVDWp'
+ '_feat_MolPol' '_feat_donsitecount' '_feat_AvgPol' '_feat_fr_NH0'
+ '_feat_ASA+' '_feat_HyperWienerIndex' '_feat_PolarSurfaceArea'
+ '_feat_AliphaticRingCount' '_feat_fr_Imine' '_feat_WienerIndex'
+ '_feat_AtomCount_C' '_feat_Refractivity' '_feat_MaximalProjectionArea'
+ '_feat_MaximalProjectionRadius' '_feat_fr_NH1'
+ '_feat_HeteroaliphaticRingCount' '_feat_Hdonorcount' '_feat_fr_NH2'
+ '_feat_RingAtomCount' '_feat_VanderWaalsVolume' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_fr_pyridine' '_feat_fr_piperdine'
+ '_feat_Hacceptorcount' '_feat_SmallestRingSize' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_WienerPolarity' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_LargestRingSize'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_Ar_NH']"
+"[2.33423232e-01 2.14858128e-01 1.63930318e-01 1.37498236e-01
+ 3.13012333e-02 1.80312440e-02 1.69546439e-02 1.63807536e-02
+ 1.58839881e-02 1.40569796e-02 1.14633172e-02 1.12066114e-02
+ 1.02986348e-02 1.00797417e-02 1.00360885e-02 8.87092035e-03
+ 7.83774228e-03 7.76286071e-03 7.14543318e-03 6.93535863e-03
+ 5.18321230e-03 4.55400372e-03 4.32066901e-03 4.29035732e-03
+ 3.86562818e-03 3.05517711e-03 2.72334381e-03 2.62591561e-03
+ 2.54929585e-03 2.11802930e-03 2.00913624e-03 2.00861745e-03
+ 1.37713517e-03 1.26763328e-03 9.11734827e-04 8.83689634e-04
+ 7.92031279e-04 6.71712708e-04 4.70040229e-04 3.40302947e-04
+ 2.68685807e-05 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount' '_feat_ASA_H'
+ '_feat_MinimalProjectionArea' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_maximalprojectionsize' '_feat_ASA_P' '_feat_AtomCount_C'
+ '_feat_ChainAtomCount' '_feat_AliphaticRingCount' '_feat_fr_NH2'
+ '_rxn_temperatureC_actual_bulk' '_feat_Accsitecount' '_feat_donsitecount'
+ '_feat_VanderWaalsSurfaceArea' '_feat_msareaASAp'
+ '_feat_minimalprojectionsize' '_feat_MinimalProjectionRadius'
+ '_feat_Refractivity' '_feat_AvgPol' '_feat_MolPol'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_VanderWaalsVolume'
+ '_feat_molsurfaceareaVDWp' '_feat_molsurfaceareaASAp'
+ '_feat_WienerPolarity' '_feat_msareaVDWp' '_feat_fr_amidine'
+ '_feat_WienerIndex' '_feat_MaximalProjectionRadius'
+ '_feat_MaximalProjectionArea' '_feat_ASA+' '_feat_HyperWienerIndex'
+ '_feat_BondCount' '_feat_Hacceptorcount' '_feat_Protpsa'
+ '_feat_fr_pyridine' '_feat_ChiralCenterCount' '_feat_fr_Imine'
+ '_feat_AromaticAtomCount' '_feat_AtomCount_N'
+ '_feat_ProtPolarSurfaceArea' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_piperdine'
+ '_feat_CyclomaticNumber' '_feat_donorcount' '_feat_fr_NH1'
+ '_feat_CarboRingCount' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_fr_piperzine' '_feat_fr_guanido' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.11748500e-01 2.00143009e-01 1.77576608e-01 1.48235465e-01
+ 2.29801056e-02 2.28946846e-02 2.28376482e-02 1.72538523e-02
+ 1.55845815e-02 1.22435773e-02 1.14404825e-02 1.08342844e-02
+ 1.03130623e-02 1.00786721e-02 8.43978997e-03 8.06945620e-03
+ 7.97533425e-03 7.83932179e-03 6.97033070e-03 6.04320653e-03
+ 5.95725384e-03 5.91838533e-03 5.77889563e-03 5.75908721e-03
+ 5.49951079e-03 5.05411905e-03 3.62024920e-03 3.11704373e-03
+ 2.68366625e-03 2.50719619e-03 1.96119761e-03 1.58150030e-03
+ 1.36793082e-03 1.31338363e-03 1.29230516e-03 1.13791509e-03
+ 1.07612783e-03 9.77967306e-04 9.71579198e-04 7.80682536e-04
+ 4.83742140e-04 4.80876298e-04 3.38143230e-04 2.84116023e-04
+ 2.37407542e-04 2.09150571e-04 1.08596015e-04 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_CarboaliphaticRingCount' '_feat_ChainAtomCount' '_feat_ASA_H'
+ '_feat_Aliphatic AtomCount' '_feat_minimalprojectionsize'
+ '_feat_Refractivity' '_feat_molsurfaceareaASAp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_ASA_P'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_MinimalProjectionArea'
+ '_feat_ASA' '_feat_LengthPerpendicularToTheMaxArea' '_feat_BalabanIndex'
+ '_rxn_temperatureC_actual_bulk' '_feat_AliphaticRingCount'
+ '_feat_Accsitecount' '_feat_VanderWaalsVolume'
+ '_feat_maximalprojectionsize' '_feat_AvgPol' '_feat_MolPol'
+ '_feat_fr_NH2' '_feat_MinimalProjectionRadius' '_feat_ASA+'
+ '_feat_molsurfaceareaVDWp' '_feat_WienerPolarity'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_amidine'
+ '_feat_HeteroaliphaticRingCount' '_feat_msareaVDWp'
+ '_feat_HyperWienerIndex' '_feat_AtomCount_C'
+ '_feat_MaximalProjectionArea' '_feat_fr_quatN' '_feat_fr_NH0'
+ '_feat_msareaASAp' '_feat_acceptorcount' '_feat_fr_Imine' '_feat_Protpsa'
+ '_feat_SmallestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_donsitecount' '_feat_donorcount' '_feat_RotatableBondCount'
+ '_feat_AromaticRingCount' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count' '_feat_fr_pyridine'
+ '_feat_Hdonorcount' '_feat_fr_piperdine' '_feat_PolarSurfaceArea'
+ '_feat_fr_ArN' '_feat_AromaticAtomCount' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_ChiralCenterCount' '_feat_AtomCount_N'
+ '_feat_fr_dihydropyridine' '_feat_Hacceptorcount' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_feat_CyclomaticNumber' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_fr_NH1' '_feat_fr_guanido'
+ '_feat_fr_Ar_NH']"
+"[2.26736599e-01 2.07725075e-01 1.59562202e-01 1.26008863e-01
+ 3.08072941e-02 2.07951003e-02 2.04225384e-02 1.98982255e-02
+ 1.92944321e-02 1.74762444e-02 1.70496554e-02 1.68742240e-02
+ 1.37300423e-02 1.19521693e-02 1.06219308e-02 1.01738759e-02
+ 8.68302774e-03 7.69202258e-03 7.48344907e-03 5.85824275e-03
+ 5.51014255e-03 5.19632818e-03 4.47564150e-03 3.44865743e-03
+ 3.38181797e-03 2.65563071e-03 2.26389576e-03 1.90627397e-03
+ 1.82303838e-03 1.66789061e-03 1.54432408e-03 1.32240552e-03
+ 1.24705457e-03 1.07734024e-03 7.75799738e-04 6.75268734e-04
+ 5.69073532e-04 5.14306333e-04 4.39202517e-04 3.63553696e-04
+ 2.45196640e-04 5.19440347e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ASA_H'
+ '_feat_CarboaliphaticRingCount' '_feat_maximalprojectionsize'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_P' '_feat_MinimalProjectionArea'
+ '_feat_ASA' '_feat_BalabanIndex' '_feat_ChainAtomCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Accsitecount'
+ '_feat_msareaVDWp' '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_C'
+ '_feat_Refractivity' '_feat_MinimalProjectionRadius'
+ '_feat_minimalprojectionsize' '_feat_Protpsa' '_feat_donsitecount'
+ '_feat_AliphaticRingCount' '_feat_MolPol' '_feat_RotatableBondCount'
+ '_feat_molsurfaceareaASAp' '_feat_WienerPolarity' '_feat_ASA+'
+ '_feat_MaximalProjectionArea' '_feat_VanderWaalsVolume'
+ '_feat_fr_amidine' '_feat_VanderWaalsSurfaceArea' '_feat_AvgPol'
+ '_feat_msareaASAp' '_feat_HyperWienerIndex' '_feat_fr_NH0'
+ '_feat_molsurfaceareaVDWp' '_feat_HeteroaliphaticRingCount'
+ '_feat_MaximalProjectionRadius' '_feat_Hacceptorcount'
+ '_feat_SmallestRingSize' '_feat_ChiralCenterCount' '_feat_AtomCount_N'
+ '_feat_ProtPolarSurfaceArea' '_feat_AromaticAtomCount'
+ '_feat_fr_pyridine' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_CyclomaticNumber' '_feat_donorcount' '_feat_fr_NH2'
+ '_feat_fr_piperzine' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_NH1' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_quatN' '_feat_fr_guanido'
+ '_feat_fr_Ar_NH']"
+"[2.32875704e-01 2.10113080e-01 1.75827842e-01 1.43665359e-01
+ 2.64590587e-02 2.19381979e-02 2.14478556e-02 1.74639144e-02
+ 1.74287624e-02 1.61429340e-02 1.58795681e-02 1.33237037e-02
+ 1.32229634e-02 8.14298584e-03 7.94640279e-03 7.73910818e-03
+ 5.73660667e-03 5.19209650e-03 4.90013670e-03 3.74215744e-03
+ 3.63127669e-03 3.57634051e-03 3.57003818e-03 3.37665156e-03
+ 2.30740588e-03 2.10848174e-03 1.66939734e-03 1.62134113e-03
+ 1.44578751e-03 1.29111081e-03 9.43796812e-04 9.34793054e-04
+ 9.26687912e-04 8.62329453e-04 7.06993308e-04 5.24868418e-04
+ 5.09421121e-04 4.76782070e-04 2.88811053e-04 2.59005158e-05
+ 5.07128593e-06 4.50432600e-06 3.77175467e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_P'
+ '_feat_MinimalProjectionArea' '_feat_ASA' '_feat_MinimalProjectionRadius'
+ '_feat_ASA_H' '_feat_LengthPerpendicularToTheMinArea'
+ '_rxn_temperatureC_actual_bulk' '_feat_minimalprojectionsize'
+ '_feat_Accsitecount' '_feat_molsurfaceareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_ChainAtomCount' '_feat_fr_amidine'
+ '_feat_AtomCount_C' '_feat_MolPol' '_feat_PolarSurfaceArea'
+ '_feat_BondCount' '_feat_msareaVDWp' '_feat_Refractivity' '_feat_ASA+'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_donorcount'
+ '_feat_WienerIndex' '_feat_msareaASAp' '_feat_AvgPol' '_feat_fr_NH0'
+ '_feat_fr_Imine' '_feat_molsurfaceareaASAp' '_feat_WienerPolarity'
+ '_feat_MaximalProjectionRadius' '_feat_fr_NH2' '_feat_SmallestRingSize'
+ '_feat_CarboRingCount' '_feat_RingAtomCount' '_feat_fr_piperdine'
+ '_rxn_mixingtime2S' '_feat_acceptorcount' '_feat_Hacceptorcount'
+ '_feat_fr_pyridine' '_rxn_stirrateRPM' '_feat_HeteroaromaticRing Count'
+ '_feat_donsitecount' '_feat_ChiralCenterCount'
+ '_feat_ProtPolarSurfaceArea' '_feat_MaximalProjectionArea'
+ '_feat_AtomCount_N' '_rxn_reactiontimeS' '_feat_AromaticAtomCount'
+ '_feat_CyclomaticNumber' '_feat_Hdonorcount' '_feat_fr_dihydropyridine'
+ '_feat_HyperWienerIndex' '_feat_LargestRingSize' '_rxn_mixingtime1S'
+ '_feat_maximalprojectionsize' '_feat_Protpsa'
+ '_feat_CarboaromaticRingCount' '_feat_fr_piperzine'
+ '_feat_HeteroaliphaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_guanido'
+ '_feat_fr_NH1' '_feat_fr_ArN' '_feat_fr_Ar_NH']"
+"[2.18477360e-01 2.03041314e-01 1.69064143e-01 1.43030639e-01
+ 2.87653798e-02 2.34919284e-02 2.19612025e-02 2.16706661e-02
+ 2.08651456e-02 2.04868573e-02 1.81742522e-02 1.57846386e-02
+ 1.17326409e-02 1.17004817e-02 1.13545962e-02 9.87964378e-03
+ 8.14326144e-03 8.09218463e-03 5.09546351e-03 2.74917856e-03
+ 2.65687583e-03 2.56845094e-03 2.48968374e-03 2.34072693e-03
+ 2.18256793e-03 1.97361808e-03 1.84142767e-03 1.77326523e-03
+ 1.31476956e-03 1.22436963e-03 1.05410969e-03 7.92825159e-04
+ 5.43513905e-04 4.67881646e-04 4.53893735e-04 3.91842493e-04
+ 3.89489671e-04 3.87928071e-04 3.30637577e-04 3.11271742e-04
+ 2.94242081e-04 2.16655228e-04 1.53253037e-04 1.51057379e-04
+ 1.34665722e-04 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ChainAtomCount' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_H'
+ '_feat_minimalprojectionsize' '_feat_MinimalProjectionRadius'
+ '_feat_ASA_P' '_feat_Accsitecount' '_rxn_temperatureC_actual_bulk'
+ '_feat_fr_NH2' '_feat_MinimalProjectionArea' '_feat_ProtPolarSurfaceArea'
+ '_feat_maximalprojectionsize' '_feat_AliphaticRingCount'
+ '_feat_msareaVDWp' '_feat_AtomCount_N' '_feat_AvgPol' '_feat_AtomCount_C'
+ '_feat_Protpsa' '_feat_Refractivity' '_feat_acceptorcount'
+ '_feat_molsurfaceareaASAp' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_HeteroaliphaticRingCount' '_feat_HyperWienerIndex'
+ '_feat_BondCount' '_feat_WienerIndex' '_feat_MaximalProjectionRadius'
+ '_feat_molsurfaceareaVDWp' '_feat_donorcount'
+ '_feat_MaximalProjectionArea' '_feat_fr_NH1' '_feat_VanderWaalsVolume'
+ '_feat_CarboaromaticRingCount' '_feat_fr_Imine' '_feat_ASA+'
+ '_feat_MolPol' '_feat_WienerPolarity' '_rxn_mixingtime1S'
+ '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_HeteroaromaticRing Count' '_feat_AromaticAtomCount'
+ '_feat_fr_piperdine' '_rxn_mixingtime2S' '_rxn_stirrateRPM'
+ '_feat_PolarSurfaceArea' '_feat_fr_pyridine' '_feat_fr_amidine'
+ '_rxn_reactiontimeS' '_feat_Hdonorcount' '_feat_SmallestRingSize'
+ '_feat_Hacceptorcount' '_feat_fr_ArN' '_feat_VanderWaalsSurfaceArea'
+ '_feat_fr_NH0' '_feat_CyclomaticNumber' '_feat_CarboRingCount'
+ '_feat_fr_guanido' '_feat_fr_quatN' '_feat_fr_piperzine'
+ '_feat_msareaASAp' '_feat_fr_dihydropyridine' '_feat_RotatableBondCount'
+ '_feat_AromaticRingCount' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_fr_Ar_NH']"
+"[2.23259668e-01 1.88267857e-01 1.71548667e-01 1.43468983e-01
+ 4.64003328e-02 2.66147211e-02 2.50154317e-02 2.17215961e-02
+ 2.12228802e-02 1.82539133e-02 1.69391865e-02 1.13344853e-02
+ 1.11051918e-02 1.05289012e-02 9.61526801e-03 7.21838506e-03
+ 5.82113241e-03 5.67556181e-03 4.70925577e-03 3.97571219e-03
+ 3.77524020e-03 3.60012735e-03 2.86229089e-03 2.80616495e-03
+ 2.72252973e-03 2.10174134e-03 1.56078598e-03 1.54047121e-03
+ 1.34584779e-03 9.97207305e-04 9.26587328e-04 7.30671667e-04
+ 7.16744009e-04 5.67983139e-04 4.92235001e-04 2.65475609e-04
+ 1.79647136e-04 7.38207965e-05 3.57635416e-05 1.53433422e-06
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_H' '_feat_MinimalProjectionArea'
+ '_feat_Aliphatic AtomCount' '_feat_CarboaliphaticRingCount' '_feat_ASA'
+ '_feat_ASA_P' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_minimalprojectionsize' '_feat_Accsitecount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_maximalprojectionsize'
+ '_rxn_temperatureC_actual_bulk' '_feat_AliphaticRingCount'
+ '_feat_fr_amidine' '_feat_RotatableBondCount'
+ '_feat_MinimalProjectionRadius' '_feat_VanderWaalsSurfaceArea'
+ '_feat_ChainAtomCount' '_feat_VanderWaalsVolume' '_feat_Refractivity'
+ '_feat_AtomCount_C' '_feat_fr_NH2' '_feat_MaximalProjectionRadius'
+ '_feat_msareaASAp' '_feat_msareaVDWp' '_feat_ASA+' '_feat_WienerIndex'
+ '_feat_MaximalProjectionArea' '_feat_ProtPolarSurfaceArea' '_feat_MolPol'
+ '_feat_AvgPol' '_feat_molsurfaceareaVDWp' '_feat_fr_guanido'
+ '_feat_fr_Imine' '_feat_AromaticAtomCount'
+ '_feat_HeteroaliphaticRingCount' '_feat_SmallestRingSize'
+ '_feat_Hacceptorcount' '_feat_AtomCount_N' '_feat_donsitecount'
+ '_feat_CyclomaticNumber' '_feat_fr_piperdine' '_feat_fr_pyridine'
+ '_feat_WienerPolarity' '_feat_ChiralCenterCount' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_quatN' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_molsurfaceareaASAp'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_Protpsa' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_HyperWienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_Ar_NH']"
+"[2.21193542e-01 2.02827635e-01 1.63258917e-01 1.62741971e-01
+ 2.76292915e-02 2.65558281e-02 2.44880326e-02 1.74541631e-02
+ 1.72504097e-02 1.38838697e-02 1.38389487e-02 1.28362131e-02
+ 1.23724622e-02 9.45380074e-03 7.35916531e-03 6.88805438e-03
+ 5.83000973e-03 5.67783496e-03 5.51009852e-03 4.36728215e-03
+ 4.26995090e-03 4.02389273e-03 3.99764572e-03 3.83649393e-03
+ 3.45833728e-03 3.23977053e-03 3.19779879e-03 2.34877804e-03
+ 2.32096161e-03 1.97418105e-03 1.24659422e-03 1.07295113e-03
+ 1.05983794e-03 7.44580860e-04 4.79325744e-04 4.13603876e-04
+ 3.44248330e-04 2.41566644e-04 2.24507889e-04 2.97696514e-05
+ 2.69152768e-05 1.86402522e-05 1.21175766e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_P' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_MinimalProjectionArea'
+ '_feat_maximalprojectionsize' '_feat_MinimalProjectionRadius' '_feat_ASA'
+ '_feat_ASA_H' '_feat_msareaASAp' '_feat_AtomCount_C'
+ '_feat_VanderWaalsSurfaceArea' '_feat_MaximalProjectionArea'
+ '_feat_ChainAtomCount' '_feat_MaximalProjectionRadius'
+ '_feat_Accsitecount' '_feat_molsurfaceareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_minimalprojectionsize' '_feat_fr_amidine' '_feat_msareaVDWp'
+ '_rxn_temperatureC_actual_bulk' '_feat_VanderWaalsVolume' '_feat_ASA+'
+ '_feat_molsurfaceareaASAp' '_feat_Hacceptorcount' '_feat_AvgPol'
+ '_feat_fr_Imine' '_feat_LengthPerpendicularToTheMinArea' '_feat_fr_NH1'
+ '_feat_Refractivity' '_feat_BondCount' '_feat_HyperWienerIndex'
+ '_feat_WienerIndex' '_feat_AromaticAtomCount' '_feat_fr_NH0'
+ '_feat_Hdonorcount' '_feat_SmallestRingSize' '_feat_fr_pyridine'
+ '_feat_HeteroaliphaticRingCount' '_feat_donsitecount'
+ '_feat_fr_piperdine' '_feat_MolPol' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_CyclomaticNumber'
+ '_feat_ProtPolarSurfaceArea' '_feat_donorcount' '_feat_WienerPolarity'
+ '_feat_fr_NH2' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_Protpsa' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_Ar_NH']"
+"[2.29235580e-01 1.99211539e-01 1.47454827e-01 1.43989961e-01
+ 3.16114946e-02 2.43614679e-02 2.12981643e-02 1.74648225e-02
+ 1.64015643e-02 1.63795903e-02 1.43766395e-02 1.09975778e-02
+ 1.00199396e-02 9.63423038e-03 9.16450880e-03 8.77003285e-03
+ 7.46010006e-03 6.85801930e-03 6.63965416e-03 6.31844913e-03
+ 5.85467224e-03 5.83236912e-03 5.79134840e-03 5.13675693e-03
+ 4.85968245e-03 4.63556812e-03 4.61921329e-03 4.53705675e-03
+ 4.14105875e-03 3.68252611e-03 2.49998384e-03 2.39233582e-03
+ 2.15706647e-03 2.10926435e-03 1.74781654e-03 8.06830579e-04
+ 6.87600633e-04 3.93853311e-04 3.19439031e-04 1.47394786e-04
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_H' '_feat_ASA' '_feat_MolPol'
+ '_feat_ChainAtomCount' '_feat_MinimalProjectionArea' '_feat_fr_amidine'
+ '_feat_Accsitecount' '_rxn_temperatureC_actual_bulk'
+ '_feat_maximalprojectionsize' '_feat_MinimalProjectionRadius'
+ '_feat_molsurfaceareaVDWp' '_feat_fr_quatN' '_feat_AtomCount_C'
+ '_feat_HyperWienerIndex' '_feat_MaximalProjectionArea' '_feat_AvgPol'
+ '_feat_minimalprojectionsize' '_feat_MaximalProjectionRadius'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_msareaVDWp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_fr_guanido' '_feat_ASA+'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_molsurfaceareaASAp'
+ '_feat_AliphaticRingCount' '_feat_fr_NH0' '_feat_ASA_P' '_feat_fr_Imine'
+ '_feat_Refractivity' '_feat_WienerIndex' '_feat_msareaASAp'
+ '_feat_Protpsa' '_feat_Hacceptorcount' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_donsitecount'
+ '_feat_WienerPolarity' '_feat_AromaticAtomCount' '_feat_fr_piperdine'
+ '_feat_fr_pyridine' '_feat_ProtPolarSurfaceArea' '_feat_CyclomaticNumber'
+ '_feat_donorcount' '_feat_fr_NH2' '_feat_fr_NH1' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[0.22261345 0.18874389 0.17326553 0.15622715 0.0282935  0.02423429
+ 0.02301658 0.01870041 0.01709711 0.0162351  0.01593797 0.01099489
+ 0.01086235 0.00915897 0.00914227 0.00879214 0.00825143 0.00778327
+ 0.00618358 0.00564574 0.00551998 0.00334038 0.00311423 0.00287275
+ 0.00286076 0.00236207 0.0022976  0.00177119 0.00169951 0.0016659
+ 0.00165623 0.00162373 0.00135943 0.00122215 0.00117543 0.00093481
+ 0.00086706 0.00082379 0.00065721 0.00041848 0.00031134 0.00026637
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.        ]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_maximalprojectionsize' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_ASA' '_feat_minimalprojectionsize' '_feat_fr_amidine'
+ '_feat_Aliphatic AtomCount' '_feat_MinimalProjectionArea'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ChainAtomCount'
+ '_feat_ASA_H' '_feat_ASA_P' '_feat_MinimalProjectionRadius'
+ '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_C' '_feat_Accsitecount'
+ '_feat_ASA+' '_feat_VanderWaalsSurfaceArea' '_feat_molsurfaceareaASAp'
+ '_feat_RotatableBondCount' '_feat_AvgPol' '_feat_Hacceptorcount'
+ '_feat_MaximalProjectionRadius' '_feat_ProtPolarSurfaceArea'
+ '_feat_molsurfaceareaVDWp' '_feat_HeteroaliphaticRingCount'
+ '_feat_donsitecount' '_feat_Refractivity' '_feat_MolPol'
+ '_feat_msareaASAp' '_feat_fr_quatN' '_feat_fr_NH0' '_feat_msareaVDWp'
+ '_feat_fr_NH2' '_feat_WienerIndex' '_feat_AliphaticRingCount'
+ '_feat_MaximalProjectionArea' '_feat_fr_pyridine'
+ '_feat_CyclomaticNumber' '_feat_ChiralCenterCount' '_feat_fr_Imine'
+ '_feat_fr_piperdine' '_feat_SmallestRingSize' '_feat_AromaticAtomCount'
+ '_feat_AtomCount_N' '_feat_WienerPolarity' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_guanido' '_feat_Protpsa'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_HyperWienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_VanderWaalsVolume'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_Ar_NH']"
+"[2.06923609e-01 2.00376163e-01 1.95797268e-01 1.50975378e-01
+ 2.35739101e-02 1.87424795e-02 1.86130327e-02 1.69479396e-02
+ 1.60480383e-02 1.55455323e-02 1.45235414e-02 1.33827332e-02
+ 1.21011041e-02 1.02758880e-02 9.06861403e-03 7.55061699e-03
+ 7.42524695e-03 6.78320374e-03 6.57955044e-03 6.24347988e-03
+ 4.93891081e-03 4.82856386e-03 4.69537009e-03 4.27563136e-03
+ 4.20120512e-03 3.99341519e-03 3.06403437e-03 2.26359944e-03
+ 1.97762262e-03 1.75205423e-03 1.17173177e-03 1.09896021e-03
+ 9.07885723e-04 6.70555778e-04 5.30336929e-04 4.78626846e-04
+ 4.75949915e-04 3.47810624e-04 3.05544265e-04 2.56143245e-04
+ 2.41490111e-04 4.66916447e-05 5.36663466e-07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA' '_feat_ASA_P' '_feat_BalabanIndex' '_feat_ChainAtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_MinimalProjectionRadius'
+ '_feat_maximalprojectionsize' '_feat_Aliphatic AtomCount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Accsitecount'
+ '_feat_AliphaticRingCount' '_feat_MolPol' '_feat_ASA_H'
+ '_feat_MinimalProjectionArea' '_feat_PolarSurfaceArea' '_feat_fr_amidine'
+ '_feat_fr_NH2' '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_C'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_msareaASAp'
+ '_feat_molsurfaceareaVDWp' '_feat_Refractivity'
+ '_feat_molsurfaceareaASAp' '_feat_AromaticAtomCount' '_feat_AvgPol'
+ '_feat_fr_NH0' '_feat_ASA+' '_feat_MaximalProjectionArea'
+ '_feat_VanderWaalsSurfaceArea' '_feat_WienerIndex'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_NH1'
+ '_feat_CarboaromaticRingCount' '_feat_minimalprojectionsize'
+ '_feat_Protpsa' '_feat_msareaVDWp' '_feat_RingAtomCount'
+ '_feat_AtomCount_N' '_feat_Hacceptorcount' '_feat_ChiralCenterCount'
+ '_feat_SmallestRingSize' '_feat_donsitecount' '_feat_fr_pyridine'
+ '_feat_fr_Imine' '_feat_HeteroaliphaticRingCount'
+ '_feat_CyclomaticNumber' '_feat_fr_piperdine' '_feat_donorcount'
+ '_feat_WienerPolarity' '_feat_fr_guanido' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_LargestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_HyperWienerIndex' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.10950685e-01 2.06626130e-01 1.56095269e-01 1.55893140e-01
+ 4.33936132e-02 2.19432023e-02 2.14728314e-02 1.71101289e-02
+ 1.63310251e-02 1.60932510e-02 1.57181790e-02 1.21922095e-02
+ 1.12413262e-02 1.06294937e-02 1.04390620e-02 8.29890419e-03
+ 8.04952301e-03 7.19657728e-03 6.93273476e-03 6.41368578e-03
+ 4.58951546e-03 3.87084138e-03 3.37049049e-03 3.09030511e-03
+ 2.43904863e-03 2.36505692e-03 2.13314212e-03 2.08237700e-03
+ 1.96701227e-03 1.95359675e-03 1.68235957e-03 1.57924691e-03
+ 1.23435162e-03 8.64416921e-04 7.12653652e-04 6.68129441e-04
+ 5.73301360e-04 5.68086450e-04 5.59784120e-04 3.71393841e-04
+ 2.98705003e-04 4.70413088e-06 5.09866006e-07 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionRadius' '_feat_maximalprojectionsize' '_feat_ASA'
+ '_feat_AtomCount_C' '_feat_ASA_H' '_feat_MinimalProjectionArea'
+ '_feat_ChainAtomCount' '_feat_Accsitecount' '_feat_acceptorcount'
+ '_feat_fr_NH2' '_feat_fr_amidine' '_feat_LengthPerpendicularToTheMinArea'
+ '_rxn_temperatureC_actual_bulk' '_feat_MolPol'
+ '_feat_MaximalProjectionArea' '_feat_VanderWaalsVolume' '_feat_ASA_P'
+ '_feat_AvgPol' '_feat_Hacceptorcount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_AliphaticRingCount'
+ '_feat_AromaticAtomCount' '_feat_ASA+' '_feat_molsurfaceareaVDWp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_msareaVDWp' '_feat_fr_NH0'
+ '_feat_MaximalProjectionRadius' '_feat_WienerIndex'
+ '_feat_molsurfaceareaASAp' '_feat_fr_Imine' '_feat_ProtPolarSurfaceArea'
+ '_feat_BondCount' '_feat_AromaticRingCount' '_feat_Refractivity'
+ '_feat_AtomCount_N' '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_WienerPolarity' '_feat_SmallestRingSize' '_feat_fr_pyridine'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_piperdine'
+ '_feat_CyclomaticNumber' '_feat_donorcount' '_feat_fr_NH1'
+ '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_Protpsa'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_HyperWienerIndex'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_msareaASAp' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.12590570e-01 1.92263304e-01 1.79168213e-01 1.41221819e-01
+ 2.52572712e-02 2.40983374e-02 2.18618859e-02 1.92943118e-02
+ 1.88202572e-02 1.58915493e-02 1.37438646e-02 1.37193191e-02
+ 1.23324116e-02 1.18566317e-02 1.04595170e-02 1.00670290e-02
+ 9.24640053e-03 9.06399437e-03 6.28309086e-03 5.61745354e-03
+ 5.27450525e-03 5.22159680e-03 4.90713907e-03 4.54142954e-03
+ 4.15590965e-03 3.99324759e-03 3.75650931e-03 2.41337257e-03
+ 2.40081207e-03 2.26756133e-03 1.91626145e-03 1.49728975e-03
+ 1.37417386e-03 1.05503948e-03 7.97245581e-04 4.84864646e-04
+ 4.49573926e-04 3.53920763e-04 2.16988185e-04 3.07115956e-05
+ 2.00910738e-05 1.41027487e-05 2.73872760e-07 1.48616756e-07
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_Aliphatic AtomCount' '_feat_ASA' '_feat_MinimalProjectionArea'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ChainAtomCount'
+ '_feat_fr_NH2' '_feat_maximalprojectionsize' '_feat_ASA_H'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionRadius'
+ '_feat_minimalprojectionsize' '_feat_Accsitecount'
+ '_rxn_temperatureC_actual_bulk' '_feat_AliphaticRingCount' '_feat_ASA_P'
+ '_feat_molsurfaceareaVDWp' '_feat_MaximalProjectionRadius'
+ '_feat_msareaASAp' '_feat_VanderWaalsSurfaceArea' '_feat_Hacceptorcount'
+ '_feat_ASA+' '_feat_MolPol' '_feat_Refractivity' '_feat_msareaVDWp'
+ '_feat_AtomCount_C' '_feat_fr_guanido' '_feat_ProtPolarSurfaceArea'
+ '_feat_AtomCount_N' '_feat_fr_amidine' '_feat_VanderWaalsVolume'
+ '_feat_Protpsa' '_feat_fr_Imine' '_feat_MaximalProjectionArea'
+ '_feat_fr_NH0' '_feat_LargestRingSize' '_feat_HyperWienerIndex'
+ '_feat_BondCount' '_feat_WienerIndex' '_feat_HeteroaliphaticRingCount'
+ '_feat_fr_pyridine' '_feat_SmallestRingSize' '_feat_CyclomaticNumber'
+ '_feat_donsitecount' '_feat_AromaticAtomCount' '_feat_fr_piperdine'
+ '_feat_ChiralCenterCount' '_feat_donorcount' '_feat_WienerPolarity'
+ '_feat_fr_NH1' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_molsurfaceareaASAp'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_RingAtomCount' '_feat_AvgPol' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.13727624e-01 2.06693398e-01 1.57786798e-01 1.45046837e-01
+ 3.52112418e-02 3.13795181e-02 2.62114071e-02 1.87533410e-02
+ 1.66851893e-02 1.60147248e-02 1.40595977e-02 1.35187717e-02
+ 1.29553447e-02 1.20545525e-02 1.15565176e-02 9.72566482e-03
+ 9.23192874e-03 6.51057319e-03 5.77335441e-03 4.20484802e-03
+ 4.15993973e-03 3.43796696e-03 3.39526201e-03 3.14181615e-03
+ 2.97825123e-03 2.15086308e-03 1.92828816e-03 1.57939275e-03
+ 1.52273426e-03 1.39150390e-03 1.26256399e-03 1.19537463e-03
+ 1.15839915e-03 8.69778941e-04 8.30461175e-04 5.60743594e-04
+ 5.21638939e-04 2.90639406e-04 2.83230700e-04 1.02558269e-04
+ 6.83441583e-05 6.75650936e-05 1.45084279e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_minimalprojectionsize' '_feat_ASA_H'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_P' '_feat_BalabanIndex'
+ '_feat_Aliphatic AtomCount' '_feat_ChainAtomCount' '_feat_Accsitecount'
+ '_feat_MinimalProjectionRadius' '_feat_MinimalProjectionArea'
+ '_rxn_temperatureC_actual_bulk' '_feat_ASA' '_feat_AliphaticRingCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_VanderWaalsSurfaceArea'
+ '_feat_fr_amidine' '_feat_MolPol' '_feat_maximalprojectionsize'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Refractivity'
+ '_feat_AtomCount_C' '_feat_molsurfaceareaVDWp' '_feat_molsurfaceareaASAp'
+ '_feat_WienerIndex' '_feat_msareaVDWp' '_feat_ASA+' '_feat_AvgPol'
+ '_feat_HyperWienerIndex' '_feat_WienerPolarity' '_feat_BondCount'
+ '_feat_fr_Imine' '_feat_ProtPolarSurfaceArea' '_feat_msareaASAp'
+ '_feat_donorcount' '_feat_Hdonorcount' '_feat_MaximalProjectionRadius'
+ '_feat_donsitecount' '_feat_Protpsa' '_feat_PolarSurfaceArea'
+ '_rxn_mixingtime1S' '_feat_HeteroaromaticRing Count' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_AromaticAtomCount' '_feat_acceptorcount'
+ '_feat_fr_piperdine' '_feat_Hacceptorcount' '_feat_fr_pyridine'
+ '_rxn_mixingtime2S' '_rxn_stirrateRPM' '_feat_MaximalProjectionArea'
+ '_rxn_reactiontimeS' '_feat_fr_ArN' '_feat_SmallestRingSize'
+ '_feat_fr_NH0' '_feat_fr_quatN' '_feat_CarboaromaticRingCount'
+ '_feat_RingAtomCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_LargestRingSize'
+ '_feat_fr_dihydropyridine' '_feat_fr_guanido' '_feat_VanderWaalsVolume'
+ '_feat_fr_NH1' '_feat_fr_NH2' '_feat_fr_piperzine'
+ '_feat_CyclomaticNumber' '_feat_CarboRingCount'
+ '_feat_HeteroaliphaticRingCount' '_feat_fr_Ar_NH']"
+"[2.10297082e-01 2.08009282e-01 1.56267844e-01 1.52301725e-01
+ 3.08968575e-02 2.22760860e-02 2.12842014e-02 1.77056303e-02
+ 1.74257486e-02 1.49608939e-02 1.40324538e-02 1.39871836e-02
+ 1.38315929e-02 1.30580544e-02 1.18751386e-02 1.04119948e-02
+ 9.31646573e-03 9.17728043e-03 7.70839582e-03 5.41061005e-03
+ 5.16037813e-03 3.89010373e-03 3.85785564e-03 2.96720869e-03
+ 2.61824516e-03 2.59209944e-03 2.32172448e-03 1.80766893e-03
+ 1.77954939e-03 1.69592144e-03 1.61799231e-03 1.57228437e-03
+ 1.50252632e-03 1.30239985e-03 1.25746839e-03 1.20300565e-03
+ 7.36863315e-04 5.65306763e-04 5.02764976e-04 3.63668495e-04
+ 3.21034908e-04 1.29408082e-04 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_ASA' '_feat_CarboaliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_MinimalProjectionArea'
+ '_feat_maximalprojectionsize' '_feat_minimalprojectionsize'
+ '_feat_Aliphatic AtomCount' '_feat_ASA_P' '_feat_ASA_H'
+ '_feat_Accsitecount' '_feat_msareaVDWp' '_feat_Refractivity'
+ '_feat_MolPol' '_feat_VanderWaalsSurfaceArea'
+ '_feat_MaximalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_AromaticAtomCount' '_feat_AvgPol' '_feat_MinimalProjectionRadius'
+ '_feat_AliphaticRingCount' '_feat_fr_NH0' '_feat_WienerIndex'
+ '_feat_HyperWienerIndex' '_feat_fr_NH2' '_feat_msareaASAp'
+ '_feat_WienerPolarity' '_feat_ProtPolarSurfaceArea' '_feat_donsitecount'
+ '_feat_VanderWaalsVolume' '_feat_Hacceptorcount' '_feat_acceptorcount'
+ '_feat_fr_Imine' '_feat_ASA+' '_feat_fr_quatN' '_feat_AtomCount_C'
+ '_feat_CyclomaticNumber' '_feat_MaximalProjectionArea'
+ '_feat_ChiralCenterCount' '_feat_HeteroaliphaticRingCount'
+ '_feat_SmallestRingSize' '_feat_AtomCount_N' '_feat_fr_pyridine'
+ '_feat_molsurfaceareaVDWp' '_feat_fr_piperdine' '_feat_fr_amidine'
+ '_feat_donorcount' '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_molsurfaceareaASAp' '_feat_Hdonorcount' '_feat_PolarSurfaceArea'
+ '_feat_fr_ArN' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_Protpsa' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[2.21689628e-01 2.11292324e-01 1.68252818e-01 1.36858461e-01
+ 2.48360791e-02 2.20722779e-02 1.98062057e-02 1.86242234e-02
+ 1.84928400e-02 1.84510693e-02 1.59290472e-02 1.43419667e-02
+ 1.35063008e-02 1.00681725e-02 8.37759563e-03 8.27360145e-03
+ 7.36559802e-03 6.38180027e-03 6.07793736e-03 5.18168569e-03
+ 4.99739492e-03 4.42726459e-03 4.29806435e-03 4.14569252e-03
+ 3.97840729e-03 3.45410737e-03 3.40269437e-03 3.19133352e-03
+ 2.92374083e-03 2.89893117e-03 1.61210224e-03 1.38575257e-03
+ 8.92231549e-04 7.45855788e-04 6.62874287e-04 5.28659397e-04
+ 4.25666227e-04 1.49595705e-04 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_CarboaliphaticRingCount' '_feat_BalabanIndex' '_feat_ASA_P'
+ '_feat_ASA_H' '_feat_Aliphatic AtomCount' '_feat_MinimalProjectionArea'
+ '_feat_ASA' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Accsitecount'
+ '_feat_AtomCount_C' '_feat_msareaVDWp' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_ChainAtomCount' '_feat_Refractivity' '_feat_maximalprojectionsize'
+ '_feat_molsurfaceareaASAp' '_feat_ASA+' '_feat_AliphaticRingCount'
+ '_feat_molsurfaceareaVDWp' '_feat_Hacceptorcount'
+ '_feat_HyperWienerIndex' '_feat_RotatableBondCount' '_feat_donorcount'
+ '_feat_MolPol' '_feat_MaximalProjectionArea' '_feat_donsitecount'
+ '_feat_AvgPol' '_feat_fr_Imine' '_feat_Protpsa'
+ '_feat_ProtPolarSurfaceArea' '_feat_fr_NH1' '_feat_LargestRingSize'
+ '_feat_SmallestRingSize' '_feat_Hdonorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_acceptorcount'
+ '_feat_AtomCount_N' '_feat_ChiralCenterCount' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_AromaticAtomCount' '_feat_PolarSurfaceArea'
+ '_rxn_reactiontimeS' '_feat_fr_piperdine' '_feat_fr_pyridine'
+ '_feat_fr_amidine' '_feat_HeteroaliphaticRingCount'
+ '_feat_WienerPolarity' '_feat_CyclomaticNumber'
+ '_feat_MaximalProjectionRadius' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_VanderWaalsSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_piperzine' '_feat_AromaticRingCount'
+ '_feat_CarboRingCount' '_feat_fr_NH0' '_feat_msareaASAp' '_feat_fr_ArN'
+ '_feat_fr_quatN' '_feat_fr_guanido' '_feat_fr_NH2' '_feat_fr_Ar_NH']"
+"[2.16480348e-01 2.06552415e-01 1.67385258e-01 1.57016085e-01
+ 2.60587903e-02 2.48059294e-02 2.17256590e-02 2.10594833e-02
+ 1.62690009e-02 1.44940814e-02 1.40418531e-02 1.35745765e-02
+ 9.03587699e-03 8.52694886e-03 7.84661882e-03 7.22223857e-03
+ 7.18336024e-03 5.71444055e-03 5.63372868e-03 4.95688181e-03
+ 4.82197817e-03 4.37761245e-03 3.82373703e-03 3.62285349e-03
+ 3.54144547e-03 3.52789684e-03 3.44740548e-03 2.88481798e-03
+ 2.87138618e-03 2.26185986e-03 1.95836667e-03 1.52653284e-03
+ 1.09580144e-03 9.87951756e-04 9.16372263e-04 8.79785812e-04
+ 6.72096278e-04 4.74562433e-04 3.62679270e-04 2.45254497e-04
+ 1.12432478e-04 3.59663362e-06 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_Aliphatic AtomCount' '_feat_BalabanIndex' '_feat_ASA_P'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_H' '_feat_ASA'
+ '_feat_MinimalProjectionArea' '_feat_ChainAtomCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_N' '_feat_Accsitecount'
+ '_feat_fr_amidine' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Refractivity' '_feat_ASA+' '_feat_maximalprojectionsize'
+ '_feat_AvgPol' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_AliphaticRingCount' '_feat_MinimalProjectionRadius'
+ '_feat_VanderWaalsSurfaceArea' '_feat_AtomCount_C'
+ '_feat_molsurfaceareaASAp' '_feat_PolarSurfaceArea'
+ '_feat_minimalprojectionsize' '_feat_msareaVDWp'
+ '_feat_molsurfaceareaVDWp' '_feat_msareaASAp' '_feat_WienerIndex'
+ '_feat_MaximalProjectionRadius' '_feat_MolPol' '_feat_fr_NH0'
+ '_feat_VanderWaalsVolume' '_feat_HyperWienerIndex'
+ '_feat_RotatableBondCount' '_feat_Protpsa' '_feat_BondCount'
+ '_feat_fr_NH1' '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_feat_ProtPolarSurfaceArea' '_feat_Hacceptorcount'
+ '_feat_MaximalProjectionArea' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_dihydropyridine' '_feat_WienerPolarity'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_guanido' '_feat_fr_NH2' '_feat_fr_Ar_NH']"
+"[2.29365611e-01 1.91758631e-01 1.66049155e-01 1.43440394e-01
+ 3.22422437e-02 3.16393421e-02 2.28603332e-02 2.01268390e-02
+ 1.24030534e-02 1.21009486e-02 1.01906834e-02 9.77466035e-03
+ 9.68679237e-03 9.58213116e-03 8.46134326e-03 8.34537515e-03
+ 8.23385018e-03 7.89463770e-03 7.61361564e-03 6.59826584e-03
+ 5.58696916e-03 5.56556227e-03 3.74375861e-03 3.51500206e-03
+ 3.46960926e-03 3.29652335e-03 3.28409337e-03 3.20514947e-03
+ 2.42119003e-03 2.32660280e-03 2.25672297e-03 2.19109611e-03
+ 1.69066830e-03 1.68846266e-03 1.66302230e-03 1.39131021e-03
+ 1.32014367e-03 1.30318970e-03 7.27522507e-04 6.36703890e-04
+ 3.24166008e-04 1.74065996e-05 7.21833364e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_BalabanIndex'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_P' '_feat_Aliphatic AtomCount'
+ '_feat_ChainAtomCount' '_feat_MinimalProjectionArea' '_feat_ASA_H'
+ '_feat_fr_amidine' '_feat_maximalprojectionsize'
+ '_rxn_temperatureC_actual_bulk' '_feat_MinimalProjectionRadius'
+ '_feat_Accsitecount' '_feat_minimalprojectionsize'
+ '_feat_molsurfaceareaVDWp' '_feat_AtomCount_C' '_feat_AliphaticRingCount'
+ '_feat_ASA' '_feat_molsurfaceareaASAp' '_feat_msareaVDWp'
+ '_feat_Refractivity' '_feat_VanderWaalsSurfaceArea' '_feat_msareaASAp'
+ '_feat_AvgPol' '_feat_HyperWienerIndex' '_feat_WienerIndex'
+ '_feat_donsitecount' '_feat_WienerPolarity' '_feat_Protpsa'
+ '_feat_MolPol' '_feat_ProtPolarSurfaceArea'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_ASA+'
+ '_feat_MaximalProjectionArea' '_feat_fr_NH0' '_feat_fr_NH2'
+ '_feat_fr_NH1' '_feat_PolarSurfaceArea' '_feat_fr_quatN'
+ '_feat_AtomCount_N' '_feat_AromaticAtomCount'
+ '_feat_HeteroaliphaticRingCount' '_feat_SmallestRingSize'
+ '_feat_CyclomaticNumber' '_feat_fr_pyridine' '_feat_fr_Imine'
+ '_feat_Hacceptorcount' '_feat_fr_piperdine' '_feat_ChiralCenterCount'
+ '_feat_donorcount' '_feat_fr_guanido' '_feat_fr_piperzine'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_RotatableBondCount'
+ '_feat_LargestRingSize' '_feat_MaximalProjectionRadius'
+ '_feat_RingAtomCount' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_Ar_NH']"
+"[0.23535374 0.19789572 0.17980853 0.14426786 0.02656673 0.01981277
+ 0.01949003 0.01654465 0.01626163 0.01499526 0.01325511 0.0119291
+ 0.01148877 0.01066379 0.00994215 0.00884582 0.00737594 0.00524031
+ 0.00517911 0.00473279 0.00470314 0.00432211 0.00430054 0.00384736
+ 0.00356973 0.00306136 0.00257412 0.00220089 0.00219519 0.00206688
+ 0.00164662 0.00128316 0.00107596 0.00078504 0.00075792 0.00053989
+ 0.00047982 0.00033517 0.00032353 0.00028174 0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.        ]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_CarboaliphaticRingCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_ASA_H' '_feat_ASA_P' '_feat_BalabanIndex' '_feat_ASA'
+ '_feat_MinimalProjectionArea' '_feat_Accsitecount'
+ '_feat_minimalprojectionsize' '_feat_fr_NH2'
+ '_feat_MinimalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_Aliphatic AtomCount' '_feat_ChainAtomCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_fr_amidine'
+ '_feat_MaximalProjectionRadius' '_feat_MaximalProjectionArea'
+ '_feat_VanderWaalsSurfaceArea' '_feat_molsurfaceareaASAp' '_feat_MolPol'
+ '_feat_AtomCount_C' '_feat_VanderWaalsVolume' '_feat_msareaVDWp'
+ '_feat_WienerPolarity' '_feat_AliphaticRingCount' '_feat_msareaASAp'
+ '_feat_Refractivity' '_feat_AvgPol' '_feat_HeteroaliphaticRingCount'
+ '_feat_HyperWienerIndex' '_feat_ASA+' '_feat_maximalprojectionsize'
+ '_feat_molsurfaceareaVDWp' '_feat_AtomCount_N' '_feat_fr_NH0'
+ '_feat_CyclomaticNumber' '_feat_fr_pyridine' '_feat_fr_Imine'
+ '_feat_SmallestRingSize' '_feat_fr_piperdine' '_feat_donsitecount'
+ '_feat_ProtPolarSurfaceArea' '_feat_AromaticAtomCount'
+ '_feat_Hacceptorcount' '_feat_ChiralCenterCount' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_Protpsa'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_WienerIndex'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.13573360e-01 2.02667333e-01 1.82271199e-01 1.49016724e-01
+ 3.41272888e-02 2.41108650e-02 2.28825497e-02 2.18025384e-02
+ 1.62690462e-02 1.47994811e-02 1.45800076e-02 1.13039847e-02
+ 1.07709769e-02 9.34828004e-03 9.00325541e-03 6.61342690e-03
+ 5.74438841e-03 4.41386051e-03 3.97889278e-03 3.95931214e-03
+ 3.80333897e-03 3.76558238e-03 3.72989784e-03 3.54576408e-03
+ 3.18485739e-03 2.74829037e-03 2.32943374e-03 2.20727736e-03
+ 1.91234165e-03 1.55793048e-03 1.48988907e-03 1.39689764e-03
+ 1.00066261e-03 8.53626253e-04 8.38119605e-04 8.27108659e-04
+ 6.45467234e-04 6.25602086e-04 5.07662204e-04 4.81153570e-04
+ 4.77178334e-04 4.66793657e-04 2.82809206e-04 4.46561590e-05
+ 4.08876377e-05 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_minimalprojectionsize' '_feat_Aliphatic AtomCount'
+ '_feat_BalabanIndex' '_feat_ChainAtomCount' '_feat_MinimalProjectionArea'
+ '_feat_ASA_H' '_feat_CarboaliphaticRingCount' '_feat_Accsitecount'
+ '_feat_ASA' '_feat_fr_amidine' '_feat_MinimalProjectionRadius'
+ '_feat_fr_NH2' '_rxn_temperatureC_actual_bulk'
+ '_feat_maximalprojectionsize' '_feat_ASA+' '_feat_ASA_P'
+ '_feat_msareaVDWp' '_feat_RotatableBondCount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_molsurfaceareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_ProtPolarSurfaceArea'
+ '_feat_msareaASAp' '_feat_Hacceptorcount' '_feat_WienerIndex'
+ '_feat_AtomCount_C' '_feat_AvgPol'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_fr_Imine' '_feat_Protpsa'
+ '_feat_acceptorcount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_WienerPolarity' '_feat_fr_NH0' '_feat_MaximalProjectionArea'
+ '_feat_PolarSurfaceArea' '_feat_MolPol' '_feat_molsurfaceareaASAp'
+ '_feat_VanderWaalsVolume' '_feat_Refractivity'
+ '_feat_MaximalProjectionRadius' '_feat_ChiralCenterCount'
+ '_feat_fr_pyridine' '_feat_fr_piperdine' '_feat_AromaticAtomCount'
+ '_feat_AtomCount_N' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_donsitecount' '_feat_donorcount'
+ '_feat_CyclomaticNumber' '_feat_fr_dihydropyridine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_LargestRingSize' '_feat_fr_NH1'
+ '_feat_RingAtomCount' '_feat_HyperWienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_quatN' '_feat_fr_guanido'
+ '_feat_fr_Ar_NH']"
+"[2.10559626e-01 2.06471581e-01 1.64984899e-01 1.29813227e-01
+ 3.09800618e-02 2.64043971e-02 2.31926919e-02 1.99299008e-02
+ 1.95808627e-02 1.51249707e-02 1.45036290e-02 1.30451157e-02
+ 1.17858539e-02 1.15037024e-02 1.12224535e-02 1.06125033e-02
+ 7.84200169e-03 7.79963733e-03 6.20181084e-03 6.07648056e-03
+ 5.37180906e-03 5.27674504e-03 5.01406884e-03 4.60232326e-03
+ 4.13690964e-03 3.51329405e-03 3.37758397e-03 3.25124027e-03
+ 2.90269878e-03 2.74917728e-03 2.21563688e-03 1.91310632e-03
+ 1.82281516e-03 1.27962065e-03 1.20010870e-03 1.10868058e-03
+ 8.00331605e-04 5.61222379e-04 5.58825781e-04 3.07103262e-04
+ 2.33606064e-04 1.63949034e-04 3.73716039e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_ASA_P' '_feat_CarboaliphaticRingCount' '_feat_BalabanIndex'
+ '_feat_MinimalProjectionRadius' '_feat_ASA' '_feat_ChainAtomCount'
+ '_feat_Aliphatic AtomCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_rxn_temperatureC_actual_bulk' '_feat_minimalprojectionsize'
+ '_feat_Accsitecount' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_msareaASAp' '_feat_ASA_H' '_feat_fr_amidine'
+ '_feat_MinimalProjectionArea' '_feat_maximalprojectionsize'
+ '_feat_Refractivity' '_feat_molsurfaceareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_AvgPol' '_feat_VanderWaalsSurfaceArea'
+ '_feat_RotatableBondCount' '_feat_msareaVDWp'
+ '_feat_MaximalProjectionRadius' '_feat_ProtPolarSurfaceArea'
+ '_feat_fr_NH2' '_feat_AtomCount_N' '_feat_AtomCount_C' '_feat_ASA+'
+ '_feat_fr_guanido' '_feat_PolarSurfaceArea' '_feat_fr_Imine'
+ '_feat_Protpsa' '_feat_HeteroaliphaticRingCount' '_feat_MolPol'
+ '_feat_MaximalProjectionArea' '_feat_HyperWienerIndex'
+ '_feat_AromaticAtomCount' '_feat_CyclomaticNumber' '_feat_donsitecount'
+ '_feat_SmallestRingSize' '_feat_Hacceptorcount' '_feat_ChiralCenterCount'
+ '_feat_fr_piperdine' '_feat_fr_pyridine' '_feat_WienerPolarity'
+ '_feat_donorcount' '_feat_fr_NH1' '_feat_CarboRingCount'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_molsurfaceareaASAp' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_fr_piperzine' '_feat_fr_quatN'
+ '_feat_fr_dihydropyridine' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_WienerIndex' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_Ar_NH']"
+"[2.26155833e-01 1.99760348e-01 1.64501357e-01 1.60176428e-01
+ 3.10968760e-02 2.36653371e-02 2.14975228e-02 2.04940683e-02
+ 1.89049323e-02 1.31599860e-02 1.16044981e-02 1.13193736e-02
+ 9.59058818e-03 8.88504063e-03 8.76858922e-03 7.95287542e-03
+ 7.85043621e-03 7.79035410e-03 7.40119089e-03 5.13979882e-03
+ 4.82612001e-03 4.48508287e-03 4.02782822e-03 3.47790846e-03
+ 2.82474795e-03 2.47943046e-03 2.36634728e-03 1.57247377e-03
+ 1.18062764e-03 1.04604939e-03 1.00392377e-03 7.42633082e-04
+ 7.13657905e-04 7.08535670e-04 6.08300983e-04 5.51519446e-04
+ 5.20589299e-04 4.56064030e-04 3.69233529e-04 2.83040238e-04
+ 4.04526044e-05 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_ChainAtomCount' '_feat_ASA_P' '_feat_ASA' '_feat_ASA_H'
+ '_feat_MinimalProjectionArea' '_feat_Aliphatic AtomCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_VanderWaalsSurfaceArea'
+ '_feat_Protpsa' '_feat_MinimalProjectionRadius' '_feat_MolPol'
+ '_feat_Accsitecount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_acceptorcount' '_feat_MaximalProjectionRadius'
+ '_feat_minimalprojectionsize' '_feat_AliphaticRingCount'
+ '_feat_Refractivity' '_feat_AvgPol' '_feat_VanderWaalsVolume'
+ '_feat_molsurfaceareaASAp' '_feat_maximalprojectionsize'
+ '_feat_WienerIndex' '_feat_ProtPolarSurfaceArea'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_fr_Imine'
+ '_feat_donsitecount' '_feat_msareaVDWp' '_feat_AtomCount_C'
+ '_feat_HyperWienerIndex' '_feat_ASA+' '_feat_msareaASAp' '_feat_fr_NH1'
+ '_feat_Hdonorcount' '_feat_fr_NH2' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_fr_amidine' '_feat_molsurfaceareaVDWp'
+ '_feat_CyclomaticNumber' '_feat_MaximalProjectionArea'
+ '_feat_Hacceptorcount' '_feat_AromaticAtomCount' '_feat_fr_piperdine'
+ '_feat_fr_pyridine' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_donorcount'
+ '_feat_WienerPolarity' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_fr_NH0'
+ '_feat_CarboRingCount' '_feat_fr_dihydropyridine' '_feat_fr_guanido'
+ '_feat_LargestRingSize' '_feat_RingAtomCount' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.38712451e-01 2.02523421e-01 1.63653751e-01 1.61292482e-01
+ 2.68587160e-02 2.23596717e-02 2.16203194e-02 1.90823230e-02
+ 1.82985334e-02 1.59702884e-02 1.55790445e-02 1.27570189e-02
+ 1.07107630e-02 1.00147858e-02 8.59598205e-03 6.99913010e-03
+ 6.76643166e-03 6.60970714e-03 5.16848699e-03 4.18489719e-03
+ 3.72436498e-03 3.65686477e-03 2.26776909e-03 2.22386863e-03
+ 1.91230192e-03 1.52869028e-03 1.25461664e-03 1.04126668e-03
+ 7.16856559e-04 6.21927178e-04 5.55467811e-04 5.23816679e-04
+ 4.24821550e-04 4.10132359e-04 4.05718790e-04 2.45639860e-04
+ 2.26040886e-04 1.98244700e-04 1.83048795e-04 1.15149054e-04
+ 5.18819826e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_BalabanIndex' '_feat_minimalprojectionsize' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_CarboaliphaticRingCount'
+ '_feat_ASA_H' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_Aliphatic AtomCount' '_feat_ChainAtomCount'
+ '_feat_MinimalProjectionRadius' '_feat_fr_amidine' '_feat_fr_NH2'
+ '_feat_Accsitecount' '_feat_MinimalProjectionArea' '_feat_msareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_AvgPol' '_feat_ASA_P'
+ '_feat_WienerIndex' '_feat_AtomCount_C' '_rxn_temperatureC_actual_bulk'
+ '_feat_molsurfaceareaASAp' '_feat_ASA+' '_feat_msareaASAp'
+ '_feat_WienerPolarity' '_feat_fr_NH0' '_feat_HyperWienerIndex'
+ '_feat_donsitecount' '_feat_Refractivity' '_feat_maximalprojectionsize'
+ '_feat_MaximalProjectionRadius' '_feat_MolPol'
+ '_feat_MaximalProjectionArea' '_feat_fr_Imine' '_feat_molsurfaceareaVDWp'
+ '_feat_VanderWaalsSurfaceArea' '_feat_RingAtomCount'
+ '_feat_ChiralCenterCount' '_feat_AtomCount_N' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_AromaticAtomCount'
+ '_feat_fr_piperdine' '_feat_Hacceptorcount' '_feat_fr_pyridine'
+ '_feat_CyclomaticNumber' '_feat_ProtPolarSurfaceArea' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_piperzine' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_guanido' '_feat_Protpsa'
+ '_feat_LargestRingSize' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.25076599e-01 2.04945811e-01 1.48105525e-01 1.47257620e-01
+ 3.14712856e-02 2.58962144e-02 1.95474786e-02 1.86253514e-02
+ 1.64647229e-02 1.52490690e-02 1.51482899e-02 1.47579242e-02
+ 1.19607991e-02 1.09242497e-02 9.01972207e-03 7.98674372e-03
+ 7.87187661e-03 6.93632497e-03 6.44404162e-03 6.12188136e-03
+ 5.36480273e-03 5.05734138e-03 4.96418819e-03 4.54734758e-03
+ 4.53524510e-03 4.17542105e-03 3.60702975e-03 3.44510998e-03
+ 2.71549833e-03 2.70151533e-03 2.09194837e-03 1.81021828e-03
+ 1.16884924e-03 1.05617734e-03 9.00546225e-04 6.42410349e-04
+ 5.55258854e-04 4.01170091e-04 3.40949473e-04 1.07441609e-04
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_ASA_H' '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_MinimalProjectionArea' '_feat_ASA'
+ '_feat_ASA_P' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Accsitecount' '_feat_ChainAtomCount' '_feat_minimalprojectionsize'
+ '_feat_Refractivity' '_feat_maximalprojectionsize'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_fr_amidine'
+ '_feat_msareaASAp' '_rxn_temperatureC_actual_bulk' '_feat_AtomCount_C'
+ '_feat_MinimalProjectionRadius' '_feat_molsurfaceareaVDWp'
+ '_feat_AliphaticRingCount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_MaximalProjectionRadius' '_feat_AvgPol' '_feat_molsurfaceareaASAp'
+ '_feat_ASA+' '_feat_MaximalProjectionArea' '_feat_MolPol'
+ '_feat_HyperWienerIndex' '_feat_fr_Imine' '_feat_fr_NH2'
+ '_feat_ProtPolarSurfaceArea' '_feat_PolarSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_Protpsa' '_feat_Hacceptorcount'
+ '_feat_AtomCount_N' '_feat_ChiralCenterCount' '_feat_donsitecount'
+ '_feat_AromaticAtomCount' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_msareaVDWp' '_feat_fr_piperdine'
+ '_feat_fr_pyridine' '_feat_CyclomaticNumber' '_feat_WienerPolarity'
+ '_feat_donorcount' '_feat_fr_NH1' '_feat_fr_piperzine'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_fr_ArN' '_feat_fr_NH0' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_guanido' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.21861908e-01 2.03062494e-01 1.75043490e-01 1.36348717e-01
+ 2.84967161e-02 2.40580484e-02 2.36544774e-02 1.80535621e-02
+ 1.69261590e-02 1.63624312e-02 1.51210060e-02 1.44800081e-02
+ 1.32303892e-02 1.25723293e-02 9.87309441e-03 8.29902458e-03
+ 8.18233124e-03 7.88852608e-03 7.24880323e-03 5.21780667e-03
+ 4.77288269e-03 4.17097562e-03 2.96838848e-03 2.87502081e-03
+ 2.79946875e-03 2.77975234e-03 2.11237673e-03 1.75080577e-03
+ 1.53912067e-03 1.34076438e-03 1.33936999e-03 1.19424226e-03
+ 9.83134413e-04 9.59341039e-04 6.05060194e-04 5.44968179e-04
+ 4.46062694e-04 3.30116438e-04 2.46198040e-04 1.30545995e-04
+ 8.25558093e-05 2.62523410e-05 2.12733557e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_MinimalProjectionArea' '_feat_ASA'
+ '_feat_Aliphatic AtomCount' '_feat_CarboaliphaticRingCount' '_feat_ASA_H'
+ '_feat_fr_NH2' '_feat_ASA_P' '_feat_ChainAtomCount' '_feat_Accsitecount'
+ '_feat_MinimalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_C' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_minimalprojectionsize' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Hacceptorcount' '_feat_AliphaticRingCount' '_feat_ASA+'
+ '_feat_msareaVDWp' '_feat_AvgPol' '_feat_fr_amidine'
+ '_feat_VanderWaalsSurfaceArea' '_feat_HeteroaliphaticRingCount'
+ '_feat_Protpsa' '_feat_molsurfaceareaVDWp' '_feat_maximalprojectionsize'
+ '_feat_VanderWaalsVolume' '_feat_Refractivity' '_feat_fr_NH0'
+ '_feat_AtomCount_N' '_feat_molsurfaceareaASAp' '_feat_MolPol'
+ '_feat_MaximalProjectionArea' '_feat_RotatableBondCount'
+ '_feat_HyperWienerIndex' '_feat_msareaASAp'
+ '_feat_MaximalProjectionRadius' '_feat_WienerPolarity'
+ '_feat_ChiralCenterCount' '_feat_SmallestRingSize'
+ '_feat_ProtPolarSurfaceArea' '_feat_donsitecount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_CyclomaticNumber' '_feat_fr_pyridine' '_feat_donorcount'
+ '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_PolarSurfaceArea' '_feat_fr_ArN' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_feat_WienerIndex' '_feat_BondCount'
+ '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.18166114e-01 1.99408136e-01 1.72574715e-01 1.50909492e-01
+ 4.11668118e-02 2.39485042e-02 2.32635264e-02 1.92791267e-02
+ 1.73217440e-02 1.56254076e-02 9.97444901e-03 9.77677378e-03
+ 8.82550881e-03 8.59078129e-03 8.40652099e-03 8.27281121e-03
+ 7.12278947e-03 7.09605536e-03 6.59321973e-03 4.80133733e-03
+ 4.67902896e-03 3.95065959e-03 3.50951074e-03 3.50522214e-03
+ 3.49099531e-03 3.13558848e-03 2.34204950e-03 2.27040856e-03
+ 2.17157445e-03 2.15513640e-03 1.58008741e-03 1.42188424e-03
+ 1.20677721e-03 6.87074880e-04 6.36432701e-04 5.53723093e-04
+ 5.20004302e-04 4.28142305e-04 3.83516916e-04 2.45050678e-04
+ 3.30804964e-06 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_H' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA' '_feat_maximalprojectionsize'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Accsitecount'
+ '_feat_fr_NH2' '_feat_minimalprojectionsize'
+ '_feat_MinimalProjectionArea' '_feat_msareaASAp'
+ '_feat_AliphaticRingCount' '_feat_ChainAtomCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Refractivity'
+ '_feat_AvgPol' '_feat_msareaVDWp' '_feat_Hacceptorcount'
+ '_feat_fr_amidine' '_feat_ASA+' '_feat_ASA_P' '_feat_MolPol'
+ '_rxn_temperatureC_actual_bulk' '_feat_HyperWienerIndex'
+ '_feat_MaximalProjectionRadius' '_feat_acceptorcount'
+ '_feat_molsurfaceareaASAp' '_feat_VanderWaalsVolume' '_feat_AtomCount_C'
+ '_feat_HeteroaliphaticRingCount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_WienerIndex' '_feat_MinimalProjectionRadius'
+ '_feat_PolarSurfaceArea' '_feat_LargestRingSize' '_feat_fr_guanido'
+ '_feat_molsurfaceareaVDWp' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_donsitecount' '_feat_MaximalProjectionArea'
+ '_feat_CyclomaticNumber' '_feat_AromaticAtomCount' '_feat_fr_piperdine'
+ '_feat_SmallestRingSize' '_feat_fr_Imine' '_feat_fr_pyridine'
+ '_feat_ProtPolarSurfaceArea' '_feat_donorcount' '_feat_WienerPolarity'
+ '_feat_fr_piperzine' '_rxn_reactiontimeS' '_rxn_stirrateRPM'
+ '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount'
+ '_feat_fr_ArN' '_feat_fr_NH0' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_NH1' '_feat_Protpsa'
+ '_feat_RingAtomCount' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.12329245e-01 2.10482669e-01 1.50450544e-01 1.44824862e-01
+ 2.69524792e-02 2.35531782e-02 2.24654385e-02 2.19256402e-02
+ 2.12516430e-02 1.50529359e-02 1.38198285e-02 1.27995538e-02
+ 1.24906189e-02 1.24888565e-02 9.99882577e-03 9.12698132e-03
+ 8.64752991e-03 8.27460598e-03 8.09035552e-03 7.77024651e-03
+ 5.23394471e-03 4.98189466e-03 4.67392556e-03 4.46551349e-03
+ 4.30471925e-03 3.86131567e-03 3.46990256e-03 2.59247613e-03
+ 2.44669988e-03 1.96778564e-03 1.65278082e-03 1.63209831e-03
+ 1.32998316e-03 8.45875083e-04 7.74068547e-04 6.95369343e-04
+ 6.41372992e-04 4.65859594e-04 3.61970976e-04 3.23131710e-04
+ 2.54919518e-04 2.24027988e-04 4.30757460e-06 1.93311471e-08
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount' '_feat_ASA_H'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_P' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_minimalprojectionsize'
+ '_feat_ChainAtomCount' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_fr_NH2' '_feat_MinimalProjectionArea'
+ '_feat_maximalprojectionsize' '_feat_MinimalProjectionRadius'
+ '_feat_AtomCount_C' '_feat_Accsitecount' '_feat_AliphaticRingCount'
+ '_feat_VanderWaalsVolume' '_feat_Refractivity' '_feat_RotatableBondCount'
+ '_feat_MolPol' '_feat_fr_amidine' '_rxn_temperatureC_actual_bulk'
+ '_feat_msareaASAp' '_feat_ProtPolarSurfaceArea'
+ '_feat_molsurfaceareaASAp' '_feat_AvgPol' '_feat_fr_Imine'
+ '_feat_Protpsa' '_feat_PolarSurfaceArea' '_feat_VanderWaalsSurfaceArea'
+ '_feat_HyperWienerIndex' '_feat_molsurfaceareaVDWp' '_feat_WienerIndex'
+ '_feat_WienerPolarity' '_feat_ASA+' '_feat_MaximalProjectionRadius'
+ '_feat_BondCount' '_feat_msareaVDWp' '_feat_fr_guanido'
+ '_feat_MaximalProjectionArea' '_feat_SmallestRingSize'
+ '_feat_fr_piperdine' '_feat_AtomCount_N' '_feat_Hacceptorcount'
+ '_feat_ChiralCenterCount' '_feat_fr_pyridine' '_feat_donsitecount'
+ '_feat_AromaticAtomCount' '_feat_HeteroaliphaticRingCount'
+ '_feat_donorcount' '_feat_CyclomaticNumber' '_feat_fr_NH1'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_fr_ArN' '_feat_fr_NH0' '_feat_CarboRingCount'
+ '_feat_fr_piperzine' '_feat_fr_dihydropyridine' '_feat_LargestRingSize'
+ '_feat_RingAtomCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_quatN' '_feat_fr_Ar_NH']"
+"[2.24353670e-01 2.00360985e-01 1.60428842e-01 1.50948679e-01
+ 2.43279403e-02 2.25972713e-02 2.05019794e-02 1.94474459e-02
+ 1.79163056e-02 1.76770247e-02 1.70263261e-02 1.67033011e-02
+ 1.20498387e-02 8.80645981e-03 8.23611720e-03 7.89927900e-03
+ 7.31118909e-03 7.10774571e-03 6.68163773e-03 5.53250592e-03
+ 5.33527670e-03 4.55870013e-03 4.42022049e-03 4.12355509e-03
+ 3.39585170e-03 3.01706721e-03 2.99141822e-03 2.93872736e-03
+ 2.50808597e-03 2.30345025e-03 1.78287198e-03 1.41740632e-03
+ 1.38636004e-03 1.00811332e-03 9.52111915e-04 5.80094887e-04
+ 3.71268397e-04 3.49018323e-04 3.40978537e-04 2.71417477e-04
+ 2.66981628e-05 3.42783633e-06 3.33607852e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_ASA_H' '_feat_BalabanIndex' '_feat_ASA'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_P'
+ '_feat_maximalprojectionsize' '_feat_MinimalProjectionArea'
+ '_feat_minimalprojectionsize' '_feat_Aliphatic AtomCount'
+ '_feat_MinimalProjectionRadius' '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_Refractivity' '_feat_ChainAtomCount'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_Accsitecount'
+ '_feat_RotatableBondCount' '_rxn_temperatureC_actual_bulk'
+ '_feat_molsurfaceareaASAp' '_feat_fr_amidine' '_feat_msareaASAp'
+ '_feat_molsurfaceareaVDWp' '_feat_AliphaticRingCount' '_feat_msareaVDWp'
+ '_feat_MolPol' '_feat_WienerIndex' '_feat_Hacceptorcount'
+ '_feat_HyperWienerIndex' '_feat_VanderWaalsSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_AtomCount_C' '_feat_ASA+'
+ '_feat_donsitecount' '_feat_MaximalProjectionRadius' '_feat_AvgPol'
+ '_feat_PolarSurfaceArea' '_feat_Protpsa' '_feat_MaximalProjectionArea'
+ '_feat_SmallestRingSize' '_feat_AromaticAtomCount' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_WienerPolarity' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_feat_ProtPolarSurfaceArea'
+ '_feat_HeteroaliphaticRingCount' '_feat_CyclomaticNumber'
+ '_feat_donorcount' '_feat_fr_NH2' '_feat_fr_NH1' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_fr_NH0' '_feat_CarboRingCount' '_feat_fr_piperzine'
+ '_feat_fr_dihydropyridine' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_fr_quatN' '_feat_fr_guanido'
+ '_feat_fr_Ar_NH']"
+"[2.38151812e-01 1.90642583e-01 1.56100096e-01 1.48968586e-01
+ 3.86031927e-02 2.75094366e-02 1.97043789e-02 1.96068639e-02
+ 1.95165885e-02 1.53434696e-02 1.34969909e-02 1.16941587e-02
+ 1.03248483e-02 1.02500014e-02 9.07812405e-03 8.40693378e-03
+ 8.06020926e-03 7.34038617e-03 6.64626755e-03 5.74491712e-03
+ 5.59388106e-03 5.38191342e-03 4.96824998e-03 4.63275855e-03
+ 2.68074188e-03 2.65977467e-03 1.38402296e-03 1.32699251e-03
+ 1.21395452e-03 1.04790156e-03 9.02642932e-04 8.20142262e-04
+ 6.91720073e-04 5.50160676e-04 4.37813998e-04 3.08268374e-04
+ 2.08772172e-04 4.43294562e-07 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_ASA_P' '_feat_ChainAtomCount' '_feat_ASA'
+ '_feat_MinimalProjectionArea' '_feat_Aliphatic AtomCount'
+ '_feat_CarboaliphaticRingCount' '_feat_ASA_H'
+ '_feat_MinimalProjectionRadius' '_feat_AliphaticRingCount'
+ '_feat_minimalprojectionsize' '_rxn_temperatureC_actual_bulk'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MolPol'
+ '_feat_Accsitecount' '_feat_maximalprojectionsize'
+ '_feat_ProtPolarSurfaceArea' '_feat_AtomCount_C' '_feat_fr_NH2'
+ '_feat_fr_amidine' '_feat_Refractivity'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_molsurfaceareaVDWp'
+ '_feat_donsitecount' '_feat_msareaVDWp' '_feat_HyperWienerIndex'
+ '_feat_WienerIndex' '_feat_WienerPolarity'
+ '_feat_MaximalProjectionRadius' '_feat_Protpsa' '_feat_donorcount'
+ '_feat_HeteroaliphaticRingCount' '_feat_ASA+' '_feat_LargestRingSize'
+ '_feat_HeteroaromaticRing Count' '_feat_Hacceptorcount'
+ '_feat_PolarSurfaceArea' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_Hdonorcount' '_feat_molsurfaceareaASAp' '_feat_AromaticAtomCount'
+ '_feat_acceptorcount' '_feat_SmallestRingSize' '_feat_fr_piperdine'
+ '_feat_fr_Imine' '_feat_fr_pyridine' '_rxn_mixingtime2S'
+ '_rxn_stirrateRPM' '_feat_MaximalProjectionArea' '_rxn_reactiontimeS'
+ '_feat_fr_ArN' '_feat_BondCount' '_feat_AvgPol' '_feat_CyclomaticNumber'
+ '_rxn_mixingtime1S' '_feat_VanderWaalsSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_RingAtomCount' '_feat_AromaticRingCount'
+ '_feat_RotatableBondCount' '_feat_fr_dihydropyridine' '_feat_msareaASAp'
+ '_feat_fr_piperzine' '_feat_fr_quatN' '_feat_fr_guanido' '_feat_fr_NH1'
+ '_feat_CarboRingCount' '_feat_fr_NH0' '_feat_fr_Ar_NH']"
+"[2.33855633e-01 2.13409266e-01 1.54687730e-01 1.25817510e-01
+ 2.48914850e-02 2.39949767e-02 2.08454726e-02 1.76700325e-02
+ 1.72485916e-02 1.63763596e-02 1.55893215e-02 1.47170688e-02
+ 1.17124932e-02 1.12176847e-02 1.03932050e-02 9.20365016e-03
+ 8.43228949e-03 8.18583820e-03 8.09677614e-03 7.95976271e-03
+ 7.04558280e-03 6.48356462e-03 5.80109898e-03 4.07212899e-03
+ 2.88600365e-03 2.79280150e-03 2.33832621e-03 2.03673185e-03
+ 1.90405726e-03 1.86895783e-03 1.58813816e-03 1.38751510e-03
+ 9.85031392e-04 9.08212498e-04 8.43552201e-04 7.90325915e-04
+ 5.15877948e-04 5.00559963e-04 3.89850523e-04 3.26603368e-04
+ 2.10824839e-04 1.74324077e-05 1.67499530e-06 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_minimalprojectionsize' '_feat_ASA_H' '_feat_Aliphatic AtomCount'
+ '_feat_LengthPerpendicularToTheMinArea'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_ASA'
+ '_feat_MinimalProjectionArea' '_feat_VanderWaalsSurfaceArea'
+ '_feat_ASA_P' '_feat_fr_amidine' '_feat_ChainAtomCount'
+ '_feat_molsurfaceareaASAp' '_feat_Accsitecount'
+ '_feat_MinimalProjectionRadius' '_rxn_temperatureC_actual_bulk'
+ '_feat_AtomCount_N' '_feat_ASA+' '_feat_PolarSurfaceArea' '_feat_Protpsa'
+ '_feat_Hacceptorcount' '_feat_ProtPolarSurfaceArea'
+ '_feat_VanderWaalsVolume' '_feat_WienerIndex' '_feat_MolPol'
+ '_feat_fr_NH2' '_feat_AliphaticRingCount' '_feat_msareaVDWp'
+ '_feat_msareaASAp' '_feat_MaximalProjectionRadius' '_feat_Refractivity'
+ '_feat_maximalprojectionsize' '_feat_AtomCount_C' '_feat_donsitecount'
+ '_feat_molsurfaceareaVDWp' '_feat_AvgPol' '_feat_donorcount'
+ '_feat_AromaticAtomCount' '_feat_CarboaromaticRingCount'
+ '_feat_CarboRingCount' '_rxn_reactiontimeS' '_feat_MaximalProjectionArea'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_fr_pyridine'
+ '_feat_fr_Imine' '_feat_fr_piperdine' '_feat_acceptorcount'
+ '_feat_HeteroaromaticRing Count' '_feat_Hdonorcount' '_feat_fr_ArN'
+ '_feat_ChiralCenterCount' '_feat_fr_NH0' '_feat_fr_piperzine'
+ '_feat_AromaticRingCount' '_feat_fr_dihydropyridine'
+ '_feat_SmallestRingSize' '_feat_HeteroaliphaticRingCount'
+ '_feat_LargestRingSize' '_feat_CyclomaticNumber' '_feat_WienerPolarity'
+ '_feat_RingAtomCount' '_feat_fr_NH1' '_feat_fr_guanido' '_feat_fr_quatN'
+ '_feat_HyperWienerIndex' '_feat_BondCount' '_rxn_mixingtime1S'
+ '_feat_RotatableBondCount' '_feat_fr_Ar_NH']"
+"[2.37717542e-01 1.93998197e-01 1.58934218e-01 1.31448783e-01
+ 3.25017273e-02 2.37466732e-02 2.22897110e-02 2.17774949e-02
+ 2.03123572e-02 2.01831716e-02 1.91288124e-02 1.48714388e-02
+ 1.30766830e-02 1.02286071e-02 9.26521660e-03 9.16869871e-03
+ 7.30523701e-03 7.22290332e-03 5.98927003e-03 5.46017821e-03
+ 5.23803129e-03 3.76553385e-03 3.58437884e-03 3.50161145e-03
+ 3.25415720e-03 3.20021622e-03 2.99232418e-03 1.41156935e-03
+ 1.27220697e-03 1.23581562e-03 1.17154848e-03 1.09635935e-03
+ 9.11679539e-04 6.57973109e-04 3.95272913e-04 3.86622751e-04
+ 3.23679107e-04 3.14647402e-04 2.57291092e-04 2.37839803e-04
+ 1.32486920e-04 3.18339136e-05 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_organic' '_rxn_M_inorganic' '_rxn_M_acid' '_feat_ASA-'
+ '_feat_BalabanIndex' '_feat_CarboaliphaticRingCount'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_Aliphatic AtomCount'
+ '_feat_maximalprojectionsize' '_feat_minimalprojectionsize' '_feat_ASA'
+ '_feat_LengthPerpendicularToTheMaxArea' '_feat_MinimalProjectionRadius'
+ '_feat_Accsitecount' '_feat_ASA_H' '_feat_ASA_P' '_feat_ChainAtomCount'
+ '_rxn_temperatureC_actual_bulk' '_feat_MinimalProjectionArea'
+ '_feat_molsurfaceareaVDWp' '_feat_MolPol' '_feat_fr_amidine'
+ '_feat_msareaASAp' '_feat_molsurfaceareaASAp' '_feat_ASA+'
+ '_feat_msareaVDWp' '_feat_Refractivity' '_feat_RotatableBondCount'
+ '_feat_AliphaticRingCount' '_feat_WienerPolarity'
+ '_feat_VanderWaalsVolume' '_feat_AvgPol' '_feat_AtomCount_C'
+ '_feat_WienerIndex' '_feat_HeteroaliphaticRingCount'
+ '_feat_HyperWienerIndex' '_feat_fr_NH0' '_feat_donsitecount'
+ '_feat_MaximalProjectionRadius' '_feat_MaximalProjectionArea'
+ '_feat_acceptorcount' '_feat_fr_NH2' '_feat_Hacceptorcount'
+ '_feat_SmallestRingSize' '_feat_AtomCount_N' '_feat_ChiralCenterCount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_fr_Imine'
+ '_feat_fr_pyridine' '_feat_CyclomaticNumber' '_feat_ProtPolarSurfaceArea'
+ '_feat_donorcount' '_feat_fr_NH1' '_feat_fr_guanido' '_rxn_reactiontimeS'
+ '_rxn_stirrateRPM' '_rxn_mixingtime2S' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_PolarSurfaceArea' '_feat_fr_ArN'
+ '_feat_CarboRingCount' '_feat_fr_piperzine' '_feat_fr_dihydropyridine'
+ '_feat_Protpsa' '_feat_LargestRingSize' '_feat_RingAtomCount'
+ '_feat_BondCount' '_rxn_mixingtime1S' '_feat_VanderWaalsSurfaceArea'
+ '_feat_CarboaromaticRingCount' '_feat_AromaticRingCount' '_feat_fr_quatN'
+ '_feat_fr_Ar_NH']"
+"[2.12750814e-01 2.09947102e-01 1.68853630e-01 1.60764647e-01
+ 2.43297832e-02 2.19032507e-02 2.01262311e-02 1.88131664e-02
+ 1.74443207e-02 1.40314028e-02 1.39460097e-02 1.24792492e-02
+ 1.07042784e-02 1.01642418e-02 8.30031233e-03 8.28062406e-03
+ 8.08107814e-03 8.01437709e-03 5.96634943e-03 5.88597962e-03
+ 4.50031122e-03 4.02210459e-03 3.93837942e-03 3.75283422e-03
+ 3.71592236e-03 3.50922500e-03 2.99078510e-03 2.37747724e-03
+ 2.31747134e-03 1.88818512e-03 1.54861034e-03 1.39475308e-03
+ 8.78913191e-04 7.61370132e-04 5.63461673e-04 3.95942672e-04
+ 3.43026690e-04 2.77944974e-04 3.64337411e-05 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]","['_rxn_M_inorganic' '_rxn_M_organic' '_feat_ASA-' '_rxn_M_acid'
+ '_feat_CarboaliphaticRingCount' '_feat_minimalprojectionsize'
+ '_feat_BalabanIndex' '_feat_Aliphatic AtomCount'
+ '_feat_MinimalProjectionArea' '_feat_MinimalProjectionRadius'
+ '_feat_ASA_P' '_feat_AtomCount_C' '_rxn_temperatureC_actual_bulk'
+ '_feat_LengthPerpendicularToTheMinArea' '_feat_ASA_H'
+ '_feat_ChainAtomCount' '_feat_PolarSurfaceArea'
+ '_feat_AliphaticRingCount' '_feat_msareaVDWp' '_feat_ASA'
+ '_feat_molsurfaceareaVDWp' '_feat_LengthPerpendicularToTheMaxArea'
+ '_feat_Accsitecount' '_feat_VanderWaalsSurfaceArea'
+ '_feat_MaximalProjectionRadius' '_feat_AvgPol' '_feat_fr_amidine'
+ '_feat_molsurfaceareaASAp' '_feat_Refractivity' '_feat_Protpsa'
+ '_feat_maximalprojectionsize' '_feat_fr_NH1' '_feat_MolPol'
+ '_feat_fr_Imine' '_feat_BondCount' '_feat_LargestRingSize' '_feat_fr_NH2'
+ '_feat_ProtPolarSurfaceArea' '_feat_CyclomaticNumber' '_feat_AtomCount_N'
+ '_feat_ChiralCenterCount' '_feat_donsitecount' '_feat_Hacceptorcount'
+ '_feat_AromaticAtomCount' '_feat_fr_piperdine' '_feat_SmallestRingSize'
+ '_feat_HeteroaliphaticRingCount' '_feat_MaximalProjectionArea'
+ '_feat_ASA+' '_feat_fr_pyridine' '_feat_WienerPolarity'
+ '_feat_donorcount' '_feat_fr_guanido' '_feat_fr_piperzine'
+ '_rxn_reactiontimeS' '_rxn_stirrateRPM' '_rxn_mixingtime2S'
+ '_feat_acceptorcount' '_feat_HeteroaromaticRing Count'
+ '_feat_Hdonorcount' '_feat_fr_ArN' '_feat_fr_NH0' '_feat_CarboRingCount'
+ '_feat_fr_dihydropyridine' '_feat_fr_quatN' '_feat_RingAtomCount'
+ '_feat_WienerIndex' '_feat_HyperWienerIndex' '_rxn_mixingtime1S'
+ '_feat_VanderWaalsVolume' '_feat_CarboaromaticRingCount'
+ '_feat_AromaticRingCount' '_feat_RotatableBondCount' '_feat_msareaASAp'
+ '_feat_fr_Ar_NH']"

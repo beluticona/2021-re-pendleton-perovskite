@@ -7,7 +7,7 @@ import collections
 
 
 def save_results(full_results, parameters):
-    full_results_folder_path = results_path + folder_for(parameters)
+    full_results_folder_path = results_path / folder_for(parameters)
     set_results_folder(full_results_folder_path)
     if parameters['model']['method'] == GBC:
         save_feature_importance(full_results_folder_path, full_results['std'])
@@ -17,14 +17,14 @@ def save_results(full_results, parameters):
         save_full_and_summary_for(full_results['loo'], full_results_folder_path, 'LeaveOneOut_Full.csv', 'LeaveOneOut_Summary.csv', LOO)
 
     full_results_description = file_name_for(parameters)[:-1] + '.csv'
-    f = open(full_results_folder_path + 'info.txt', "a")
+    f = open(full_results_folder_path / 'info.txt', "a")
     f.write(full_results_description)
     f.close()
 
 
 def save_full_and_summary_for(dict_results, full_results_path, full_result_filename, summary_filename, validation):
     df_results = pd.DataFrame.from_dict(dict_results, orient='columns')
-    df_results.to_csv(full_results_path + full_result_filename, index=None)
+    df_results.to_csv(full_results_path / full_result_filename, index=None)
 
     summarize_results(df_results, validation)
 
@@ -39,13 +39,13 @@ def save_full_and_summary_for(dict_results, full_results_path, full_result_filen
 
     summary = summary.groupby(['data_index', 'sample_fraction']).mean().drop('seed', axis=1)
 
-    summary.to_csv(full_results_path + summary_filename)
+    summary.to_csv(full_results_path / summary_filename)
 
 
 def save_feature_importance(full_results_folder_path, dict_results):
     df_results = pd.DataFrame.from_dict(dict_results, orient='columns')
     features = df_results[[FEAT_VALUES_IMPORTANCE, FEAT_NAMES_IMPORTANCE]]
-    features.to_csv(full_results_folder_path + 'features.csv')
+    features.to_csv(full_results_folder_path / 'features.csv', index=None)
     dict_results.pop(FEAT_VALUES_IMPORTANCE, None)
     dict_results.pop(FEAT_NAMES_IMPORTANCE, None)
 

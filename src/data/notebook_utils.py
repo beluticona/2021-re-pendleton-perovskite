@@ -1,14 +1,12 @@
-from src.config import data_path, parameters_path, data_types_path
+from src.config import training_dataset_path, data_types_path, chemical_inventory_path
 import src.data.utils as data_utils 
 import pandas as pd
 import json
 import yaml as yl
 
 
-def read_data():
-    with open(parameters_path) as file, open(data_types_path) as json_file:
-
-        parameters = yl.safe_load(file)
+def read_data(data_path=training_dataset_path):
+    with open(data_types_path) as json_file:
 
         dtypes = json.load(json_file)
         
@@ -23,15 +21,27 @@ def read_data():
         return df
 
 
+def read_chemical_info():
+    with open(chemical_inventory_path) as file:
+        chemical_inventory = pd.read_csv(file, header=0)
+        return chemical_inventory
+
+
+def filter_columns_by_prefix(columns, prefixes):
+    filtered_columns = { column for column in columns if True in (column.startswith(prefix)  for prefix in prefixes) }
+    return filtered_columns
+
+
 def get_columns(total_columns):
-    prefixs = ['_rxn_', '_feat_']
+    prefixs = ['_rxn_', '_feat_', '_raw']
     columns_by_prefix = {}
     for prefix in prefixs:
         columns_by_prefix[prefix] = set(filter(lambda column_name: column_name.startswith(prefix), total_columns))
     columns_by_prefix['solUD'] = set(data_utils.get_sol_ud_model_columns(total_columns))
+    columns_by_prefix['solV'] = set(data_utils.get_sol_v_model_columns(total_columns))
     chem_cols = []
     data_utils.extend_with_chem_columns(total_columns, chem_cols)
-    columns_by_prefix['chem'] = chem_cols
+    columns_by_prefix['chem'] = set(chem_cols)
     return columns_by_prefix
 
 
