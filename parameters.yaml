@@ -5,6 +5,7 @@ data_preparation:
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
 model:
+  testing-proportion: 0.2
   method: 2
   hyperparam-opt: No  # Enables gridsearch_CV, takes a LONG time (depending on parameters specified)
   strat: No
@@ -15,9 +16,9 @@ model:
       rxn: No     # Forces normalization of _rxns_*
       raw: No     # Forces normalization of _raws_* (post calculations of proportional values)
   std:
-      feat: No     # Forces standardization of _feats_*
-      rxn: No      # Forces standardization of _rxns_*
-      raw: No      # Forces standardization of _raws_* (post calculations of proportional values)
+      feat: Yes     # Forces standardization of _feats_*
+      rxn: Yes      # Forces standardization of _rxns_*
+      raw: Yes      # Forces standardization of _raws_* (post calculations of proportional values)
 # for no one hot set drop:0 and empty the keep list
 # Specifically for analyzing how stts models are handling the _feats_
   one-hot-encoding: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
@@ -29,18 +30,18 @@ dataset:
     solV-only: No
     solV-feat: No
     solUD-prop: No
-    solUD-feat-chem:  Yes
+    solUD-feat-chem:  No
     solUD-exp-chem: No
     solUD-feat-exp: No
     solUD-exp: No
-    solUD-chem: Yes
+    solUD-chem: No
     solUD-reag: No
     solUD-feat: Yes
-    solUD-only: Yes
-    chem-only: Yes
+    solUD-only: No
+    chem-only: No
     reag-only: No
     exp-only: No
-    feat-only: Yes
+    feat-only: No
     solUD-feat-chem-exp: No
 
 runs: 10
