@@ -1,0 +1,56 @@
+1. perovskita
+2. comprender
+3. comprender numero de cls y cuales
+4. analizar cunetos
+
+solUD: _rxn_ but _rxn_v0
+	_rxn_mmol_inorganic_actual
+	_rxn_mmol_organic_actual
+	_rxn_mixingtime1S
+	_rxn_mixingtime2S
+	_rxn_reactiontimeS
+	_rxn_stirrateRPM
+	_rxn_temperatureC
+	
+Chem: includes chemical quantities, such as the masses and volumes of each chemical, used in the preparation of “Reagents”
+
+	regex_for_chem_columns = ['_raw_reagent_.*_chemicals_.*_actual_amount$', (28)
+                              '_raw_*molweight', (1)
+                              '_feat_vanderwalls_volume', (0)
+                              '_raw_reagent_\d_volume'] (7)
+                              
+                              
+Exp: contains all data captured by the workflow required
+to prepare the final experiment solution.
+                            
+     lambda v1: [f"_raw{'_v1-' if v1 else '_'}M_.*_final", (47)
+              f"_raw_reagent_\d{'_v1-' if v1 else '_'}conc_.*",(116)
+              "_raw_reagent_\d_volume"] (7)
+              (170)
+ 
+Feat: _feat
+(Feat + Actions) includes only the physicochemical descriptors (e.g., surface area, polarity, volume, number of rings) of the organic reagents and the actions associated with experiments.
+
+
+
+analizar correlación -> 1
+	- solUd-chem
+	- feat varianza del feat
+	
+pca varianza de predctores-> cuál explica mejor la relación
+
+feat susbceptibilidad a particion random
+
+probar si desde 0.4 ya convergo
+
+- analizar qué quiero maximizar
+
+- consideraciones de qué info poner o no para predecir
+
+- decir que cols no aportan
+
+reglas de asociacion a  futuro)    
+ 
+ideas:
+	- ventajas con respecto a los exp, canti de datos 
+	- posibles conflictos
