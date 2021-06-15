@@ -1,6 +1,3 @@
-extrpl: No         # Run extrapolative models (Leave one amine/organic out)
-intrpl : Yes          # Run interpolative models (Standard test train splits )
-plot_results : No    # Turn mass plotting on (plots each of the model comparisons to png images)
 data_preparation: 
   shuffle_enabled: No         # Shuffles correspondence between x and y  (cannot be used with deep shuffle or unshuffled data)
   deep_shuffle_enabled : No    # Shuffles each column of the dataset independently (cannot be used concurrently with data_shuffle or unshuffled data)
@@ -19,30 +16,10 @@ model:
       feat: Yes     # Forces standardization of _feats_*
       rxn: Yes      # Forces standardization of _rxns_*
       raw: Yes      # Forces standardization of _raws_* (post calculations of proportional values)
-# for no one hot set drop:0 and empty the keep list
-# Specifically for analyzing how stts models are handling the _feats_
-  one-hot-encoding: No # CAUTION DROPS _feats_ from dataframe leaves only encoding from organic inchikey
-
 dataset:
-    solV-chem: No
-    solV-exp: No
-    solV-reag: No
-    solV-only: No
-    solV-feat: No
-    solUD-prop: No
-    solUD-feat-chem:  No
-    solUD-exp-chem: No
-    solUD-feat-exp: No
-    solUD-exp: No
-    solUD-chem: No
-    solUD-reag: No
-    solUD-feat: Yes
-    solUD-only: No
-    chem-only: No
-    reag-only: No
-    exp-only: No
-    feat-only: No
-    solUD-feat-chem-exp: No
+    rxn-only: No
+    chemical-only: No
+    rxn-chemical: No
 
 runs: 10
 fixed-predictors: No
