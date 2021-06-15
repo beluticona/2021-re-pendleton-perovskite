@@ -15,23 +15,25 @@ with open(parameters_path) as file, open(data_types_path) as json_file:
     
     df = pd.read_csv(training_dataset_path, header=0, dtype=dtypes)
 
-    # Select reactions where the solvent produced at least a crystal score of 4
-    df = pre_process.prepare_full_dataset(df, parameters["data_preparation"])
+    # Shuffle dataset if required (to compare results)
+    df = pre_process.shuffle_dataset(df, parameters["data_preparation"])
 
     #To analize metrics vs amount of data
     #sampling_fractions = [round(0.1*n,2) for n in range(2,11)]
     sampling_fractions = [1]
     full_results = model_utils.create_results_container(parameters)
 
-    # Set seed each run
+    # Set seed for each run
     random_seeds = [random_seed for random_seed in range(parameters['runs'])]
+
+    # Read classifeirs to run
 
     for seed in random_seeds:
         for fraction in sampling_fractions:
             frac_df = df.groupby('_out_crystalscore').sample(frac=fraction, random_state=seed)
             parameters['model']['sample_fraction'] = fraction 
             parameters['model']['seed'] = seed 
-            pre_process.process_dataset(frac_df, parameters, full_results)
+            pre_process.process_dataset(frac_df, parameters, full_results) 
 
     post_process.save_results(full_results, parameters)
 
