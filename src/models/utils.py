@@ -55,10 +55,6 @@ def feat_scaling(model_parameters, data_columns):
     return make_column_transformer((fun, curated_columns), remainder='passthrough'), curated_columns
 
 
-def record_amine_info(inchi, results):
-    results['inchi'].append(inchi)
-
-
 def translate_inchi_key(inchi, results):
     chemical_name = constants.INCHI_TO_CHEMNAME[inchi]
     results['chemical-name'].append(chemical_name)
@@ -70,17 +66,8 @@ def no_feat_scaling(model_parameters):
     return std + norm == 0
 
 
-def create_results_container(parameters):
-    full_results = {}
-    if parameters['intrpl']:
-        full_results['std'] = result_container()
-    if parameters['extrpl']:
-        std_loo = result_container()
-        std_loo['chemical-name'] = []
-        std_loo['inchi'] = []
-        full_results['loo'] = std_loo
-
-    return full_results
+def create_results_container():
+    return result_container()
 
 def result_container():
     std_results = {

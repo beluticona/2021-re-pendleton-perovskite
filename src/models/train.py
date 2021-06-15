@@ -27,7 +27,7 @@ def make_voting_clf(seed):
     ensemble = VotingClassifier(estimators=[('knn1', knn), ('gbc1', gbc)], voting='hard')
     return ensemble
 
-
+# Read best classifiers
 def make_classifier(model_parameters):
     param_grid = {'weights': ['uniform', 'distance'],
                 'algorithm': ['ball_tree', 'kd_tree', 'brute'],
@@ -160,7 +160,7 @@ def execute_cross_validation(crystal_score, data, folds, pipeline, seed):
     scores = cross_validate(pipeline, data, crystal_score,
                             cv=KFold(folds, shuffle=True, random_state=seed),
                             scoring=scoring,
-                            return_train_score=True,
+                            return_train_score=False,
                             return_estimator=True)
     return scores
 
@@ -176,15 +176,6 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
         ('scale', data_preprocess),
         ('clf', clf)
     ])
-
-    if model_parameters['hyperparam-opt']:
-        param_grid = {}
-        for k, v in clf_dict['param_grid'].items():
-            # '__' (double underscore) specfies step to apply param grid to
-            param_grid[f'clf__{k}'] = v
-        pipeline = GridSearchCV(pipeline, param_grid=param_grid, refit=True, cv=5, n_jobs=-1)
-        pipeline.fit(X, y)
-        pipeline = pipeline.best_estimator_
 
     if model_parameters['cv'] <= 1:
         simple_fit_predict(X_test, pipeline, dataset_name, results, y_test)
@@ -202,68 +193,3 @@ def std_train_test(data, model_parameters, crystal_score, dataset_name, results)
                                    curated_columns)
 
 
-def amine_slip(selected_data, model_parameters, crystal_score, inchis):
-    if model_parameters['strat']:
-        indicies = {}
-        for i, inchi in enumerate(inchis):
-            indicies[inchi] = np.array(range(96)) + i * 96
-
-        for amine in inchis.keys():
-            is_amine = indicies[amine]
-            train = list(set(range(selected_data.shape[0])) - set(indicies[amine]))
-            X_test_0 = selected_data.iloc[is_amine]
-            X_train_0 = selected_data.iloc[train]
-
-            y_test = crystal_score.iloc[is_amine].values.squeeze()
-            y_train = crystal_score.iloc[train].values.squeeze()
-
-            yield X_train_0, X_test_0, y_train, y_test
-    else:
-        for amine in inchis.unique():
-            is_amine = (inchis == amine).values
-            X_test_0 = selected_data[is_amine]
-            X_train_0 = selected_data[~is_amine]
-
-            y_test = crystal_score[is_amine]
-            y_train = crystal_score[~is_amine]
-
-            yield X_train_0, X_test_0, y_train, y_test
-
-
-def leave_one_out_train_test(data, model_parameters, crystal_score, dataset_name, inchis, results):
-    """
-    Strat = 1 : Uniformly sampling 96 experiments for each amine
-    Strat = 0 : Samples built from all experiments for each amine
-    """
-    mycv_return = amine_slip(data, model_parameters, crystal_score, inchis)
-
-    # for each dataset (model0, model1 concentrations)
-    clf_dict = make_classifier(model_parameters)
-    clf = clf_dict['estimator']
-    data_preprocess, curated_columns = utils.feat_scaling(model_parameters, data.columns.to_list())
-    pipeline = Pipeline([
-        ('scale', data_preprocess),
-        ('clf', clf)
-    ])
-
-    if model_parameters['hyperparam-opt']:
-        param_grid = {}
-        for k, v in clf_dict['param_grid'].items():
-            # '__' (double underscore) specfies step to apply param grid to
-            param_grid[f'clf__{k}'] = v
-        pipeline = GridSearchCV(pipeline, param_grid=param_grid, refit=True, cv=5, n_jobs=-1)
-        pipeline.fit(data, crystal_score)
-        pipeline = pipeline.best_estimator_
-
-    for inchi, (X_train, X_test, y_train, y_test) in zip(inchis.unique(), mycv_return):
-        pipeline.fit(X_train, y_train)
-        simple_fit_predict(X_test, pipeline, dataset_name, results, y_test)
-        utils.record_amine_info(inchi, results)
-        if model_parameters['method'] == constants.GBC:
-            features_importances = pipeline['clf'].feature_importances_
-            hold_curated = prepare_features_to_be_sort_by_importance(curated_columns, data.columns.to_list(), results)
-            results[constants.FEAT_VALUES_IMPORTANCE].append(
-                features_importances[np.argsort(features_importances)[::-1]])
-            results[constants.FEAT_NAMES_IMPORTANCE].append(hold_curated[np.argsort(features_importances)[::-1]])
-
-        utils.translate_inchi_key(inchi, results)
